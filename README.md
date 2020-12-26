@@ -46,4 +46,4 @@ Live Sass compiler собирает стили из файлов scss в index.c
 Останавливается работа скрипта сочетанием клавиш Ctrl + C
 
 Готовый к публикации проект компилируется в папке dist
-Компиляция производится запуском скрипта produsction - CloneWars NPM SCRIPTS 
+Компиляция производится запуском скрипта production - CloneWars NPM SCRIPTS 
