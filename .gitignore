@@ -1,4 +1,9 @@
-node_modules
+node_modules/
+
+dist/
+
 .vscode
+
 *.css
+
 *.css.map
