@@ -14,9 +14,8 @@
 
 проверить работает ли Eslint
 
-если нет, установить eslint - npm install
-настроить Eslint -
- ./node_modules/.bin/eslint --init
+если нет, установить eslint - npm install eslint
+настроить Eslint - ./node_modules/.bin/eslint --init
 ? How would you like to configure ESLint? Use a popular style guide
 ? Which style guide do you want to follow? Airbnb
 ? Do you use React? Yes
