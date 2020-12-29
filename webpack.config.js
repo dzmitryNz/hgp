@@ -1,81 +1,55 @@
-// webpack.config.js
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const webpack = require("webpack");
-const CopyPlugin = require("copy-webpack-plugin");
-require("babel-polyfill");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: "development",
-
+  entry: './src/index.tsx',
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, '/dist'),
+  },
+  mode: 'development',
   devServer: {
     historyApiFallback: true,
-    contentBase: path.resolve(__dirname, "./public"),
+    contentBase: path.resolve(__dirname, './dist'),
     open: true,
     compress: true,
     hot: true,
-    port: 8080,
+    port: 8081,
   },
-
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: "webpack Covid Dashboard",
-      template: path.resolve(__dirname, "./src/index.html"), // шаблон
-      filename: "index.html", // название выходного файла
-    }),
-    new CleanWebpackPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new CopyPlugin({
-      patterns: [
-        {
-          context: path.resolve(__dirname, "src"),
-          from: "images/",
-          to: "images/",
-        },
-      ],
-    }),
-  ],
-
   module: {
     rules: [
       // JavaScript
       {
-        test: /\.js$/,
+        test: /\.tsx?$/,
+        use: 'ts-loader',
         exclude: /node_modules/,
-        use: ["babel-loader"],
       },
-      // Images
+      // изображения
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-        type: "asset/resource",
+        use: ['file-loader?name=[name].[ext]'],
+        exclude: /node_modules/,
       },
-      // Fonts and SVG
+      // шрифты и SVG
       {
         test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
-        type: "asset/inline",
+        type: 'asset/inline',
       },
-      // CSS
+      // CSS, PostCSS, Sass
       {
-        test: /\.(css)$/,
-        use: ["style-loader", "css-loader"],
-      },
-      // JSON
-      {
-        test: /\.json$/,
-        use: ["json-loader"],
-        type: "javascript/auto",
-      },
-      // sounds
-      {
-        test: /\.(mp3|wav)$/,
-        use: [{
-          loader: "file-loader",
-          options: {
-            name: "sounds/[hash]-[name].[ext]",
-          },
-        }],
+        test: /\.(scss|css)$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
       },
     ],
   },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'public/index.html'),
+      favicon: path.resolve(__dirname, 'public/favicon.ico'),
+      filename: 'index.html',
+    }),
+  ],
 };
