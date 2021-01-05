@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "style": "sass --watch ./src/components/index.scss ./src/components/index.css",
     "start": "webpack serve",
     "build": "tsc --build",
     "lint": "eslint .",
