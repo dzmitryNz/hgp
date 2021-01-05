@@ -1,0 +1,25 @@
+@import "../#common-scss/#reset-css.scss";
+@import "../#common-scss/#normalize-css.scss";
+@import "../#common-scss/#scroll.scss";
+@import "App.scss";
+@import "header/scss/header.scss";
+@import "footer/scss/footer.scss";
+@import "menu/scss/menu.scss";
+@import "ingredients/scss/ingredients.scss";
+@import "exports/scss/exports.scss";
+@import "family/scss/family.scss";
+@import "planner/scss/planner.scss";
+@import "receipts/scss/receipts.scss";
+@import "storages/scss/storages.scss";
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
