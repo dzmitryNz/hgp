@@ -15,8 +15,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var jsx_runtime_1 = require("react/jsx-runtime");
-var logo_svg_1 = __importDefault(require("./logo.svg"));
-require("./App.css");
+var logo_svg_1 = __importDefault(require("../assets/images/logo.svg"));
 function App() {
     return (jsx_runtime_1.jsx("div", __assign({ className: "App" }, { children: jsx_runtime_1.jsxs("header", __assign({ className: "App-header" }, { children: [jsx_runtime_1.jsx("img", { src: logo_svg_1.default, className: "App-logo", alt: "logo" }, void 0),
                 jsx_runtime_1.jsxs("p", { children: ["Edit ", jsx_runtime_1.jsx("code", { children: "src/App.tsx" }, void 0), " and save to reload."] }, void 0),
