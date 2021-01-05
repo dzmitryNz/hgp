@@ -1,12 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './components/index.css';
+import Header from './components/header/header';
+import Footer from './components/footer/footer';
+import Menu from './components/menu/menu';
+import Family from './components/family/family';
+import Planner from './components/planner/planner';
+import Receipts from './components/receipts/receipts';
+import Storages from './components/storages/storages';
+import Ingredients from './components/ingredients/ingredients';
+import Exports from './components/exports/exports';
+import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
+    <Header />
+    <Menu />
+    <Family />
+    <Storages />
+    <Planner />
+    <Receipts />
+    <Ingredients />
+    <Exports />
     <App />
+    <Footer />
+
   </React.StrictMode>,
   document.getElementById('root')
 );
