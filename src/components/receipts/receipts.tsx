@@ -1,13 +1,18 @@
 import React from 'react';
+const PropertiesJson = require("../json/properties.json");
+const DictJson = require("../json/dict.json");
 
-function receipts() {
+const language = PropertiesJson.language;
+const receiptsTitle = DictJson[language].receiptsTitle;
+
+function Receipts() {
   return (
     <div className="receipts">
       <header className="receipts-header">
-          Receipts block here.
+          <h2>{ receiptsTitle }</h2>
       </header>
     </div>
   );
 }
 
-export default receipts;
+export default Receipts;

@@ -10,22 +10,19 @@ import Receipts from './components/receipts/receipts';
 import Storages from './components/storages/storages';
 import Ingredients from './components/ingredients/ingredients';
 import Exports from './components/exports/exports';
-import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <div className="wrapper"><Header />
-    <Menu />
+    <Header />
+    {/* <Menu /> */}
     <Family />
     <Storages />
     <Planner />
     <Receipts />
     <Ingredients />
     <Exports />
-    <App />
     <Footer />
-    </div>
   </React.StrictMode>,
   document.getElementById('root')
 );

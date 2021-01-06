@@ -1,4 +1,37 @@
 .header {
+  grid-area: header;
+  display: flex;
   text-align: center;
+  justify-content: space-between;
+  align-items: center;
   background-color: yellowgreen;
+  padding: 0 20px;
+
+  *::selection {
+    background: none;  
+  }
+
+  .buttons{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 20px;
+    align-items: center;
+    
+    div {
+      margin: 0 10px;
+    
+    .theme:hover,
+    .auth:hover,
+    .lang:hover {
+      cursor: pointer;
+      color: royalblue;
+      }
+    .theme:active,
+    .auth:active,
+    .lang:active {
+      cursor: pointer;
+      color: rosybrown;
+      }
+    }
+  }
 }

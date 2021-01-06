@@ -1,13 +1,18 @@
 import React from 'react';
+const PropertiesJson = require("../json/properties.json");
+const DictJson = require("../json/dict.json");
 
-function storages() {
+const language = PropertiesJson.language;
+const storagesTitle = DictJson[language].storagesTitle;
+
+function Storages() {
   return (
     <div className="storages">
       <header className="storages-header">
-          Storages block here.
+          <h2>{ storagesTitle }</h2>
       </header>
     </div>
   );
 }
 
-export default storages;
+export default Storages;

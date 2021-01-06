@@ -16,7 +16,7 @@
     // "noFallthroughCasesInSwitch": true,
     // "module": "esnext",
     // "moduleResolution": "node",
-    // "resolveJsonModule": true,
+    "resolveJsonModule": true,
     // "isolatedModules": true,
     "jsx": "react-jsx"
   },

@@ -1,0 +1,44 @@
+{
+    "main": {
+        "By": "Беларуская",
+        "Ua": "Украiнска",
+        "Ru": "Руский",
+        "En": "English"
+    },
+    "Ru": {
+        "title": "Планировщик домашних запасов",
+        "familyTitle": "Семья",
+        "storagesTitle": "Хранение",
+        "plannerTitle": "Планирование",
+        "receiptsTitle": "Составление меню",
+        "ingredientsTitle": "Ингредиенты",
+        "exportsTitle": "Заказ / Экспорт"
+    },
+    "By": {
+        "title": "Планавальнік хатніх запасаў",
+        "familyTitle": "Семья",
+        "storagesTitle": "Хранение",
+        "plannerTitle": "Планаванне",
+        "receiptsTitle": "Составление меню",
+        "ingredientsTitle": "Ингрэдыенты",
+        "exportsTitle": "Залiк / Экспарт"
+     },
+    "Ua": {
+        "title": "Планувальник домашніх запасів",
+        "familyTitle": "Семья",
+        "storagesTitle": "Хранение",
+        "plannerTitle": "Планирование",
+        "receiptsTitle": "Составление меню",
+        "ingredientsTitle": "Ингредиенты",
+        "exportsTitle": "Заказ / Экспорт"
+    },
+    "En": {
+        "title": "Home grocery planner",
+        "familyTitle": "Family",
+        "storagesTitle": "Storages",
+        "plannerTitle": "Planning",
+        "receiptsTitle": "Complete menu",
+        "ingredientsTitle": "Ingrredients",
+        "exportsTitle": "Order / Export"
+    }
+}
