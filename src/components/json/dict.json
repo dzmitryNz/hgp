@@ -1,8 +1,8 @@
 {
-    "main": {
+    "langs": {
         "By": "Беларуская",
         "Ua": "Украiнска",
-        "Ru": "Руский",
+        "Ru": "Русский",
         "En": "English"
     },
     "Ru": {
@@ -12,25 +12,28 @@
         "plannerTitle": "Планирование",
         "receiptsTitle": "Составление меню",
         "ingredientsTitle": "Ингредиенты",
-        "exportsTitle": "Заказ / Экспорт"
+        "exportsTitle": "Заказ / Экспорт",
+        "next": "Дальше"
     },
     "By": {
         "title": "Планавальнік хатніх запасаў",
-        "familyTitle": "Семья",
-        "storagesTitle": "Хранение",
+        "familyTitle": "Сям'я",
+        "storagesTitle": "Захоўванне",
         "plannerTitle": "Планаванне",
-        "receiptsTitle": "Составление меню",
-        "ingredientsTitle": "Ингрэдыенты",
-        "exportsTitle": "Залiк / Экспарт"
+        "receiptsTitle": "Складанне меню",
+        "ingredientsTitle": "Iнгрэдыенты",
+        "exportsTitle": "Заказ / Экспарт",
+        "next": "Далей"
      },
     "Ua": {
         "title": "Планувальник домашніх запасів",
-        "familyTitle": "Семья",
-        "storagesTitle": "Хранение",
-        "plannerTitle": "Планирование",
-        "receiptsTitle": "Составление меню",
-        "ingredientsTitle": "Ингредиенты",
-        "exportsTitle": "Заказ / Экспорт"
+        "familyTitle": "Cім'я",
+        "storagesTitle": "Зберігання",
+        "plannerTitle": "Планування",
+        "receiptsTitle": "Складання меню",
+        "ingredientsTitle": "Iнгредієнти",
+        "exportsTitle": "Замовлення / Експорт",
+        "next": "Далi"
     },
     "En": {
         "title": "Home grocery planner",
@@ -39,6 +42,7 @@
         "plannerTitle": "Planning",
         "receiptsTitle": "Complete menu",
         "ingredientsTitle": "Ingrredients",
-        "exportsTitle": "Order / Export"
+        "exportsTitle": "Order / Export",
+        "next": "Next"
     }
 }

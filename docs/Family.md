@@ -4,3 +4,8 @@
 так же указываются домашние питомцы если необходимо.
 
 Состав семьи сохраняется в LocalStorage для дальнейшего использования в приложении 
+Family{
+    adults:{qty: 2, diet: [null, null]},
+    children:{qty: 2, diet: [null, "baby"]},
+    pets:{qty: 1, diet: ["cat", "dog", "turtle", "fish"]},
+}

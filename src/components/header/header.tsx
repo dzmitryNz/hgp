@@ -3,20 +3,32 @@ const PropertiesJson = require("../json/properties.json");
 const DictJson = require("../json/dict.json");
 
 let root = document.getElementById("root");
-const theme = PropertiesJson.theme;
-const language = PropertiesJson.language;
-const title = DictJson[language].title;
-const auto = "schedule";
-const light = "light_mode";
-const dark = "dark_mode";
-const hours = new Date().getHours();
-const shedule = hours > 19 || hours < 8 ? dark : light;
-const constTheme = theme === "dark" ? dark : light; 
-const iconTheme = theme === "auto" ? auto : constTheme;
-root.className = shedule + " " + "mode_family";
 
+function createSelectItems() {
+  let items = [];  
+  console.log(DictJson.langs);
+  return items;
+}  
+
+function onDropdownSelected(e) {
+    console.log("THE VAL", e.target.value);
+    //here you will see the current selected value of the select input
+}
 
 function header() {
+  console.log(PropertiesJson)
+  const theme = PropertiesJson.theme;
+  const language = PropertiesJson.language;
+  const title = DictJson[language].title;
+  const mode = PropertiesJson.mode;
+  const auto = "schedule";
+  const light = "light_mode";
+  const dark = "dark_mode";
+  const hours = new Date().getHours();
+  const shedule = hours > 19 || hours < 8 ? dark : light;
+  const constTheme = theme === "dark" ? dark : light; 
+  const iconTheme = theme === "auto" ? auto : constTheme;
+  root.className = shedule + " " + mode;
   return (
     <div className="header">
       <header className="header-header">
@@ -37,4 +49,5 @@ function header() {
   );
 }
 
+createSelectItems()
 export default header;

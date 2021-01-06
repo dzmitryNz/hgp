@@ -47,10 +47,39 @@ code {
 }
 
 header {
-    position: relative;
-    white-space: nowrap;
+  position: relative;
+  white-space: nowrap;
 }
 
+.wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.content {
+    height: 87vh;
+}
+
+.family ,
+.storages, 
+.planner, 
+.receipts, 
+.ingredients, 
+.exports {
+  text-align: center;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.button-next {
+  width: 110px;
+  height: 35px;
+  border-radius: 10px;
+  background: #51ac51;
+  font-size: 2em;
+  margin: 0 20px;
+}
 
 .mode_family {
   grid-template-columns: auto 35px 35px 35px 35px 35px;
@@ -65,26 +94,151 @@ header {
   .ingredients-header, 
   .exports-header {
     transform: rotate(-90deg);
-    top: 180px;
+    top: 210px;
   } 
+
+    .wrapper {
+    display: none;
+  } 
+
+  .family .wrapper { 
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
 }
 
 .mode_storages {
   grid-template-columns:  35px auto 35px 35px 35px 35px;
+
+  .storages-header { 
+    transform: none;
+  }
+
+  .family-header,
+  .planner-header, 
+  .receipts-header, 
+  .ingredients-header, 
+  .exports-header {
+    transform: rotate(-90deg);
+    top: 210px;
+  }  
+
+  .wrapper {
+    display: none;
+  } 
+
+  .storages .wrapper { 
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
 }
 
-.mode_plannner {
+.mode_planner {
   grid-template-columns:  35px 35px auto 35px 35px 35px;
+
+  .planner-header { 
+    transform: none;
+  }
+
+  .family-header,
+  .storages-header, 
+  .receipts-header, 
+  .ingredients-header, 
+  .exports-header {
+    transform: rotate(-90deg);
+    top: 210px;
+  } 
+
+  .wrapper {
+    display: none;
+  } 
+
+  .planner .wrapper { 
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
 }
 
 .mode_receipts {
   grid-template-columns:  35px 35px 35px auto 35px 35px;
+
+  .receipts-header { 
+    transform: none;
+  }
+
+  .family-header,
+  .storages-header, 
+  .planner-header, 
+  .ingredients-header, 
+  .exports-header {
+    transform: rotate(-90deg);
+    top: 210px;
+  } 
+
+  .wrapper {
+    display: none;
+  } 
+
+  .receipts .wrapper { 
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
 }
 
 .mode_ingredients {
   grid-template-columns:  35px 35px 35px 35px auto 35px;
+
+  .ingredients-header { 
+    transform: none;
+  } 
+
+  .family-header,
+  .storages-header, 
+  .planner-header, 
+  .receipts-header, 
+  .exports-header {
+    transform: rotate(-90deg);
+    top: 210px;
+  } 
+
+  .wrapper {
+    display: none;
+  } 
+
+  .ingredients .wrapper { 
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
 }
 
 .mode_exports {
   grid-template-columns:  35px 35px 35px 35px 35px auto;
+
+  .exports-header { 
+    transform: none;
+  }
+  
+  .family-header,
+  .storages-header, 
+  .planner-header, 
+  .receipts-header, 
+  .ingredients-header {
+    transform: rotate(-90deg);
+    top: 210px;
+  } 
+
+  .wrapper {
+    display: none;
+  } 
+
+  .exports .wrapper { 
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
 }
