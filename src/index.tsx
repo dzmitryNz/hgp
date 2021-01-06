@@ -15,7 +15,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Header />
+    <div className="wrapper"><Header />
     <Menu />
     <Family />
     <Storages />
@@ -25,7 +25,7 @@ ReactDOM.render(
     <Exports />
     <App />
     <Footer />
-
+    </div>
   </React.StrictMode>,
   document.getElementById('root')
 );

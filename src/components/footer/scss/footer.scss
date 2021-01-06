@@ -1,7 +1,6 @@
 .footer {
   height: 25px;
   text-align: center;
-  background-color: skyblue;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +22,8 @@
     width: 40px;
   }
   a {
-    color: black;
+    text-decoration: none;
+    color: inherit;
   }
   a:hover {
     text-decoration: none;
