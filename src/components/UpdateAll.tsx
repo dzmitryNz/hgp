@@ -13,6 +13,8 @@ const PropertiesJson = require("./json/properties.json");
 
 function UpdateAll(target) {
     if (target) PropertiesJson.mode = target;
+    localStorage.setItem("hgp-properties", JSON.stringify(PropertiesJson))
+    
     ReactDOM.render(
     <React.StrictMode>
     <Header />

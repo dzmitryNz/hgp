@@ -11,6 +11,19 @@
 @import "receipts/scss/receipts.scss";
 @import "storages/scss/storages.scss";
 
+
+$hoverColor: rgb(0,50,255);
+
+%activeWrapper {
+    display: grid;
+    gap: 5px;
+    grid-template-rows: 1fr 40px;
+    grid-template-columns: auto;
+    grid-template-areas:
+    "content"
+    "buttons"
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
@@ -51,14 +64,15 @@ header {
   white-space: nowrap;
 }
 
-.wrapper {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+.content {
+  grid-area: content;
+  width: 100%;
+  height: 100%;
 }
 
-.content {
-    height: 87vh;
+.buttons {
+  grid-area: buttons;
+  justify-self: end;
 }
 
 .family ,
@@ -84,10 +98,6 @@ header {
 .mode_family {
   grid-template-columns: auto 35px 35px 35px 35px 35px;
   
-  .family-header {
-    transform: none;
-  }
-
   .storages-header, 
   .planner-header, 
   .receipts-header, 
@@ -95,6 +105,16 @@ header {
   .exports-header {
     transform: rotate(-90deg);
     top: 210px;
+  }
+
+  .storages-header:hover, 
+  .planner-header:hover, 
+  .receipts-header:hover, 
+  .ingredients-header:hover, 
+  .exports-header:hover {
+  cursor: pointer;
+  color: $hoverColor;
+  transition: all 0.3s;
   } 
 
     .wrapper {
@@ -102,18 +122,12 @@ header {
   } 
 
   .family .wrapper { 
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    @extend %activeWrapper;
   }
 }
 
 .mode_storages {
   grid-template-columns:  35px auto 35px 35px 35px 35px;
-
-  .storages-header { 
-    transform: none;
-  }
 
   .family-header,
   .planner-header, 
@@ -124,23 +138,27 @@ header {
     top: 210px;
   }  
 
+  .family-header:hover, 
+  .planner-header:hover, 
+  .receipts-header:hover, 
+  .ingredients-header:hover, 
+  .exports-header:hover {
+  cursor: pointer;
+  color:  $hoverColor;
+  transition: all 0.3s;
+  } 
+
   .wrapper {
     display: none;
   } 
 
   .storages .wrapper { 
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    @extend %activeWrapper;
   }
 }
 
 .mode_planner {
   grid-template-columns:  35px 35px auto 35px 35px 35px;
-
-  .planner-header { 
-    transform: none;
-  }
 
   .family-header,
   .storages-header, 
@@ -149,6 +167,16 @@ header {
   .exports-header {
     transform: rotate(-90deg);
     top: 210px;
+  } 
+
+  .family-header:hover, 
+  .storages-header:hover, 
+  .receipts-header:hover, 
+  .ingredients-header:hover, 
+  .exports-header:hover {
+  cursor: pointer;
+  color:  $hoverColor;
+  transition: all 0.3s;
   } 
 
   .wrapper {
@@ -156,18 +184,12 @@ header {
   } 
 
   .planner .wrapper { 
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    @extend %activeWrapper;
   }
 }
 
 .mode_receipts {
   grid-template-columns:  35px 35px 35px auto 35px 35px;
-
-  .receipts-header { 
-    transform: none;
-  }
 
   .family-header,
   .storages-header, 
@@ -178,23 +200,27 @@ header {
     top: 210px;
   } 
 
+  .family-header:hover, 
+  .storages-header:hover, 
+  .planner-header:hover, 
+  .ingredients-header:hover, 
+  .exports-header:hover {
+  cursor: pointer;
+  color:  $hoverColor;
+  transition: all 0.3s;
+  } 
+
   .wrapper {
     display: none;
   } 
 
   .receipts .wrapper { 
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    @extend %activeWrapper;
   }
 }
 
 .mode_ingredients {
   grid-template-columns:  35px 35px 35px 35px auto 35px;
-
-  .ingredients-header { 
-    transform: none;
-  } 
 
   .family-header,
   .storages-header, 
@@ -205,24 +231,28 @@ header {
     top: 210px;
   } 
 
+  .family-header:hover, 
+  .storages-header:hover, 
+  .planner-header:hover, 
+  .receipts-header:hover, 
+  .exports-header:hover {
+  cursor: pointer;
+  color:  $hoverColor;
+  transition: all 0.3s;
+  } 
+
   .wrapper {
     display: none;
   } 
 
   .ingredients .wrapper { 
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    @extend %activeWrapper;
   }
 }
 
 .mode_exports {
   grid-template-columns:  35px 35px 35px 35px 35px auto;
 
-  .exports-header { 
-    transform: none;
-  }
-  
   .family-header,
   .storages-header, 
   .planner-header, 
@@ -232,13 +262,21 @@ header {
     top: 210px;
   } 
 
+  .family-header:hover, 
+  .storages-header:hover, 
+  .planner-header:hover, 
+  .receipts-header:hover, 
+  .ingredients-header:hover {
+  cursor: pointer;
+  color:  $hoverColor;
+  transition: all 0.3s;
+  }
+
   .wrapper {
     display: none;
   } 
 
   .exports .wrapper { 
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    @extend %activeWrapper;
   }
 }

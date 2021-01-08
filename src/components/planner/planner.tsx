@@ -15,10 +15,11 @@ function Planner() {
       <header className="planner-header">
           <h2>{ plannerTitle }</h2>
       </header>
-            <div className="wrapper">
-        <div className="content">
-        </div>
+      <div className="wrapper">
+        <div className="content"></div>
+        <div className="buttons">
         <Button buttonName = { next } target = "mode_receipts" />
+        </div>
       </div>
     </div>
   );

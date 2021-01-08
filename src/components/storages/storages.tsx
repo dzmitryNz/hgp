@@ -16,9 +16,10 @@ function Storages() {
           <h2>{ storagesTitle }</h2>
       </header>
       <div className="wrapper">
-        <div className="content">
-        </div>
+        <div className="content"></div>
+        <div className="buttons">
         <Button buttonName = { next } target = "mode_planner" />
+        </div>
       </div>
     </div>
   );

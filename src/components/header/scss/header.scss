@@ -19,14 +19,18 @@
     align-items: center;
     font-size: 1.5em;
     align-items: normal;
+    transition: all 0.3s;
+
     div {
       margin: 0 10px;
+
     .theme:hover,
     .auth:hover,
     .lang:hover {
       cursor: pointer;
       color: royalblue;
       }
+
     .theme:active,
     .auth:active,
     .lang:active {
@@ -34,6 +38,7 @@
       color: rosybrown;
       }
     }
+
     .themes,
     .langs {
       display: flex;
@@ -41,12 +46,14 @@
       top: 10px;
       width: fit-content;
       height: fit-content;
+
       span {
         margin: 0 10px;
         background: inherit;
         color: inherit;
       }
     }
+    
     .themes-hidden,
     .langs-hidden {
       display: none;

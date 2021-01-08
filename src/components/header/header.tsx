@@ -12,7 +12,6 @@ function showMenu(e) {
   let langsHidden = document.querySelector(".langs-hidden");
   let themes = document.querySelector(".themes");
   let langs = document.querySelector(".langs");
-  console.log(e.target.className.split(' ')[0], themes, langs);
   if (target === "theme") 
   {
     if (themesHidden) themesHidden.className = "themes"
@@ -29,7 +28,6 @@ function changeProperties(e) {
   const target = e.target.className.split(' ')[0];
   let themes = document.querySelector(".themes");
   let langs = document.querySelector(".langs");
-  console.log("Change", target);
   if (DictJson.langsList.indexOf(target) != -1) 
   {
     PropertiesJson.language = target;
@@ -64,12 +62,12 @@ function header() {
   let themes = [];
   themesList.forEach((el, i) => {
     const classNames = el + " theme material-icons";
-    themes.push(<span className={classNames} onClick={ changeProperties }>{el}</span>)
+    themes.push(<span key={el} className={classNames} onClick={ changeProperties }>{el}</span>)
   })
   let langs = [];
   langsList.forEach((el, i) => {
     const classNames = el + " lang";
-    langs.push(<span className={classNames} onClick={ changeProperties }>{el}</span>)
+    langs.push(<span key={el} className={classNames} onClick={ changeProperties }>{el}</span>)
   })
   return (
     <div className="header">

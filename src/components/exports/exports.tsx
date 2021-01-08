@@ -15,10 +15,11 @@ function Exports() {
       <header className="exports-header">
           <h2>{ exportsTitle }</h2>
       </header>
-            <div className="wrapper">
-        <div className="content">
-        </div>
+      <div className="wrapper">
+        <div className="content"></div>
+        <div className="buttons">
         <Button buttonName = { next } target = "mode_family" />
+        </div>
       </div>
     </div>
   );

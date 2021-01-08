@@ -15,10 +15,11 @@ function Ingredients() {
       <header className="ingredients-header">
           <h2>{ ingredientsTitle }</h2>
       </header>
-            <div className="wrapper">
-        <div className="content">
-        </div>
+      <div className="wrapper">
+        <div className="content"></div>
+        <div className="buttons">
         <Button buttonName = { next } target = "mode_exports" />
+        </div>
       </div>
     </div>
   );

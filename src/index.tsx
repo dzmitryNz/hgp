@@ -11,6 +11,14 @@ import Storages from './components/storages/storages';
 import Ingredients from './components/ingredients/ingredients';
 import Exports from './components/exports/exports';
 import reportWebVitals from './reportWebVitals';
+const PropertiesJson = require("./components/json/properties.json");
+
+const localProp = JSON.parse(localStorage.getItem("hgp-properties"));
+if (localProp) {
+  PropertiesJson.language = localProp.language;
+  PropertiesJson.theme = localProp.theme;
+  PropertiesJson.mode = localProp.mode;
+  }
 
 ReactDOM.render(
   <React.StrictMode>
