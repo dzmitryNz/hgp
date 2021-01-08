@@ -5,11 +5,11 @@ import Button from "../Button";
 const PropertiesJson = require("../json/properties.json");
 const DictJson = require("../json/dict.json");
 
+
+function Family() {
 const language = PropertiesJson.language;
 const familyTitle = DictJson[language].familyTitle;
 const next = DictJson[language].next;
-
-function Family() {
   return (
     <div className="family">
       <header className="family-header">

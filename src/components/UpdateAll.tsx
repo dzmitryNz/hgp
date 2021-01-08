@@ -11,8 +11,8 @@ import Ingredients from './ingredients/ingredients';
 import Exports from './exports/exports';
 const PropertiesJson = require("./json/properties.json");
 
-function getNext(target) {
-    PropertiesJson.mode = target;
+function UpdateAll(target) {
+    if (target) PropertiesJson.mode = target;
     ReactDOM.render(
     <React.StrictMode>
     <Header />
@@ -29,4 +29,4 @@ function getNext(target) {
 );
 }
 
-export default getNext;
+export default UpdateAll;

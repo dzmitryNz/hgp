@@ -1,12 +1,12 @@
 import React from 'react';
-import getNext from "./getNext";
+import UpdateAll from "./UpdateAll";
 const PropertiesJson = require("./json/properties.json");
 const DictJson = require("./json/dict.json");
 
 const Button = ({buttonName, target}) => {
     const clName = "button-next";
     const handleClick = () => {
-    getNext(target)
+    UpdateAll(target)
   }
   return <button className={ clName } onClick={ handleClick }>{ buttonName }</button>
 }

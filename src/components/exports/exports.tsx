@@ -5,11 +5,11 @@ import Button from "../Button";
 const PropertiesJson = require("../json/properties.json");
 const DictJson = require("../json/dict.json");
 
-const language = PropertiesJson.language;
-const exportsTitle = DictJson[language].exportsTitle;
-const next = DictJson[language].next;
 
 function Exports() {
+  const language = PropertiesJson.language;
+  const exportsTitle = DictJson[language].exportsTitle;
+  const next = DictJson[language].next;
   return (
     <div className="exports">
       <header className="exports-header">

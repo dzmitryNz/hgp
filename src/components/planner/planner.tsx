@@ -5,11 +5,11 @@ import Button from "../Button";
 const PropertiesJson = require("../json/properties.json");
 const DictJson = require("../json/dict.json");
 
-const language = PropertiesJson.language;
-const plannerTitle = DictJson[language].plannerTitle;
-const next = DictJson[language].next;
 
 function Planner() {
+  const language = PropertiesJson.language;
+  const plannerTitle = DictJson[language].plannerTitle;
+  const next = DictJson[language].next;
   return (
     <div className="planner">
       <header className="planner-header">
