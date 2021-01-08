@@ -2,9 +2,11 @@
 
 import React from 'react';
 import Button from "../Button";
+import UpdateAll from "../UpdateAll";
 const PropertiesJson = require("../json/properties.json");
 const DictJson = require("../json/dict.json");
 
+const handleClick = () => { UpdateAll("mode_exports") };
 
 function Exports() {
   const language = PropertiesJson.language;
@@ -13,7 +15,7 @@ function Exports() {
   return (
     <div className="exports">
       <header className="exports-header">
-          <h2>{ exportsTitle }</h2>
+          <h2 onClick={ handleClick }>{ exportsTitle }</h2>
       </header>
       <div className="wrapper">
         <div className="content"></div>

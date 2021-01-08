@@ -2,8 +2,11 @@
 
 import React from 'react';
 import Button from "../Button";
+import UpdateAll from "../UpdateAll";
 const PropertiesJson = require("../json/properties.json");
 const DictJson = require("../json/dict.json");
+
+const handleClick = () => { UpdateAll("mode_receipts") };
 
 function Receipts() {
   const language = PropertiesJson.language;
@@ -12,7 +15,7 @@ function Receipts() {
   return (
     <div className="receipts">
       <header className="receipts-header">
-          <h2>{ receiptsTitle }</h2>
+          <h2 onClick={ handleClick }>{ receiptsTitle }</h2>
       </header>
       <div className="wrapper">
         <div className="content"></div>

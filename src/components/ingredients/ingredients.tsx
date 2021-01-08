@@ -2,9 +2,11 @@
 
 import React from 'react';
 import Button from "../Button";
+import UpdateAll from "../UpdateAll";
 const PropertiesJson = require("../json/properties.json");
 const DictJson = require("../json/dict.json");
 
+const handleClick = () => { UpdateAll("mode_ingredients") };
 
 function Ingredients() {
   const language = PropertiesJson.language;
@@ -13,7 +15,7 @@ function Ingredients() {
   return (
     <div className="ingredients">
       <header className="ingredients-header">
-          <h2>{ ingredientsTitle }</h2>
+          <h2 onClick={ handleClick }>{ ingredientsTitle }</h2>
       </header>
       <div className="wrapper">
         <div className="content"></div>
