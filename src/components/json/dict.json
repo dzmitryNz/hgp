@@ -8,7 +8,12 @@
         "receiptsTitle": "Составление меню",
         "ingredientsTitle": "Ингредиенты",
         "exportsTitle": "Заказ / Экспорт",
-        "next": "Дальше"
+        "next": "Дальше",
+        "footer": "footer",
+        "categories": "Категории",
+        "areas": "Кухни разных стран",
+        "popular": "Популярные рецепты",
+        "recent": "Недавние рецепты"
     },
     "By": {
         "title": "Планавальнік хатніх запасаў",
@@ -18,7 +23,12 @@
         "receiptsTitle": "Складанне меню",
         "ingredientsTitle": "Iнгрэдыенты",
         "exportsTitle": "Заказ / Экспарт",
-        "next": "Далей"
+        "next": "Далей",
+        "footer": "footer",
+        "categories": "Категории",
+        "areas": "Кухни разных стран",
+        "popular": "Популярные рецепты",
+        "recent": "Недавние рецепты"
      },
     "Ua": {
         "title": "Планувальник домашніх запасів",
@@ -28,7 +38,12 @@
         "receiptsTitle": "Складання меню",
         "ingredientsTitle": "Iнгредієнти",
         "exportsTitle": "Замовлення / Експорт",
-        "next": "Далi"
+        "next": "Далi",
+        "footer": "footer",
+        "categories": "Категории",
+        "areas": "Кухни разных стран",
+        "popular": "Популярные рецепты",
+        "recent": "Недавние рецепты"
     },
     "En": {
         "title": "Home grocery planner",
@@ -38,6 +53,11 @@
         "receiptsTitle": "Complete menu",
         "ingredientsTitle": "Ingrredients",
         "exportsTitle": "Order / Export",
-        "next": "Next"
+        "next": "Next",
+        "footer": "footer",
+        "categories": "Сategories",
+        "areas": "Areas cousines",
+        "popular": "Popular recipes",
+        "recent": "Recent recipes"
     }
 }

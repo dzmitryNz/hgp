@@ -2,17 +2,23 @@
 @import "../common-scss/normalize-css.scss";
 @import "../common-scss/scroll.scss";
 @import "header/scss/header.scss";
-@import "footer/scss/footer.scss";
+// @import "footer/scss/footer.scss";
 @import "menu/scss/menu.scss";
-@import "ingredients/scss/ingredients.scss";
-@import "exports/scss/exports.scss";
-@import "family/scss/family.scss";
-@import "planner/scss/planner.scss";
+// @import "ingredients/scss/ingredients.scss";
+// @import "exports/scss/exports.scss";
+// @import "family/scss/family.scss";
+// @import "planner/scss/planner.scss";
 @import "receipts/scss/receipts.scss";
-@import "storages/scss/storages.scss";
+// @import "storages/scss/storages.scss";
 
 
 $hoverColor: rgb(0,50,255);
+$backgroundDark: rgb(49, 49, 49);
+$backgroundLight: rgb(186, 216, 186); 
+$colorDark: rgb(229, 229, 229); 
+$colorLight: rgb(29, 29, 29); 
+$backgroundColor: $backgroundLight;
+$сolor: $colorLight;
 
 %activeWrapper {
     display: grid;
@@ -40,28 +46,79 @@ code {
   width: 100%;
   height: 100%;
   display: grid;
-  gap: 5px;
-  grid-template-rows: 50px 1fr 30px;
-  grid-template-columns:  auto 35px 35px 35px 35px 35px;
+  // gap: 5px;
+  grid-template-rows: 100px 1fr;
+  grid-template-columns: 100px auto;
   grid-template-areas:
-    "header header header header header header"
-    "family storages planner receipts ingredients exports"
-    "footer footer footer footer footer footer"
+    "menu header"
+    "menu receipts"
+    // "footer footer footer footer footer footer"
 }
 
 .light_mode {
-  background-color: white;
-  color: black;
+  $backgroundColor: $backgroundLight;
+  background-color: $backgroundColor;
+  $color: $colorLight;
+  color: $color;
 }
 
 .dark_mode {
-  background-color: rgb(49, 49, 49);
-  color: rgb(229, 229, 229);
+  $backgroundColor: $backgroundDark;
+  background-color: $backgroundColor;
+  $color: $colorDark;
+  color: $color;
 }
 
-header {
-  position: relative;
-  white-space: nowrap;
+.menu .active-tab {
+  background-color: $backgroundColor;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0000003a;
+  transition: opacity 0.2s ease;
+}
+
+.modal {
+  position: fixed;
+  left: 250px;
+  bottom: 90vh;
+  margin: 0px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 2px;
+  transform: translateY(100%);
+  transition: transform 0.2s ease;
+  box-shadow: 0 2px 8px 3px;
+  font-family: Helvetica, Arial, sans-serif;
+  width: 75vw;
+  height: 75vh;
+}
+
+.modal button {
+  position: absolute;
+  right: -1rem;
+  top: -1rem;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.5rem;
+  margin: 0 auto;
+  border-radius: 50%;
+  box-shadow: 1px 1px 1px #0000003a;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.562);
 }
 
 .content {
@@ -96,7 +153,6 @@ header {
 }
 
 .mode_family {
-  grid-template-columns: auto 35px 35px 35px 35px 35px;
   
   .storages-header, 
   .planner-header, 
@@ -127,7 +183,6 @@ header {
 }
 
 .mode_storages {
-  grid-template-columns:  35px auto 35px 35px 35px 35px;
 
   .family-header,
   .planner-header, 
@@ -158,7 +213,6 @@ header {
 }
 
 .mode_planner {
-  grid-template-columns:  35px 35px auto 35px 35px 35px;
 
   .family-header,
   .storages-header, 
@@ -189,7 +243,6 @@ header {
 }
 
 .mode_receipts {
-  grid-template-columns:  35px 35px 35px auto 35px 35px;
 
   .family-header,
   .storages-header, 
@@ -220,7 +273,6 @@ header {
 }
 
 .mode_ingredients {
-  grid-template-columns:  35px 35px 35px 35px auto 35px;
 
   .family-header,
   .storages-header, 
@@ -251,7 +303,6 @@ header {
 }
 
 .mode_exports {
-  grid-template-columns:  35px 35px 35px 35px 35px auto;
 
   .family-header,
   .storages-header, 
