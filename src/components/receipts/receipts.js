@@ -28,7 +28,7 @@ function Receipts() {
       </header>
       <div className='receipts-wrapper'>
       <div className="receipts-content">
-            {!show && <button onClick={openModal}>Show modal</button>}
+            {/* {!show && <button onClick={openModal}>Show modal</button>} */}
         <Modal closeModal={closeModal} show={show} dataModal={dataModal}/>
         <CategoriesList />
         <RecentsList />
