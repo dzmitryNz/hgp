@@ -11,6 +11,8 @@ function RecentsReceipts() {
     const language = PropertiesJson.language;
     const recentsListTitle = DictJson[language].recent;
     const recentsArr = PropertiesJson.recents;
+    const serverUrl = PropertiesJson.serverUrl;
+    const requestUrl = serverUrl + '/rec/array';
 
     const ListRecentsLoading = withListLoading(ListRecents);
     const [appState, setAppState] = useState({
@@ -21,7 +23,7 @@ function RecentsReceipts() {
 
 useEffect(() => {
     setAppState({ loading: true });
-    const apiUrl = 'http://192.168.1.66:3000/rec/array';
+    const apiUrl = requestUrl;
     const config = { el: "idMeal", reg: regEx};
     axios.post(apiUrl, config).then((recents) => {
     const Allrecents = recents.data;
