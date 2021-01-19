@@ -4,6 +4,7 @@ import Modal from '../Modal.js';
 import UpdateAll from "../UpdateAll";
 // import withListLoading from './WithListLoading';
 import CategoriesList from './CategoriesList';
+import CategoryList from './CategoryList';
 // import AreasList from './AreasList';
 import RecentsList from './RecentsList';
 const PropertiesJson = require("../json/properties.json");
@@ -31,6 +32,7 @@ function Receipts() {
             {/* {!show && <button onClick={openModal}>Show modal</button>} */}
         <Modal closeModal={closeModal} show={show} dataModal={dataModal}/>
         <CategoriesList />
+        <CategoryList />
         <RecentsList />
         {/* <AreasList /> */}
       </div>
@@ -38,6 +40,7 @@ function Receipts() {
         <Button buttonName = { next } target = "mode_ingredients" />
         </div> */}
     </div>
+    <Modal closeModal={closeModal} show={show}/>
     </div>
   );
 }

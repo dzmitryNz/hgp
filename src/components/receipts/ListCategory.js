@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const PropertiesJson = require("../json/properties.json");
 const DictJson = require("../json/dict.json");
 
-const ListRecents = (props) => {
+const ListCategory = (props) => {
   const language = PropertiesJson.language;
   const noDataMessage = DictJson[language].noDataMessage;
 
@@ -20,7 +20,7 @@ const ListRecents = (props) => {
   const closeModal = () => setShow(false);
   
   return (
-    <div className='recent-content'>
+    <div className='category-content'>
       {recents.map((recent, i) => {
         const clasNm =  i + " receipt";
         const clasNmM =  i + " receipt-meal";
@@ -38,6 +38,6 @@ const ListRecents = (props) => {
     </div>
   );
 };
-export default ListRecents;
+export default ListCategory;
 
 

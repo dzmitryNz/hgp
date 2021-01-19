@@ -97,7 +97,7 @@ code {
   bottom: 90vh;
   margin: 0px auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: $backgroundColor;
   border-radius: 2px;
   transform: translateY(100%);
   transition: transform 0.2s ease;

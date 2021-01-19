@@ -13,7 +13,12 @@
         "categories": "Категории",
         "areas": "Кухни разных стран",
         "popular": "Популярные рецепты",
-        "recent": "Недавние рецепты"
+        "recent": "Недавние рецепты",
+        "receiptOverview": "Рецепт",
+        "noDataMessage": "Отсутствуют данные, простите",
+        "loadingMessage": "Погодите, получение данных может занять некоторое время :)",
+        "source": "Источник",
+        "sourceTitle": "Рецепт мы взяли здесь"
     },
     "By": {
         "title": "Планавальнік хатніх запасаў",
@@ -25,10 +30,15 @@
         "exportsTitle": "Заказ / Экспарт",
         "next": "Далей",
         "footer": "footer",
-        "categories": "Категории",
-        "areas": "Кухни разных стран",
-        "popular": "Популярные рецепты",
-        "recent": "Недавние рецепты"
+        "categories": "Катэгорыі",
+        "areas": "Кухні розных краін",
+        "popular": "Папулярныя рэцэпты",
+        "recent": "Нядаўнія рэцэпты",
+        "receiptOverview": "Рэцэпт",
+        "noDataMessage": "Няма дадзеных, прабачце",
+        "loadingMessage": "Трымайцеся, загрузка дадзеных можа заняць некаторы час :)",
+        "source": "Крыніца",
+        "sourceTitle": "Рэцэпт ўзялі адсюль"
      },
     "Ua": {
         "title": "Планувальник домашніх запасів",
@@ -40,10 +50,15 @@
         "exportsTitle": "Замовлення / Експорт",
         "next": "Далi",
         "footer": "footer",
-        "categories": "Категории",
-        "areas": "Кухни разных стран",
-        "popular": "Популярные рецепты",
-        "recent": "Недавние рецепты"
+        "categories": "Категорії",
+        "areas": "Кухні різних країн",
+        "popular": "Популярні рецепти",
+        "recent": "Недавні рецепти",
+        "receiptOverview": "Рецепт",
+        "noDataMessage": "Немає даних, вибачте",
+        "loadingMessage": "Зачекайте, отримання даних може зайняти деякий час :)",
+        "source": "Источник",
+        "sourceTitle": "Рецепт взяли звідси"
     },
     "En": {
         "title": "Home grocery planner",
@@ -58,6 +73,11 @@
         "categories": "Сategories",
         "areas": "Areas cousines",
         "popular": "Popular recipes",
-        "recent": "Recent recipes"
+        "recent": "Recent recipes",
+        "receiptOverview": "Receipt",
+        "noDataMessage": "No data, sorry",
+        "loadingMessage": "Hold on, fetching data may take some time :)",
+        "source": "Source",
+        "sourceTitle": "The recipe was taken from here"
     }
 }

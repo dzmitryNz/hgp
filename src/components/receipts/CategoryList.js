@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
-import ListRecents from './ListRecents';
+import ListCategory from './ListCategory';
 import withListLoading from './WithListLoading';
 const PropertiesJson = require("../json/properties.json");
 const DictJson = require("../json/dict.json");
 
 // const handleClick = () => { UpdateAll("mode_receipts") };
 
-function RecentsReceipts() {
+function CategoryReceipts() {
     const language = PropertiesJson.language;
     const recentsListTitle = DictJson[language].recent;
 
-    const ListRecentsLoading = withListLoading(ListRecents);
+    const ListCategoryLoading = withListLoading(ListCategory);
     const [appState, setAppState] = useState({
     loading: false,
     recents: null,
@@ -19,23 +19,22 @@ function RecentsReceipts() {
 
 useEffect(() => {
     setAppState({ loading: true });
-    const recentsArr = PropertiesJson.recents;
-    const regEx = recentsArr.join("|");
     const serverUrl = PropertiesJson.serverUrl;
+    const categoryStr = PropertiesJson.category;
     const requestUrl = serverUrl + '/rec/array';
     const apiUrl = requestUrl;
-    const config = { el: "idMeal", reg: regEx};
-    axios.post(apiUrl, config).then((recents) => {
-    const Allrecents = recents.data;
+    const config = { el: "strCategory", reg: categoryStr};
+    axios.post(apiUrl, config).then((category) => {
+    const Allrecents = category.data;
 
-    setAppState({ loading: false, recents: Allrecents });
+    setAppState({ loading: false, category: Allrecents });
     });
   }, [setAppState]);
   return (
-    <div className='recents'>
-      <div className="recents-header">{ recentsListTitle }</div>
-        <ListRecentsLoading isLoading={appState.loading} recents={appState.recents} />
+    <div className='category'>
+      <div className="category-header">{ recentsListTitle }</div>
+        <ListCategoryLoading isLoading={appState.loading} category={appState.category} />
     </div>
   );
 }
-export default RecentsReceipts;
+export default CategoryReceipts;

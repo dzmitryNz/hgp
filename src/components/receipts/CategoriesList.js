@@ -10,8 +10,6 @@ const PropertiesJson = require("../json/properties.json");
 function CategoriesList() {
   // const language = PropertiesJson.language;
   // const categoriesListTitle = DictJson[language].categories;
-  const serverUrl = PropertiesJson.serverUrl;
-  const requestUrl = serverUrl + '/rec/cat/';
 
   const ListCategoriesLoading = withListLoading(ListCategories);
   const [appState, setAppState] = useState({
@@ -21,6 +19,8 @@ function CategoriesList() {
 
 useEffect(() => {
     setAppState({ loading: true });
+  const serverUrl = PropertiesJson.serverUrl;
+  const requestUrl = serverUrl + '/rec/cat/';
     const apiUrl = requestUrl;
     axios.get(apiUrl).then((categories) => {
       const Allcategories = categories.data;

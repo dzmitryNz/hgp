@@ -10,11 +10,12 @@
   grid-template-columns: 1fr;
   grid-template-areas:
     "categories"
-    "mainDiv"
+    "category"
     "favorites"
     "recent";
   max-height: calc(100vh - 125px);
   max-width: calc(100vw - 105px);
+  justify-content: space-around;
 }
 
 .categories {
@@ -30,6 +31,7 @@
 .categories-list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 
     .list-item{
       display: block;
@@ -38,6 +40,11 @@
       margin: 3px;
       padding: 3px;
     }
+}
+
+.category {
+  grid-area: category;
+  display: block;
 }
 
 .recents {
@@ -108,3 +115,50 @@
     // background: rgba(0, 0, 0, 0.75);
   }
 }
+
+.modal-receipt {
+
+  .receipt-category {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0px;
+  }
+
+  .receipt-cat {
+    margin: 0 15px;
+  }
+
+  .receipt-ingredients {
+    display: grid;
+    justify-content: center;
+  }
+  .receipt-ingredient {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+      "name dotted measure";
+    min-width: 350px;
+    margin: 5px 0;
+  }
+
+  .receipt-ingredient-name {
+    grid-area: name;
+    text-align: left;
+    width: fit-content;
+  }
+
+  .receipt-ingredient-dotted {
+    grid-area: dotted;
+    border-bottom: 1px dotted black;
+  }
+
+  .receipt-ingredient-measure {
+    grid-area: measure;
+    text-align: right;
+    width: fit-content;
+
+  }
+
+}
+
