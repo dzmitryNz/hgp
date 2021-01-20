@@ -1,5 +1,6 @@
 import React from 'react';
 const PropertiesJson = require("../json/properties.json");
+const loadingGif = require("../../assets/images/143.gif")
 const DictJson = require("../json/dict.json");
 
 function WithListLoading(Component) {
@@ -9,7 +10,8 @@ function WithListLoading(Component) {
     if (!isLoading) return <Component {...props} />;
     return (
       <p style={{ textAlign: 'center', fontSize: '30px' }}>
-        {loadingMessage}
+      {loadingMessage}
+      <img href={loadingGif} alt="loading"></img>
       </p>
     );
   };

@@ -27,7 +27,6 @@ useEffect(() => {
     axios.post(apiUrl, config).then((category) => {
     
     const Allcategory = category.data;
-    console.log(Allcategory)
 
     setAppState({ loading: false, category: Allcategory });
     });

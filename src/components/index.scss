@@ -47,7 +47,7 @@ code {
   height: 100%;
   display: grid;
   // gap: 5px;
-  grid-template-rows: 100px 1fr;
+  grid-template-rows: 50px 1fr;
   grid-template-columns: 100px auto;
   grid-template-areas:
     "menu header"
@@ -67,10 +67,6 @@ code {
   background-color: $backgroundColor;
   $color: $colorDark;
   color: $color;
-}
-
-.menu .active-tab {
-  background-color: $backgroundColor;
 }
 
 .show {
@@ -139,7 +135,7 @@ code {
 .ingredients, 
 .exports {
   text-align: center;
-  border: 1px solid grey;
+  // border: 1px solid grey;
   border-radius: 5px;
 }
 
@@ -152,28 +148,18 @@ code {
   margin: 0 20px;
 }
 
+.menu .tabs .tab .active-tab {
+  background-color: $backgroundColor;
+
+}
+
 .mode_family {
   
-  .storages-header, 
-  .planner-header, 
-  .receipts-header, 
-  .ingredients-header, 
-  .exports-header {
-    transform: rotate(-90deg);
-    top: 210px;
-  }
-
-  .storages-header:hover, 
-  .planner-header:hover, 
-  .receipts-header:hover, 
-  .ingredients-header:hover, 
-  .exports-header:hover {
-  cursor: pointer;
-  color: $hoverColor;
-  transition: all 0.3s;
-  } 
-
-    .wrapper {
+  .storages,
+  .planner, 
+  .receipts, 
+  .ingredients, 
+  .exports {
     display: none;
   } 
 
@@ -184,27 +170,13 @@ code {
 
 .mode_storages {
 
-  .family-header,
-  .planner-header, 
-  .receipts-header, 
-  .ingredients-header, 
-  .exports-header {
-    transform: rotate(-90deg);
-    top: 210px;
-  }  
-
-  .family-header:hover, 
-  .planner-header:hover, 
-  .receipts-header:hover, 
-  .ingredients-header:hover, 
-  .exports-header:hover {
-  cursor: pointer;
-  color:  $hoverColor;
-  transition: all 0.3s;
-  } 
-
-  .wrapper {
-    display: none;
+  .family,
+  .storages,
+  .planner, 
+  .receipts, 
+  .ingredients, 
+  .exports {
+   display: none;
   } 
 
   .storages .wrapper { 
@@ -214,27 +186,12 @@ code {
 
 .mode_planner {
 
-  .family-header,
-  .storages-header, 
-  .receipts-header, 
-  .ingredients-header, 
-  .exports-header {
-    transform: rotate(-90deg);
-    top: 210px;
-  } 
-
-  .family-header:hover, 
-  .storages-header:hover, 
-  .receipts-header:hover, 
-  .ingredients-header:hover, 
-  .exports-header:hover {
-  cursor: pointer;
-  color:  $hoverColor;
-  transition: all 0.3s;
-  } 
-
-  .wrapper {
-    display: none;
+  .family,
+  .storages,
+  .receipts, 
+  .ingredients, 
+  .exports {
+   display: none;
   } 
 
   .planner .wrapper { 
@@ -244,27 +201,12 @@ code {
 
 .mode_receipts {
 
-  .family-header,
-  .storages-header, 
-  .planner-header, 
-  .ingredients-header, 
-  .exports-header {
-    transform: rotate(-90deg);
-    top: 210px;
-  } 
-
-  .family-header:hover, 
-  .storages-header:hover, 
-  .planner-header:hover, 
-  .ingredients-header:hover, 
-  .exports-header:hover {
-  cursor: pointer;
-  color:  $hoverColor;
-  transition: all 0.3s;
-  } 
-
-  .wrapper {
-    display: none;
+  .family,
+  .storages,
+  .planner, 
+  .ingredients, 
+  .exports {
+   display: none;
   } 
 
   .receipts .wrapper { 
@@ -274,27 +216,12 @@ code {
 
 .mode_ingredients {
 
-  .family-header,
-  .storages-header, 
-  .planner-header, 
-  .receipts-header, 
-  .exports-header {
-    transform: rotate(-90deg);
-    top: 210px;
-  } 
-
-  .family-header:hover, 
-  .storages-header:hover, 
-  .planner-header:hover, 
-  .receipts-header:hover, 
-  .exports-header:hover {
-  cursor: pointer;
-  color:  $hoverColor;
-  transition: all 0.3s;
-  } 
-
-  .wrapper {
-    display: none;
+  .family,
+  .storages,
+  .planner, 
+  .receipts, 
+  .exports {
+   display: none;
   } 
 
   .ingredients .wrapper { 
@@ -302,29 +229,14 @@ code {
   }
 }
 
-.mode_exports {
+.mode_export {
 
-  .family-header,
-  .storages-header, 
-  .planner-header, 
-  .receipts-header, 
-  .ingredients-header {
-    transform: rotate(-90deg);
-    top: 210px;
-  } 
-
-  .family-header:hover, 
-  .storages-header:hover, 
-  .planner-header:hover, 
-  .receipts-header:hover, 
-  .ingredients-header:hover {
-  cursor: pointer;
-  color:  $hoverColor;
-  transition: all 0.3s;
-  }
-
-  .wrapper {
-    display: none;
+  .family,
+  .storages,
+  .planner, 
+  .receipts, 
+  .ingredients {
+   display: none;
   } 
 
   .exports .wrapper { 

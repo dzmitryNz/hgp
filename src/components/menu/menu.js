@@ -30,7 +30,11 @@ function showMenu(e) {
 
 function changeProperties(e) {
   let propertiesChanged = false;
+  const modes = /family|storages|planner|receipts|ingredients|export/;
   const target = e.target.className.split(' ')[0];
+  const targetMode = e.target.className.split(' ')[0].split("-")[1];
+  console.log(targetMode);
+
   let themes = document.querySelector(".themes");
   let langs = document.querySelector(".langs");
   if (DictJson.langsList.indexOf(target) !== -1) 
@@ -45,6 +49,10 @@ function changeProperties(e) {
     propertiesChanged = true;
     themes.className = "themes-hidden"
   }
+  if (targetMode.match(modes)) {
+    PropertiesJson.mode = "mode_" + targetMode;
+    propertiesChanged = true;
+    }
   if (propertiesChanged) UpdateAll(PropertiesJson.mode);
 }
 
@@ -57,6 +65,12 @@ function Menu() {
   const footerTitle = DictJson[language].footer;
   const mode = PropertiesJson.mode;
   const title = DictJson[language].title;
+  const tabFamily = mode === "mode_family" ? "tab-family tabi active-tab" : "tab-family tabi";
+  const tabStorages = mode === "mode_storages" ? "tab-storages tabi active-tab" : "tab-storages tabi";
+  const tabPlanner = mode === "mode_planner" ? "tab-planner tabi active-tab" : "tab-planner tabi";
+  const tabReceipts = mode === "mode_receipts" ? "tab-receipts tabi active-tab" : "tab-receipts tabi";
+  const tabIngredients = mode === "mode_ingredients" ? "tab-ingredients tabi active-tab" : "tab-ingredients tabi";
+  const tabExport = mode === "mode_export" ? "tab-export tabi active-tab" : "tab-export tabi";
 
   // const auto = "schedule";
   const light = "light_mode";
@@ -83,22 +97,22 @@ function Menu() {
       <header className="menu-header">{ title }</header>
       <div className="tabs">
         <div className="tab"> 
-        <div className="tabi tab-family active-tab"></div>
+        <div onClick={changeProperties} className={tabFamily}></div>
         </div>
         <div className="tab"> 
-        <div className="tabi tab-storages"></div>
+        <div onClick={changeProperties} className={tabStorages}></div>
         </div>
         <div className="tab"> 
-        <div className="tabi tab-planner"></div>
+        <div onClick={changeProperties} className={tabPlanner}></div>
         </div>
         <div className="tab"> 
-        <div className="tabi tab-receipts"></div>
+        <div onClick={changeProperties} className={tabReceipts}></div>
         </div>
         <div className="tab"> 
-        <div className="tabi tab-ingredients"></div>
+        <div onClick={changeProperties} className={tabIngredients}></div>
         </div>
         <div className="tab"> 
-        <div className="tabi tab-export"></div>
+        <div onClick={changeProperties} className={tabExport}></div>
         </div>
 
       </div>

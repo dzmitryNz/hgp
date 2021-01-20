@@ -9,8 +9,7 @@ function header() {
 
   return (
     <div className="header">
-      <header className="header-header">
-      </header>
+      <div className="next-button  material-icons">arrow_forward_ios</div>
       <div className="auth-switcher">
         <span className="auth material-icons">account_circle</span>
         </div>

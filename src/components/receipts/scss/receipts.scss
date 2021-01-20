@@ -4,9 +4,14 @@
   max-width: calc(100vw - 105px);
 }
 
+  .receipts-header {
+  text-align: left;
+  margin: 5px 20px;
+}
+
 .receipts-content {
   display: grid;
-  grid-template-rows: 30px calc(100vh - 440px) 280px;
+  grid-template-rows: 30px calc(100vh - 400px) 280px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-areas:
     "categories categories categories categories"
@@ -51,7 +56,7 @@
   flex-wrap: wrap;
   overflow: scroll;
   max-width: calc(100vw - 107px);
-  max-height: 58vh;
+  max-height: calc(100vh - 430px);
   justify-content: space-between;
 }
 
@@ -60,12 +65,22 @@
   display: block;
 }
 
+.category-header, 
+.recents-header {
+  background-color: rgb(80, 129, 80);
+  border-radius: 10px;
+  height: 25px;
+  padding: 3px 0px;
+  margin: 5px 5px;
+  font-size: 16px;
+}
+
 .recent-content {
   display: flex;
   flex-wrap: wrap;
   overflow: scroll;
   max-width: calc(100vw - 107px);
-  max-height: 265px;
+  max-height: 250px;
   justify-content: space-between;
 }
 
