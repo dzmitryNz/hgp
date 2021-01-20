@@ -3,13 +3,13 @@ import axios from 'axios'
 import ListCategory from './ListCategory';
 import withListLoading from './WithListLoading';
 const PropertiesJson = require("../json/properties.json");
-const DictJson = require("../json/dict.json");
+// const DictJson = require("../json/dict.json");
 
 // const handleClick = () => { UpdateAll("mode_receipts") };
 
 function CategoryReceipts() {
-    const language = PropertiesJson.language;
-    const recentsListTitle = DictJson[language].recent;
+    // const langfcuage = PropertiesJson.language;
+    const categoryStr = PropertiesJson.category;
 
     const ListCategoryLoading = withListLoading(ListCategory);
     const [appState, setAppState] = useState({
@@ -19,20 +19,22 @@ function CategoryReceipts() {
 
 useEffect(() => {
     setAppState({ loading: true });
+    const categorySt = PropertiesJson.category;
     const serverUrl = PropertiesJson.serverUrl;
-    const categoryStr = PropertiesJson.category;
     const requestUrl = serverUrl + '/rec/array';
     const apiUrl = requestUrl;
-    const config = { el: "strCategory", reg: categoryStr};
+    const config = { el: "strCategory", reg: categorySt };
     axios.post(apiUrl, config).then((category) => {
-    const Allrecents = category.data;
+    
+    const Allcategory = category.data;
+    console.log(Allcategory)
 
-    setAppState({ loading: false, category: Allrecents });
+    setAppState({ loading: false, category: Allcategory });
     });
   }, [setAppState]);
   return (
     <div className='category'>
-      <div className="category-header">{ recentsListTitle }</div>
+      <div className="category-header">{ categoryStr }</div>
         <ListCategoryLoading isLoading={appState.loading} category={appState.category} />
     </div>
   );

@@ -6,13 +6,12 @@
 
 .receipts-content {
   display: grid;
-  grid-template-rows: 45px auto 300px 280px;
-  grid-template-columns: 1fr;
+  grid-template-rows: 30px calc(100vh - 440px) 280px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-areas:
-    "categories"
-    "category"
-    "favorites"
-    "recent";
+    "categories categories categories categories"
+    "category category category menus"
+    "recent recent favorites favorites";
   max-height: calc(100vh - 125px);
   max-width: calc(100vw - 105px);
   justify-content: space-around;
@@ -31,7 +30,7 @@
 .categories-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
 
     .list-item{
       display: block;
@@ -47,6 +46,15 @@
   display: block;
 }
 
+.category-content {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: scroll;
+  max-width: calc(100vw - 107px);
+  max-height: 58vh;
+  justify-content: space-between;
+}
+
 .recents {
   grid-area: recent;
   display: block;
@@ -58,31 +66,60 @@
   overflow: scroll;
   max-width: calc(100vw - 107px);
   max-height: 265px;
+  justify-content: space-between;
 }
 
 .receipt {
     display: grid;
-    grid-template-rows: 30px auto 30px;
-    grid-template-columns: auto;
+    grid-template-rows: auto 30px 10px;
+    grid-template-columns: 190px;
     grid-template-areas:
-        "category"
+        "see"
+        "buttons"
         "mealName";
     width: 190px;
     height: 190px;
     margin: 0px 10px 70px 10px;
     border-radius: 100px; 
   
-  .receipt-category {
-    grid-area: category;
+  .receipt-buttons{
+    grid-area: buttons;
+    display: flex;
+    justify-content: space-around;
+
+  .receipt-add {
     position: relative;
-    font-size: 18px;
-    margin-top: 10px;
+    text-align: left;
+    right: 25px;
+    top: 10px;
   }
+
+  .receipt-favorite {
+    position: relative;
+    text-align: right;
+    left: 25px;
+    top: 10px;
+  }
+
+  .receipt-add:hover,
+  .receipt-favorite:hover {
+    cursor: pointer;
+  }
+  }
+
+  .receipt-see {
+    grid-area: see;
+  }
+
+  .receipt-see:hover {
+    cursor: pointer;
+  }
+
   .receipt-meal {
     grid-area: mealName;
     position: relative;
     height: 56px;
-    top: 160px;
+    top: 10px;
     font-size: 15px;
     padding: 2px 5px;
     text-emphasis: none;
@@ -98,7 +135,6 @@
 }
 
 .receipt:hover {
-  cursor: pointer;
   border-radius: 10px;
   transition: all 0.1s;
   width: 200px;
@@ -107,7 +143,7 @@
 
   .receipt-meal {
     position: relative;
-    top: 170px;
+    top: 10px;
     font-size: 18px;
     padding: 2px 5px;
     border-bottom-left-radius: 10px;
@@ -117,20 +153,91 @@
 }
 
 .modal-receipt {
+  display: grid;
+  grid-template-rows: 50px 25px 290px 4fr 5fr;
+  grid-template-columns: 145px 145px 1fr 1fr;
+  grid-template-areas:
+    "receipHeader receipHeader receipHeader receipHeader"
+    "receipCat receipCat receipCat receipCat"
+    "receipThumb receipThumb receipIng receipIng"
+    "receipDescription receipDescription receipIng receipIng"
+    "receipInstruction receipInstruction receipInstruction receipInstruction";
 
   .receipt-category {
+    grid-area: receipCat;
     display: flex;
     justify-content: center;
-    margin: 10px 0px;
+    background-color: #88ad88ad;
+    border-radius: 5px;
+  }
+
+  .receipt-meal {
+    grid-area: receipHeader;
   }
 
   .receipt-cat {
-    margin: 0 15px;
+    margin: 5px 15px;
+    text-decoration: none;
+  }
+
+  .receipt-persons {
+    display: flex;
+    margin: 15px 0;
+    font-size: 35px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .receipt-persons-value {
+    margin: 15px 0;
+    font-size: 35px;
+    background-color: rgb(176, 214, 100);
+    border: 1px solid grey;
+    border-radius: 5px;
+    width: 50px;
+    padding: 5px 0;
+  }
+
+  .receipt-persons-minus,
+  .receipt-persons-plus {
+    margin: 15px 20px;
+    font-size: 35px;
+    background-color: yellowgreen;
+    border-radius: 5px;
+    width: 50px;
+  }
+
+  .receipt-persons-minus:hover,
+  .receipt-persons-plus:hover {
+    cursor: pointer;
+    background-color: rgb(128, 172, 42);
+    transition: all 0.2s;
+  }
+
+  .receipt-persons-minus:active,
+  .receipt-persons-plus:active {
+    cursor: pointer;
+    background-color: rgb(108, 172, 42);
+    transition: all 0.2s;
+
+  }
+
+  .receipt-thumb {
+    grid-area: receipThumb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+    border-radius: 10px;
+    }
   }
 
   .receipt-ingredients {
+    grid-area: receipIng;
     display: grid;
     justify-content: center;
+    font-size: 16px;
   }
   .receipt-ingredient {
     display: grid;
@@ -151,6 +258,7 @@
   .receipt-ingredient-dotted {
     grid-area: dotted;
     border-bottom: 1px dotted black;
+    min-width: 20px;
   }
 
   .receipt-ingredient-measure {
@@ -159,6 +267,6 @@
     width: fit-content;
 
   }
-
 }
+
 

@@ -31,6 +31,7 @@ useEffect(() => {
     setAppState({ loading: false, recents: Allrecents });
     });
   }, [setAppState]);
+  
   return (
     <div className='recents'>
       <div className="recents-header">{ recentsListTitle }</div>

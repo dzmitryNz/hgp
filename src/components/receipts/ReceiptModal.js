@@ -37,6 +37,7 @@ function Modal(props) {
   let receiptIngredient19Block = (<div className="receipt-ingredient 19"></div>);
   let receiptIngredient20Block = (<div className="receipt-ingredient 20"></div>);
 
+  if (receipt) { 
   if (receipt.strDescription) strDescriptionBlock = (<div className="receipt-description">{receipt.strDescription}</div>);
   if (receipt.strDrinkAlternate) strDrinkAlternateBlock = (<div className="receipt-drink-alternate">{receipt.strDrinkAlternate}</div>);
   if (receipt.strSubCategory) strSubCategoryBlock = (<div className="receipt-cat">{receipt.strSubCategory}</div>);
@@ -163,6 +164,7 @@ function Modal(props) {
            <div className="receipt-ingredient-dotted"></div>
            <div className="receipt-ingredient-measure">{receipt.strMeasure20}</div>
          </div>);
+  }
 
   return (
     <>
@@ -177,14 +179,18 @@ function Modal(props) {
              <div className="receipt-cat">{receipt.strCategory}</div>
              {strSubCategoryBlock}
              {strAreaBlock}
-             <div className="receipt-source"><a target="_blank" rel="noreferrer" href={receipt.strSource} title={sourceTitle}>{source}</a></div>
+             <div className="receipt-cat"><a target="_blank" rel="noreferrer" href={receipt.strSource} title={sourceTitle}>{source}</a></div>
              {strYoutubeBlock}
           </div>
          {strDrinkAlternateBlock}
          <div className="receipt-thumb"><img src={receipt.strMealThumb} alt={receipt.strMeal} /></div>
          {strDescriptionBlock}
-         <div className="receipt-persons">{receipt.strForPersons}</div>
          <div className="receipt-ingredients">
+         <div className="receipt-persons">
+         <div className="receipt-persons-minus">-</div>
+         <div className="receipt-persons-value">{receipt.strForPersons}</div>
+         <div className="receipt-persons-plus">+</div>
+         </div>
          {receiptIngredient1Block}
          {receiptIngredient2Block}
          {receiptIngredient3Block}

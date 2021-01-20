@@ -8,33 +8,59 @@ const ListCategory = (props) => {
   const noDataMessage = DictJson[language].noDataMessage;
 
   const [show, setShow] = useState(false);
-  const { recents } = props;
-  if (!recents || recents.length === 0) return <p>{noDataMessage}</p>;
+  const { category } = props;
+  if (!category || category.length === 0) return <p>{noDataMessage}</p>;
 
   const openModal = (e) => {
     const target = e.target.classList[0]
-    localStorage.setItem("modalSee", JSON.stringify(recents[target]))
+    console.log(e)
+    localStorage.setItem("modalSee", JSON.stringify(category[target]))
     setShow(true);
   }
 
   const closeModal = () => setShow(false);
-  
+
+  const addFavorite = (e) => {
+    const target = e.target.classList[0];
+    const favLocal = JSON.parse(localStorage.getItem("hgp-favorite"));
+    let favNew = favLocal ? favLocal: [];
+    favNew.push(target);
+    localStorage.setItem("hgp-favorite", JSON.stringify(favNew))
+  }
+
+  const addMenu = (e) => {
+    const target = e.target.classList[0]
+    console.log(e)
+    let menuLocal = JSON.parse(localStorage.getItem("hgp-menu"));
+    let menuNew = menuLocal ? menuLocal: [];
+    menuNew.push(target);
+    localStorage.setItem("hgp-menu", JSON.stringify(menuNew))
+  }   
+
   return (
     <div className='category-content'>
-      {recents.map((recent, i) => {
+      {category.map((categor, i) => {
         const clasNm =  i + " receipt";
-        const clasNmM =  i + " receipt-meal";
+        const clasNM =  i + " receipt-meal";
+        const clasNS =  i + " receipt-see";
+        const clasFvr =  categor.idMeal + " receipt-favorite material-icons";
+        const clasAdd =  categor.idMeal + " receipt-add material-icons";
+
         const divStyle = {
-           backgroundImage: 'url(' + recent.strMealThumb + ')',
+           backgroundImage: 'url(' + categor.strMealThumb + ')',
               };
         return (
-            <div onClick={openModal} style={divStyle} key={recent.idMeal} className={ clasNm } >
-            {/* <span className='receipt-category'>{recent.strCategory} {recent.strArea}</span> */}
-            <div className={clasNmM}>{recent.strMeal} </div>
-          </div>
+          <div style={divStyle} key={categor.idMeal} className={ clasNm } >
+            <div className="receipt-buttons">
+            <div onClick={addMenu} className={clasAdd}>add_circle</div>
+            <div onClick={addFavorite} className={clasFvr}>favorite_border</div>
+            </div>
+            <div onClick={openModal} className={clasNS}></div>
+            <div className={clasNM}>{categor.strMeal}</div>
+            </div>
         );
       })}
-    <Modal closeModal={closeModal} show={show}/>
+      <Modal closeModal={closeModal} show={show}/>
     </div>
   );
 };
