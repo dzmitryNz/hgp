@@ -22,17 +22,20 @@ const ListCategory = (props) => {
 
   const addFavorite = (e) => {
     const target = e.target.classList[0];
-    const favLocal = JSON.parse(localStorage.getItem("hgp-favorite"));
-    let favNew = favLocal ? favLocal: [];
+    let favLocal = JSON.parse(localStorage.getItem("hgp-favorite"));
+    let favNew = favLocal ? favLocal = Array.from(favLocal): [];
     favNew.push(target);
+    const favSet = new Set(favNew);
+    favNew = Array.from(favSet);
     localStorage.setItem("hgp-favorite", JSON.stringify(favNew))
+    PropertiesJson.favorites = favNew;
   }
 
   const addMenu = (e) => {
-    const target = e.target.classList[0]
-    console.log(e)
+    const target = e.target.classList[0];
+    console.log(e.target.classList)
     let menuLocal = JSON.parse(localStorage.getItem("hgp-menu"));
-    let menuNew = menuLocal ? menuLocal: [];
+    let menuNew = menuLocal ? menuLocal = Array.from(menuLocal): [];
     menuNew.push(target);
     localStorage.setItem("hgp-menu", JSON.stringify(menuNew))
   }   

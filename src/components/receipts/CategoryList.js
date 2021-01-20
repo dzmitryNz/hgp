@@ -32,7 +32,7 @@ useEffect(() => {
     });
   }, [setAppState]);
   return (
-    <div className='category'>
+    <div id='category' className='category'>
       <div className="category-header">{ categoryStr }</div>
         <ListCategoryLoading isLoading={appState.loading} category={appState.category} />
     </div>

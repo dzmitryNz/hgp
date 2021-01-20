@@ -7,11 +7,24 @@
   .receipts-header {
   text-align: left;
   margin: 5px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.next-button {
+  width: 100px;
+  height: 30px;
+  background-color: rgb(50, 81, 50);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  align-items: center;
 }
 
 .receipts-content {
   display: grid;
-  grid-template-rows: 30px calc(100vh - 400px) 280px;
+  grid-template-rows: 30px calc(100vh - 405px) 280px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-areas:
     "categories categories categories categories"
@@ -39,10 +52,17 @@
 
     .list-item{
       display: block;
-      border: 1px solid green;
+      border: 1px solid #508150;
       border-radius: 5px;
-      margin: 3px;
-      padding: 3px;
+    }
+
+    .category-name {
+    padding: 3px 10px;
+    height: 20px;
+    }
+
+    .active-category {
+      background-color: rgb(50, 81, 50);
     }
 }
 

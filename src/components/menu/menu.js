@@ -33,7 +33,6 @@ function changeProperties(e) {
   const modes = /family|storages|planner|receipts|ingredients|export/;
   const target = e.target.className.split(' ')[0];
   const targetMode = e.target.className.split(' ')[0].split("-")[1];
-  console.log(targetMode);
 
   let themes = document.querySelector(".themes");
   let langs = document.querySelector(".langs");
@@ -49,7 +48,7 @@ function changeProperties(e) {
     propertiesChanged = true;
     themes.className = "themes-hidden"
   }
-  if (targetMode.match(modes)) {
+  if (targetMode && targetMode.match(modes)) {
     PropertiesJson.mode = "mode_" + targetMode;
     propertiesChanged = true;
     }
