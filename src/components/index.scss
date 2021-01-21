@@ -6,7 +6,7 @@
 @import "menu/scss/menu.scss";
 // @import "ingredients/scss/ingredients.scss";
 // @import "exports/scss/exports.scss";
-// @import "family/scss/family.scss";
+@import "family/scss/family.scss";
 // @import "planner/scss/planner.scss";
 @import "receipts/scss/receipts.scss";
 // @import "storages/scss/storages.scss";
@@ -23,11 +23,11 @@ $сolor: $colorLight;
 %activeWrapper {
     display: grid;
     gap: 5px;
-    grid-template-rows: 1fr 40px;
+    grid-template-rows: 40px 1fr;
     grid-template-columns: auto;
     grid-template-areas:
+    "header"
     "content"
-    "buttons"
 }
 
 body {
@@ -42,19 +42,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-[id="root"] {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  // gap: 5px;
-  grid-template-rows: 50px 1fr;
-  grid-template-columns: 100px auto;
-  grid-template-areas:
-    "menu header"
-    "menu receipts"
-    // "footer footer footer footer footer footer"
-}
-
 .light_mode {
   $backgroundColor: $backgroundLight;
   background-color: $backgroundColor;
@@ -67,6 +54,19 @@ code {
   background-color: $backgroundColor;
   $color: $colorDark;
   color: $color;
+}
+
+[id="root"] {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  // gap: 5px;
+  grid-template-rows: 50px 1fr;
+  grid-template-columns: 100px auto;
+  // grid-template-areas:
+  //   "menu header"
+  //   "menu family"
+  //   // "footer footer footer footer footer footer"
 }
 
 .show {
@@ -139,13 +139,27 @@ code {
   border-radius: 5px;
 }
 
-.button-next {
-  width: 110px;
-  height: 35px;
+  .family-header,
+  .storages-header,
+  .planner-header,
+  .receipts-header,
+  .ingredients-header,
+  .export-header {
+  text-align: left;
+  margin: 5px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.next-button {
+  width: 100px;
+  height: 30px;
+  background-color: rgb(50, 81, 50);
   border-radius: 10px;
-  background: #508150;
-  font-size: 2em;
-  margin: 0 20px;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  align-items: center;
 }
 
 .menu .tabs .tab .active-tab {
@@ -154,92 +168,92 @@ code {
 }
 
 .mode_family {
+  grid-template-areas:
+    "menu header"
+    "menu family";
+    // "footer footer footer footer footer footer"
   
   .storages,
-  .planner, 
-  .receipts, 
-  .ingredients, 
-  .exports {
+  .planner,
+  .receipts,
+  .ingredients,
+  .export {
     display: none;
-  } 
-
-  .family .wrapper { 
-    @extend %activeWrapper;
   }
 }
 
 .mode_storages {
 
+grid-template-areas:
+    "menu header"
+    "menu storages";
+  
   .family,
-  .storages,
-  .planner, 
-  .receipts, 
-  .ingredients, 
-  .exports {
-   display: none;
-  } 
-
-  .storages .wrapper { 
-    @extend %activeWrapper;
+  .planner,
+  .receipts,
+  .ingredients,
+  .export {
+    display: none;
   }
 }
 
 .mode_planner {
 
+  grid-template-areas:
+    "menu header"
+    "menu planner";
+    // "footer footer footer footer footer footer"
+  
   .family,
   .storages,
-  .receipts, 
-  .ingredients, 
-  .exports {
-   display: none;
-  } 
-
-  .planner .wrapper { 
-    @extend %activeWrapper;
+  .receipts,
+  .ingredients,
+  .export {
+    display: none;
   }
 }
 
 .mode_receipts {
+  grid-template-areas:
+    "menu header"
+    "menu receipts";
+    // "footer footer footer footer footer footer"
 
   .family,
   .storages,
-  .planner, 
-  .ingredients, 
-  .exports {
-   display: none;
-  } 
-
-  .receipts .wrapper { 
-    @extend %activeWrapper;
+  .planner,
+  .ingredients,
+  .export {
+    display: none;
   }
 }
 
 .mode_ingredients {
+  grid-template-areas:
+    "menu header"
+    "menu ingredients";
+    // "footer footer footer footer footer footer"
 
   .family,
   .storages,
-  .planner, 
-  .receipts, 
-  .exports {
-   display: none;
-  } 
-
-  .ingredients .wrapper { 
-    @extend %activeWrapper;
+  .planner,
+  .receipts,
+  .export {
+    display: none;
   }
 }
 
 .mode_export {
+  grid-template-areas:
+    "menu header"
+    "menu export";
+    // "footer footer footer footer footer footer"
 
   .family,
   .storages,
-  .planner, 
-  .receipts, 
+  .planner,
+  .receipts,
   .ingredients {
-   display: none;
-  } 
-
-  .exports .wrapper { 
-    @extend %activeWrapper;
+    display: none;
   }
 }

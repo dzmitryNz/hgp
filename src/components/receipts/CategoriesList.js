@@ -14,7 +14,7 @@ function CategoriesList() {
   const ListCategoriesLoading = withListLoading(ListCategories);
   const [appState, setAppState] = useState({
     loading: false,
-    repos: null,
+    categories: null,
   });
 
 useEffect(() => {

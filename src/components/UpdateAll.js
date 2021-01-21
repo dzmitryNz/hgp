@@ -3,23 +3,24 @@ import ReactDOM from 'react-dom';
 import Header from './header/header';
 // import Footer from './footer/footer';
 import Menu from './menu/menu';
-// import Family from './family/family';
+import Family from './family/Family';
 // import Planner from './planner/planner';
 import Receipts from './receipts/receipts';
 // import Storages from './storages/storages';
 // import Ingredients from './ingredients/ingredients';
 // import Exports from './exports/exports';
-const PropertiesJson = require("./json/properties.json");
+let PropertiesJson = require("./json/properties.json");
 
 function UpdateAll(target) {
-    if (target) PropertiesJson.mode = target;
-    localStorage.setItem("hgp-properties", JSON.stringify(PropertiesJson))
+    if (target && typeof target === 'string') PropertiesJson.mode = target;
+        else {PropertiesJson = target}
+    localStorage.setItem('hgp-properties', JSON.stringify(PropertiesJson))
     
     ReactDOM.render(
     <React.StrictMode>
     <Header />
     <Menu />
-    {/* <Family /> */}
+    <Family />
     {/* <Storages /> */}
     {/* <Planner /> */}
     <Receipts />

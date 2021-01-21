@@ -1,31 +1,35 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-import CategoryList from './CategoryList';
-
+import React from "react";
+// import CategoryList from './CategoryList';
+// import ReactDOM from 'react-dom';
+// import Receipts from './receipts';
+import UpdateCategory from './UpdateCategory'
 let PropertiesJson = require("../json/properties.json");
+
 const categorySt = PropertiesJson.category;
 console.log("categorProp", categorySt)
 
-const changeCategory = (e) => {
-  let propertiesChanged = false;
+const ChangeCategory = (e) => {
   const target = e.target.className.slice(0, -14);
+  let propertiesChanged = false;
+  let localProp = JSON.parse(localStorage.getItem('hgp-properties'));
   console.log (e.target.className.slice(0, -14))
   if (target !== categorySt) {
     PropertiesJson.category = target;
+    console.log(PropertiesJson);
     propertiesChanged = true;
-    let localProp = JSON.parse(localStorage.getItem('hgp-properties'));
     localProp.category = target;
     localStorage.setItem('hgp-properties', JSON.stringify(localProp))
   }
-  if (propertiesChanged) ReactDOM.render(<CategoryList />, document.getElementById('category'))
+  if (propertiesChanged)  {
+    UpdateCategory()
+  }
 }
 
 const ListCategories = (props) => {
 
   const { categories } = props;
   if (!categories || categories.length === 0) return <p>No data, sorry</p>;
-  // const data = repos.data;
+
   return (
     <div className='categories-list'>
       {categories.map((cat, i) => {
@@ -35,7 +39,7 @@ const ListCategories = (props) => {
         const catClassName = category0 === categorySt ?  activeClassName : categoryClassName;
         return (
           <div key={i} className='list-item'>
-            <div onClick={changeCategory} className={catClassName}>{category0}</div>
+            <div onClick={ChangeCategory} className={catClassName}>{category0}</div>
             {/* <div className='category-qty'>{cat[1]}</div> */}
           </div>
         );

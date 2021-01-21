@@ -4,7 +4,7 @@ import './components/index.css';
 import Header from './components/header/header';
 // import Footer from './components/footer/footer';
 import Menu from './components/menu/menu';
-// import Family from './components/family/family';
+import Family from './components/family/Family';
 // import Planner from './components/planner/planner';
 import Receipts from './components/receipts/receipts';
 // import Storages from './components/storages/storages';
@@ -24,7 +24,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Header />
     <Menu />
-    {/* <Family /> */}
+    <Family />
     {/* <Storages /> */}
     {/* <Planner /> */}
     <Receipts />

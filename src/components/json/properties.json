@@ -1,10 +1,13 @@
 {"language": "Ru", 
-"langList": [ "By", "En", "Ru", "Ua"],
-"themeList": ["dark_mode", "light_mode", "schedule"],
+"category": "Завтраки",
 "theme": "schedule", 
 "mode": "mode_receipts",
-"category": "Завтраки",
 "recents": ["16921", "20811", "33068", "15715", "44065", "33013", "91464", "22388", "49038", "15694", "14970"], 
 "favorites": ["45809", "42751", "79791", "41331", "15194", "15102", "92279", "18262", "16992", "25999", "36595"],
+"langList": [ "By", "En", "Ru", "Ua"],
+"themeList": ["dark_mode", "light_mode", "schedule"],
+"familyModes": ["family", "party"],
+"family": {"matures": 2, "children": 1, "maturesDiet": 1, "childrenDiet": 1, "pets": ["cat"]},
+"party": {"matures": 8, "children": 2, "maturesDiet": 1, "childrenDiet": 1},
 "serverUrl": "http://192.168.1.66:3000"
 }
