@@ -7,7 +7,7 @@
 "langList": [ "By", "En", "Ru", "Ua"],
 "themeList": ["dark_mode", "light_mode", "schedule"],
 "familyModes": ["family", "party"],
-"family": {"matures": 2, "children": 1, "maturesDiet": 1, "childrenDiet": 1, "pets": ["cat"]},
-"party": {"matures": 8, "children": 2, "maturesDiet": 1, "childrenDiet": 1},
+"family": {"adults": 2, "children": 1, "adultsDiet": 1, "childrenDiet": 1, "pets": ["cat"]},
+"party": {"adults": 8, "children": 2, "adultsDiet": 1, "childrenDiet": 1},
 "serverUrl": "http://192.168.1.66:3000"
 }
