@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import ListCategory from './ListCategory';
-import withListLoading from './WithListLoading';
+import withListLoading from '../WithListLoading';
 const PropertiesJson = require("../json/properties.json");
 const categoryStr = PropertiesJson.category;
 

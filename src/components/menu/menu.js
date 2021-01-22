@@ -30,8 +30,7 @@ function showMenu(e) {
 
 function changeProperties(e) {
   const root = document.getElementById('root');
-  const langsClass = document.getElementById('langs');
-  console.log(langsClass)
+  // const langsClass = document.getElementById('langs');
   const rootClassList = root.classList;
   let propertiesChanged = false;
   const modes = /family|storages|planner|receipts|ingredients|export/;
@@ -44,13 +43,13 @@ function changeProperties(e) {
   {
     PropertiesJson.language = target;
     propertiesChanged = true;
-    langs.className = "langs-hidden"
+    langs.className = "langs-hidden";
   }
   if (PropertiesJson.themeList.indexOf(target) !== -1) 
   {
     PropertiesJson.theme = target;
     propertiesChanged = true;
-    themes.className = "themes-hidden"
+    themes.className = "themes-hidden";
   }
   if (targetMode && targetMode.match(modes)) {
     PropertiesJson.mode = "mode_" + targetMode;

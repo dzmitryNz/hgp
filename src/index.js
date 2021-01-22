@@ -5,11 +5,11 @@ import Header from './components/header/header';
 // import Footer from './components/footer/footer';
 import Menu from './components/menu/menu';
 import Family from './components/family/Family';
-// import Planner from './components/planner/planner';
+import Planner from './components/planner/Planner';
 import Receipts from './components/receipts/Receipts';
 import Storages from './components/storages/Storages';
-// import Ingredients from './components/ingredients/ingredients';
-// import Exports from './components/exports/exports';
+import Ingredients from './components/ingredients/Ingredients';
+import Export from './components/export/Export';
 // import reportWebVitals from './reportWebVitals';
 const PropertiesJson = require("./components/json/properties.json");
 
@@ -26,10 +26,10 @@ ReactDOM.render(
     <Menu />
     <Family />
     <Storages />
-    {/* <Planner /> */}
+    <Planner />
     <Receipts />
-    {/* <Ingredients /> */}
-    {/* <Exports /> */}
+    <Ingredients />
+    <Export />
     {/* <Footer /> */}
   </React.StrictMode>,
   document.getElementById('root')

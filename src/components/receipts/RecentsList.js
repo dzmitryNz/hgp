@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import ListRecents from './ListRecents';
-import withListLoading from './WithListLoading';
+import withListLoading from '../WithListLoading';
 const PropertiesJson = require("../json/properties.json");
 const DictJson = require("../json/dict.json");
 

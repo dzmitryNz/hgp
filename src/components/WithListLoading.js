@@ -1,7 +1,6 @@
 import React from 'react';
-const PropertiesJson = require("../json/properties.json");
-const loadingGif = require("../../assets/images/143.gif")
-const DictJson = require("../json/dict.json");
+const PropertiesJson = require("./json/properties.json");
+const DictJson = require("./json/dict.json");
 
 function WithListLoading(Component) {
   const language = PropertiesJson.language;
@@ -9,10 +8,10 @@ function WithListLoading(Component) {
   return function WihLoadingComponent({ isLoading, ...props }) {
     if (!isLoading) return <Component {...props} />;
     return (
-      <p style={{ textAlign: 'center', fontSize: '30px' }}>
+      <div>
+      <div className="loading" alt="loading"></div>
       {loadingMessage}
-      <img href={loadingGif} alt="loading"></img>
-      </p>
+      </div>
     );
   };
 }

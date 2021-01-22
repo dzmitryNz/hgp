@@ -44,7 +44,7 @@ function FamilyModes() {
             const propTarget = target.split("-");
             const propCat = propTarget[0];
             const propIncr = propTarget[1];
-            const classId = propCat + "-value";
+            const classId = propCat;
             const value = document.getElementById(classId);
             const indxPet = complete.pets.indexOf(propCat);
 
@@ -104,10 +104,11 @@ function FamilyModes() {
     complete.pets.forEach((pet, i) => {
         const minusClassName = pet + "-minus material-icons";
         const valueClassName = pet + "-value";
-        const block = ( <div id={valueClassName} className="pet">
-        <div className="pets-switcher"> 
-        <div className={valueClassName}>{pet}</div>
-        <div onClick={clickEvent} className={minusClassName}>remove_circle</div>
+        const petClassName = pet + " pet";
+        const block = ( <div id={pet} key={petClassName} className={ petClassName }>
+        <div key={valueClassName} className="pets-switcher"> 
+        <div key={valueClassName} className={valueClassName}>{pet}</div>
+        <div onClick={clickEvent} key={minusClassName} className={minusClassName}>remove_circle</div>
         </div>
         </div>
         )
@@ -117,7 +118,7 @@ function FamilyModes() {
         <div className="pets-header">{petsTitle}
         <div onClick={clickEvent} className="pets-plus material-icons">add_circle</div>
         </div> 
-        <div className="pets-icon"></div> 
+        <div id="pets-icon" className="pets-icon"></div> 
         <div className="pets-list"> 
         {pets}
         </div>

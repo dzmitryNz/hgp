@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import ListCategories from './ListCategories';
-import withListLoading from './WithListLoading';
+import withListLoading from '../WithListLoading';
 const PropertiesJson = require("../json/properties.json");
 // const DictJson = require("../json/dict.json");
 
@@ -31,7 +31,7 @@ useEffect(() => {
     <div className='categories'>
       {/* <div className="categories-header">{ categoriesListTitle }</div> */}
       <div className="categories-wrapper">
-        <ListCategoriesLoading isLoading={appState.loading} categories={appState.categories} />
+        <ListCategoriesLoading categories={appState.categories} />
       </div>
     </div>
   );
