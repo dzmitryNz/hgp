@@ -6,8 +6,8 @@ import Header from './components/header/header';
 import Menu from './components/menu/menu';
 import Family from './components/family/Family';
 // import Planner from './components/planner/planner';
-import Receipts from './components/receipts/receipts';
-// import Storages from './components/storages/storages';
+import Receipts from './components/receipts/Receipts';
+import Storages from './components/storages/Storages';
 // import Ingredients from './components/ingredients/ingredients';
 // import Exports from './components/exports/exports';
 // import reportWebVitals from './reportWebVitals';
@@ -25,7 +25,7 @@ ReactDOM.render(
     <Header />
     <Menu />
     <Family />
-    {/* <Storages /> */}
+    <Storages />
     {/* <Planner /> */}
     <Receipts />
     {/* <Ingredients /> */}

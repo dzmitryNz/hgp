@@ -21,48 +21,107 @@ function FamilyModes() {
 
     let familyMode = familyModesProp[0];
     let complete = PropertiesJson[familyMode];
-    console.log(complete)
-    let adultsBlock = (
+
+    const clickEvent = (e) => {
+        const target = e.target.classList[0];
+        if(target.match(/-plus|-minus/) &&  target.match(/adults|children/)) {
+            const propTarget = target.split("-");
+            const propCat = propTarget[0];
+            const propIncr = propTarget[1];
+            const valueId = propCat + '-value';
+            const value = document.getElementById(valueId);
+            if (propIncr === "plus" ) {
+                complete[propCat] = complete[propCat] + 1;
+                value.innerText = complete[propCat];
+            }
+            if (propIncr === "minus" && complete[propCat] > 0) {
+                complete[propCat] = complete[propCat] - 1;
+                value.innerText = complete[propCat];
+            }
+        }
+
+        if (!target.match(/adults|children/)) {
+            const propTarget = target.split("-");
+            const propCat = propTarget[0];
+            const propIncr = propTarget[1];
+            const classId = propCat + "-value";
+            const value = document.getElementById(classId);
+            const indxPet = complete.pets.indexOf(propCat);
+
+            let petsArr = complete.pets;
+            if (propIncr === "plus" ) {
+                console.log('plus')
+                // complete.pets[propCat] = complete.pets[propCat];
+                // value.innerText = complete[propCat];
+            }
+            if (propIncr === "minus" ) {
+                if (indxPet !== -1) 
+                    petsArr.splice(indxPet, 1)
+                    value.remove();
+                // complete[propCat] = complete[propCat] + 1;
+                // value.innerText = complete[propCat];
+            }
+        }
+
+    }
+
+    const adultsBlock = () =>{
+        return (
         <div className="adults">
          <div className="adults-header">{adultsTitle}</div> 
          <div className="adults-icon"></div>
          <div className="adults-switcher"> 
-         <div className="adults-minus material-icons">remove_circle</div> 
-         <div className="adults-value">{complete.adults}</div>
-         <div className="adults-plus material-icons">add_circle</div>
+         <div onClick={clickEvent} className="adults-minus material-icons">remove_circle</div> 
+         <div id="adults-value" className="adults-value">{complete.adults}</div>
+         <div onClick={clickEvent} className="adults-plus material-icons">add_circle</div>
         </div>
         <div className="adultsdiet-header">{adultsDietTitle}</div> 
          <div className="adultsdiet-switcher"> 
-        <div className="adultsdiet-minus material-icons">remove_circle</div>
-        <div className="adultsdiet-value">{complete.adultsDiet}</div>
-        <div className="adultsdiet-plus material-icons">add_circle</div>
+        <div onClick={clickEvent} className="adultsdiet-minus material-icons">remove_circle</div>
+        <div id="adultsdiet-value" className="adultsdiet-value">{complete.adultsdiet}</div>
+        <div onClick={clickEvent} className="adultsdiet-plus material-icons">add_circle</div>
         </div>
         </div>)
+    } 
+    
+ 
     let childrenBlock = (<div className="children">
         <div className="children-header">{childrenTitle}</div> 
         <div className="children-icon"></div> 
         <div className="children-switcher"> 
-        <div className="children-minus material-icons">remove_circle</div>
-        <div className="children-value">{complete.children}</div>
-        <div className="children-plus material-icons">add_circle</div>
+        <div onClick={clickEvent} className="children-minus material-icons">remove_circle</div>
+        <div id="children-value" className="children-value">{complete.children}</div>
+        <div onClick={clickEvent} className="children-plus material-icons">add_circle</div>
         </div>
         <div className="childrendiet-header">{childrenDietTitle}</div> 
         <div className="childrendiet-switcher"> 
-        <div className="childrendiet-minus material-icons">remove_circle</div>
-        <div className="childrendiet-value">{complete.childrenDiet}</div>
-        <div className="childrendiet-plus material-icons">add_circle</div>
+        <div onClick={clickEvent} className="childrendiet-minus material-icons">remove_circle</div>
+        <div id="childrendiet-value" className="childrendiet-value">{complete.childrendiet}</div>
+        <div onClick={clickEvent} className="childrendiet-plus material-icons">add_circle</div>
         </div>
         </div>)
-    let petsBlock = (<div className="pets">
-        <div className="pets-header">{petsTitle}</div> 
-        <div className="pets-icon"></div> 
+    let pets = [];
+    complete.pets.forEach((pet, i) => {
+        const minusClassName = pet + "-minus material-icons";
+        const valueClassName = pet + "-value";
+        const block = ( <div id={valueClassName} className="pet">
         <div className="pets-switcher"> 
-        <div className="pets-value">{complete.pets}</div>
-        <div className="pets-minus material-icons">remove_circle</div>
-        <div className="pets-plus material-icons">add_circle</div>
+        <div className={valueClassName}>{pet}</div>
+        <div onClick={clickEvent} className={minusClassName}>remove_circle</div>
+        </div>
+        </div>
+        )
+        pets.push(block)
+    })
+    let petsBlock = ( <div className="pets">
+        <div className="pets-header">{petsTitle}
+        <div onClick={clickEvent} className="pets-plus material-icons">add_circle</div>
+        </div> 
+        <div className="pets-icon"></div> 
+        <div className="pets-list"> 
+        {pets}
         </div>
         </div>)
-    
 
   return (
     <div className='content'>
@@ -70,7 +129,7 @@ function FamilyModes() {
             { familyModesArr }
         </div>
         <div className='mode-family'>
-            { adultsBlock }
+            {adultsBlock()}
             {childrenBlock}
             {petsBlock}
         </div>

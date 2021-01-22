@@ -7,7 +7,8 @@
 "langList": [ "By", "En", "Ru", "Ua"],
 "themeList": ["dark_mode", "light_mode", "schedule"],
 "familyModes": ["family", "party"],
-"family": {"adults": 2, "children": 1, "adultsDiet": 1, "childrenDiet": 1, "pets": ["cat"]},
-"party": {"adults": 8, "children": 2, "adultsDiet": 1, "childrenDiet": 1},
+"family": {"adults": 2, "children": 1, "adultsdiet": 1, "childrendiet": 1, "pets": ["cat", "fish", "turtle"]},
+"party": {"adults": 8, "children": 2, "adultsdiet": 1, "childrendiet": 1},
+"modes": ["mode_family", "mode_storages", "mode_planner", "mode_receipts", "mode_ingredients", "mode_export"],
 "serverUrl": "http://192.168.1.66:3000"
 }

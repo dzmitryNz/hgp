@@ -30,6 +30,10 @@ $сolor: $colorLight;
     "content"
 }
 
+*::selection {
+  background: none;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
@@ -152,14 +156,24 @@ code {
 }
 
 .next-button {
+  color: white;
   width: 100px;
   height: 30px;
-  background-color: rgb(50, 81, 50);
+  background-color: #508150;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   vertical-align: middle;
   align-items: center;
+}
+
+.next-button:hover {
+  background-color: #306130;
+  cursor: pointer;
+}
+
+.next-button:active {
+  background-color: #9DBA96;
 }
 
 .menu .tabs .tab .active-tab {

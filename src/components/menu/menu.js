@@ -29,6 +29,10 @@ function showMenu(e) {
 }
 
 function changeProperties(e) {
+  const root = document.getElementById('root');
+  const langsClass = document.getElementById('langs');
+  console.log(langsClass)
+  const rootClassList = root.classList;
   let propertiesChanged = false;
   const modes = /family|storages|planner|receipts|ingredients|export/;
   const target = e.target.className.split(' ')[0];
@@ -50,9 +54,12 @@ function changeProperties(e) {
   }
   if (targetMode && targetMode.match(modes)) {
     PropertiesJson.mode = "mode_" + targetMode;
-    propertiesChanged = true;
+    const ClassName = PropertiesJson.mode;
+    root.classList.remove(rootClassList[1]);
+    root.classList.add(ClassName);
     }
   if (propertiesChanged) UpdateAll(PropertiesJson.mode);
+
 }
 
 function Menu() {
@@ -116,11 +123,11 @@ function Menu() {
 
       </div>
       <div className="buttons">
-        <div className="langs-hidden">{ langs }</div>
+        <div id="langs" className="langs-hidden">{ langs }</div>
       <div className="lang-switcher">
         <div className="lang" onClick={ showMenu }>{language}</div>
       </div>
-        <div className="themes-hidden">{ themes }</div>
+        <div id="langs" className="themes-hidden">{ themes }</div>
       <div className="theme-switcher">
         <div className="theme material-icons" onClick={ showMenu }>{ iconTheme }</div>
       </div>
