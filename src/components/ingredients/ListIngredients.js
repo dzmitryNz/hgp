@@ -7,25 +7,25 @@ const ListIngredients = (props) => {
   const language = PropertiesJson.language;
   const noDataMessage = DictJson[language].noDataMessage;
 
-  const [show, setShow] = useState(false);
+  // const [show, setShow] = useState(false);
   const { menu } = props;
   if (!menu || menu.length === 0) return <p>{noDataMessage}</p>;
 
-  const openModal = (e) => {
-    const target = e.target.classList[0]
-    localStorage.setItem("modalSee", JSON.stringify(menu[target]))
-    setShow(true);
-  }
+  // const openModal = (e) => {
+  //   const target = e.target.classList[0]
+  //   localStorage.setItem("modalSee", JSON.stringify(menu[target]))
+  //   setShow(true);
+  // }
 
   // const closeModal = () => setShow(false);
   
-  const addFavorite = (e) => {
-    const target = e.target.classList[0];
-    const favLocal = JSON.parse(localStorage.getItem("hgp-favorite"));
-    let favNew = favLocal ? favLocal: [];
-    favNew.push(target);
-    localStorage.setItem("hgp-favorite", JSON.stringify(favNew))
-  }
+  // const addFavorite = (e) => {
+  //   const target = e.target.classList[0];
+  //   const favLocal = JSON.parse(localStorage.getItem("hgp-favorite"));
+  //   let favNew = favLocal ? favLocal: [];
+  //   favNew.push(target);
+  //   localStorage.setItem("hgp-favorite", JSON.stringify(favNew))
+  // }
 
   const addMenu = (e) => {
     const target = e.target.classList[0]
