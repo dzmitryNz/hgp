@@ -56,14 +56,16 @@
     height: 50px;
     width: 100px;
     background-size: contain;
+    position: relative;
+    top: 10px;
     }
 
-    .tabi:hover { 
+    .tab:hover { 
       background-color: #535353;
       cursor: pointer;
     }
 
-    .tabi:active {
+    .tab:active {
       background-color: inherit;
     }
   }

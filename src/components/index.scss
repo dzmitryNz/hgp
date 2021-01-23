@@ -51,6 +51,10 @@ code {
   background-color: $backgroundColor;
   $color: $colorLight;
   color: $color;
+
+  .menu .tabs .active-tab {
+  background-color: $backgroundLight;
+  }
 }
 
 .dark_mode {
@@ -58,7 +62,16 @@ code {
   background-color: $backgroundColor;
   $color: $colorDark;
   color: $color;
+
+  .menu .tabs .active-tab {
+  background-color: $backgroundDark;
+  }
 }
+
+  .menu .tabs .active-tab {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  }
 
 .loading {
   width: 100%;
@@ -184,11 +197,6 @@ code {
 
 .next-button:active {
   background-color: #9DBA96;
-}
-
-.menu .tabs .tab .active-tab {
-  background-color: $backgroundColor;
-
 }
 
 .mode_family {

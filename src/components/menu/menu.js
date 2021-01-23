@@ -56,6 +56,7 @@ function changeProperties(e) {
     const ClassName = PropertiesJson.mode;
     root.classList.remove(rootClassList[1]);
     root.classList.add(ClassName);
+    propertiesChanged = true;
     }
   if (propertiesChanged) UpdateAll(PropertiesJson.mode);
 
@@ -70,12 +71,12 @@ function Menu() {
   const footerTitle = DictJson[language].footer;
   const mode = PropertiesJson.mode;
   const title = DictJson[language].title;
-  const tabFamily = mode === "mode_family" ? "tab-family tabi active-tab" : "tab-family tabi";
-  const tabStorages = mode === "mode_storages" ? "tab-storages tabi active-tab" : "tab-storages tabi";
-  const tabPlanner = mode === "mode_planner" ? "tab-planner tabi active-tab" : "tab-planner tabi";
-  const tabReceipts = mode === "mode_receipts" ? "tab-receipts tabi active-tab" : "tab-receipts tabi";
-  const tabIngredients = mode === "mode_ingredients" ? "tab-ingredients tabi active-tab" : "tab-ingredients tabi";
-  const tabExport = mode === "mode_export" ? "tab-export tabi active-tab" : "tab-export tabi";
+  const tabFamily = mode === "mode_family" ? "tab active-tab" : "tab";
+  const tabStorages = mode === "mode_storages" ? "tab active-tab" : "tab";
+  const tabPlanner = mode === "mode_planner" ? "tab active-tab" : "tab";
+  const tabReceipts = mode === "mode_receipts" ? "tab active-tab" : "tab";
+  const tabIngredients = mode === "mode_ingredients" ? "tab tabi active-tab" : "tab";
+  const tabExport = mode === "mode_export" ? "tab active-tab" : "tab";
 
   // const auto = "schedule";
   const light = "light_mode";
@@ -101,23 +102,23 @@ function Menu() {
     <div className="menu">
       <header className="menu-header">{ title }</header>
       <div className="tabs">
-        <div className="tab"> 
-        <div onClick={changeProperties} className={tabFamily}></div>
+        <div className={tabFamily}> 
+        <div onClick={changeProperties} className="tab-family tabi"></div>
         </div>
-        <div className="tab"> 
-        <div onClick={changeProperties} className={tabStorages}></div>
+        <div className={tabStorages}> 
+        <div onClick={changeProperties} className="tab-storages tabi"></div>
         </div>
-        <div className="tab"> 
-        <div onClick={changeProperties} className={tabPlanner}></div>
+        <div className={tabPlanner}> 
+        <div onClick={changeProperties} className="tab-planner tabi"></div>
         </div>
-        <div className="tab"> 
-        <div onClick={changeProperties} className={tabReceipts}></div>
+        <div className={tabReceipts}> 
+        <div onClick={changeProperties} className="tab-receipts tabi"></div>
         </div>
-        <div className="tab"> 
-        <div onClick={changeProperties} className={tabIngredients}></div>
+        <div className={tabIngredients}> 
+        <div onClick={changeProperties} className="tab-ingredients tabi"></div>
         </div>
-        <div className="tab"> 
-        <div onClick={changeProperties} className={tabExport}></div>
+        <div className={tabExport}> 
+        <div onClick={changeProperties} className="tab-export tabi"></div>
         </div>
 
       </div>
