@@ -10,6 +10,8 @@ function Modal(props) {
   const source = DictJson[language].source;
   const sourceTitle = DictJson[language].sourceTitle;
 
+  if(!receipt) return (<div></div>);
+
   let strDescriptionBlock = (<div className="receipt-description"></div>);
   let strDrinkAlternateBlock = (<div className="receipt-drink-alternate"></div>);
   let strSubCategoryBlock = (<div className="receipt-cat"></div>);

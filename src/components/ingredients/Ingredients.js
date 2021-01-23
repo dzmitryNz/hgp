@@ -6,6 +6,7 @@ import IngredientsList from './ingredientsList'
 const PropertiesJson = require("../json/properties.json");
 
 const localProp = JSON.parse(localStorage.getItem("hgp-properties"));
+
 if (localProp) {
   PropertiesJson.language = localProp.language;
   PropertiesJson.theme = localProp.theme;

@@ -20,6 +20,7 @@ function IngredientsList() {
 useEffect(() => {
     setAppState({ loading: true });
     const menuArr = JSON.parse(localStorage.getItem("hgp-menu"));
+    if(!menuArr) return(<div></div>);
     const regEx = menuArr.join("|");
     const serverUrl = PropertiesJson.serverUrl;
     const requestUrl = serverUrl + '/rec/array';
