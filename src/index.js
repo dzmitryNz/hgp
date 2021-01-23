@@ -8,7 +8,7 @@ import Family from './components/family/Family';
 import Planner from './components/planner/Planner';
 import Receipts from './components/receipts/Receipts';
 import Storages from './components/storages/Storages';
-// import Ingredients from './components/ingredients/Ingredients';
+import Ingredients from './components/ingredients/Ingredients';
 import Export from './components/export/Export';
 // import reportWebVitals from './reportWebVitals';
 const PropertiesJson = require("./components/json/properties.json");
@@ -28,7 +28,7 @@ ReactDOM.render(
     <Storages />
     <Planner />
     <Receipts />
-    {/* <Ingredients /> */}
+    <Ingredients />
     <Export />
     {/* <Footer /> */}
   </React.StrictMode>,

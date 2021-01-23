@@ -2,6 +2,8 @@
   grid-area: receipts;
   text-align: center;
   max-width: calc(100vw - 105px);
+  background-color: inherit;
+  color: inherit;
 
 .content {
   display: grid;
@@ -14,11 +16,14 @@
   max-height: calc(100vh - 125px);
   max-width: calc(100vw - 105px);
   justify-content: space-around;
+  background-color: inherit;
+  color: inherit;
 }
 
 .categories {
-    grid-area: categories;
-    
+  grid-area: categories;
+  background-color: inherit;
+  color: inherit;
 }
 
 .areas {
@@ -50,6 +55,8 @@
 .category {
   grid-area: category;
   display: block;
+  background-color: inherit;
+  color: inherit;
 }
 
 .category-content {
@@ -59,11 +66,15 @@
   max-width: calc(100vw - 107px);
   max-height: calc(100vh - 430px);
   justify-content: space-between;
+  background-color: inherit;
+  color: inherit;
 }
 
 .recents {
   grid-area: recent;
   display: block;
+  background-color: inherit;
+  color: inherit;
 }
 
 .category-header, 
@@ -83,6 +94,8 @@
   max-width: calc(100vw - 107px);
   max-height: 250px;
   justify-content: space-between;
+  background-color: inherit;
+  color: inherit;
 }
 
 .receipt {
@@ -108,6 +121,7 @@
     text-align: left;
     right: 25px;
     top: 10px;
+    z-index: 1;
   }
 
   .receipt-favorite {
@@ -115,6 +129,7 @@
     text-align: right;
     left: 25px;
     top: 10px;
+    z-index: 1;
   }
 
   .receipt-add:hover,
@@ -179,7 +194,9 @@
     "receipThumb receipThumb receipIng receipIng"
     "receipDescription receipDescription receipIng receipIng"
     "receipInstruction receipInstruction receipInstruction receipInstruction";
-
+  background-color: inherit;
+  color: inherit;
+  
   .receipt-category {
     grid-area: receipCat;
     display: flex;
@@ -208,7 +225,7 @@
   .receipt-persons-value {
     margin: 15px 0;
     font-size: 35px;
-    background-color: rgb(176, 214, 100);
+    background-color: inherit;
     border: 1px solid grey;
     border-radius: 5px;
     width: 50px;

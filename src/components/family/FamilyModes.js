@@ -20,8 +20,10 @@ function FamilyModes() {
     })
 
     let familyMode = familyModesProp[0];
-    let complete = PropertiesJson[familyMode];
-
+    const localComplete = JSON.parse(localStorage.getItem("hgp-family"));
+    const prefComplete = PropertiesJson[familyMode];
+    let complete = localComplete ? localComplete : prefComplete;
+    
     const clickEvent = (e) => {
         const target = e.target.classList[0];
         if(target.match(/-plus|-minus/) &&  target.match(/adults|children/)) {
@@ -63,6 +65,7 @@ function FamilyModes() {
             }
         }
 
+        localStorage.setItem("ghp-family", JSON.stringify(complete));
     }
 
     const adultsBlock = () =>{

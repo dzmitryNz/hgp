@@ -100,24 +100,26 @@ code {
 
 .modal {
   position: fixed;
-  left: 250px;
-  bottom: 90vh;
+  left: 125px;
+  bottom: 95vh;
   margin: 0px auto;
   padding: 20px;
-  background-color: $backgroundColor;
-  border-radius: 2px;
+  background-color: inherit;
+  border-radius: 10px;
   transform: translateY(100%);
   transition: transform 0.2s ease;
   box-shadow: 0 2px 8px 3px;
   font-family: Helvetica, Arial, sans-serif;
-  width: 75vw;
-  height: 75vh;
+  width: 85vw;
+  height: 90vh;
+  overflow: scroll;
+  z-index: 5;
 }
 
 .modal button {
-  position: absolute;
-  right: -1rem;
-  top: -1rem;
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
   width: 2rem;
   height: 2rem;
   padding: 0.5rem;
@@ -126,6 +128,7 @@ code {
   box-shadow: 1px 1px 1px #0000003a;
   cursor: pointer;
   border: 1px solid rgba(0, 0, 0, 0.562);
+  z-index: 100;
 }
 
 .content {
