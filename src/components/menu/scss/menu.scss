@@ -63,11 +63,10 @@
     .tab:hover { 
       background-color: #535353;
       cursor: pointer;
+      border-bottom-left-radius: 10px;
+      border-top-left-radius: 10px;
     }
 
-    .tab:active {
-      background-color: inherit;
-    }
   }
 
   .buttons{

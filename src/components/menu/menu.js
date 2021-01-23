@@ -75,7 +75,7 @@ function Menu() {
   const tabStorages = mode === "mode_storages" ? "tab active-tab" : "tab";
   const tabPlanner = mode === "mode_planner" ? "tab active-tab" : "tab";
   const tabReceipts = mode === "mode_receipts" ? "tab active-tab" : "tab";
-  const tabIngredients = mode === "mode_ingredients" ? "tab tabi active-tab" : "tab";
+  const tabIngredients = mode === "mode_ingredients" ? "tab active-tab" : "tab";
   const tabExport = mode === "mode_export" ? "tab active-tab" : "tab";
 
   // const auto = "schedule";

@@ -7,7 +7,7 @@
 
 .content {
   display: grid;
-  grid-template-rows: 30px calc(100vh - 405px) 280px;
+  grid-template-rows: 50px calc(100vh - 410px) 260px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-areas:
     "categories categories categories categories"
@@ -48,7 +48,8 @@
     }
 
     .active-category {
-      background-color: rgb(50, 81, 50);
+      background-color: #508150;
+      color: snow;
     }
 }
 
@@ -83,7 +84,7 @@
   border-radius: 10px;
   height: 25px;
   padding: 3px 0px;
-  margin: 5px 5px;
+  // margin: 5px 5px;
   font-size: 16px;
 }
 
@@ -92,7 +93,7 @@
   flex-wrap: wrap;
   overflow: scroll;
   max-width: calc(100vw - 107px);
-  max-height: 250px;
+  max-height: 235px;
   justify-content: space-between;
   background-color: inherit;
   color: inherit;
