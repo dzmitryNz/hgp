@@ -9,43 +9,100 @@ function Modal(props) {
   const receipt = JSON.parse(localStorage.getItem("modalSee"));
   const source = DictJson[language].source;
   const sourceTitle = DictJson[language].sourceTitle;
+  const portions = DictJson[language].portions;
+  const timerDescription = DictJson[language].portions;
+
+const clickEvent = (e) => {
+        let complete = receipt;
+        const target = e.target.classList[0];
+        if(target.match(/-plus|-minus/)) {
+            const propTarget = target.split("-");
+            const propCat = propTarget[0];
+            const propIncr = propTarget[1];
+            const valueId = propCat + '-value';
+            const value = document.getElementById(valueId);
+            if (propIncr === "plus" ) {
+                // receipt. = complete[propCat] + 1;
+                // value.innerText = complete[propCat];
+            }
+            if (propIncr === "minus" && complete[propCat] > 0) {
+                // complete. = complete[propCat] - 1;
+                value.innerText = receipt.strForPersons;
+            }
+        }
+
+      localStorage.setItem("ghp-family", JSON.stringify(complete));
+    }
+
 
   if(!receipt) return (<div></div>);
 
-  let strDescriptionBlock = (<div className="receipt-description"></div>);
+  let strDescriptionBlock = [];
   let strDrinkAlternateBlock = (<div className="receipt-drink-alternate"></div>);
   let strSubCategoryBlock = (<div className="receipt-cat"></div>);
   let strAreaBlock = (<div className="receipt-cat"></div>)
   let strTagsBlock = (<div className="receipt-tags"></div>);
   let strYoutubeBlock = (<div className="receipt-youtube"></div>);
+  let receiptIngredientEmpty = (<div className="receipt-ingredient-empty"></div>);
   let receiptIngredient1Block = (<div className="receipt-ingredient 1"></div>);
-  let receiptIngredient2Block = (<div className="receipt-ingredient 2"></div>);
-  let receiptIngredient3Block = (<div className="receipt-ingredient 3"></div>);
-  let receiptIngredient4Block = (<div className="receipt-ingredient 4"></div>);
-  let receiptIngredient5Block = (<div className="receipt-ingredient 5"></div>);
-  let receiptIngredient6Block = (<div className="receipt-ingredient 6"></div>);
-  let receiptIngredient7Block = (<div className="receipt-ingredient 7"></div>);
-  let receiptIngredient8Block = (<div className="receipt-ingredient 8"></div>);
-  let receiptIngredient9Block = (<div className="receipt-ingredient 9"></div>);
-  let receiptIngredient10Block = (<div className="receipt-ingredient 10"></div>);
-  let receiptIngredient11Block = (<div className="receipt-ingredient 11"></div>);
-  let receiptIngredient12Block = (<div className="receipt-ingredient 12"></div>);
-  let receiptIngredient13Block = (<div className="receipt-ingredient 13"></div>);
-  let receiptIngredient14Block = (<div className="receipt-ingredient 14"></div>);
-  let receiptIngredient15Block = (<div className="receipt-ingredient 15"></div>);
-  let receiptIngredient16Block = (<div className="receipt-ingredient 16"></div>);
-  let receiptIngredient17Block = (<div className="receipt-ingredient 17"></div>);
-  let receiptIngredient18Block = (<div className="receipt-ingredient 18"></div>);
-  let receiptIngredient19Block = (<div className="receipt-ingredient 19"></div>);
-  let receiptIngredient20Block = (<div className="receipt-ingredient 20"></div>);
+  let receiptIngredient2Block = receiptIngredientEmpty;
+  let receiptIngredient3Block = receiptIngredientEmpty;
+  let receiptIngredient4Block = receiptIngredientEmpty;
+  let receiptIngredient5Block = receiptIngredientEmpty;
+  let receiptIngredient6Block = receiptIngredientEmpty;
+  let receiptIngredient7Block = receiptIngredientEmpty;
+  let receiptIngredient8Block = receiptIngredientEmpty;
+  let receiptIngredient9Block = receiptIngredientEmpty;
+  let receiptIngredient10Block = receiptIngredientEmpty;
+  let receiptIngredient11Block = receiptIngredientEmpty;
+  let receiptIngredient12Block = receiptIngredientEmpty;
+  let receiptIngredient13Block = receiptIngredientEmpty;
+  let receiptIngredient14Block = receiptIngredientEmpty;
+  let receiptIngredient15Block = receiptIngredientEmpty;
+  let receiptIngredient16Block = receiptIngredientEmpty;
+  let receiptIngredient17Block = receiptIngredientEmpty;
+  let receiptIngredient18Block = receiptIngredientEmpty;
+  let receiptIngredient19Block = receiptIngredientEmpty;
+  let receiptIngredient20Block = receiptIngredientEmpty;
+  let receiptInstruction = (<div className="receipt-instruction"></div>);
 
   if (receipt) { 
-  if (receipt.strDescription) strDescriptionBlock = (<div className="receipt-description">{receipt.strDescription}</div>);
+  if (receipt.arrNutrition && receipt.arrNutrition !== []) {
+    let nutritionBlockInn = [];
+    receipt.arrNutrition.forEach((el, i) => {
+      const keyNutr = "nutrition " + i;
+      nutritionBlockInn.push(<div key={keyNutr} className="nutrition">
+      <div key={keyNutr} className="nutrition-name">{el.name}</div>
+      <div key={keyNutr} className="nutrition-weight">{el.weight}</div>
+      <div key={keyNutr} className="nutrition-measure">{el.measure}</div>
+      </div>)
+    })
+    const nutritionBlock = (<div className="nutritions">{nutritionBlockInn}</div>);
+    strDescriptionBlock.push(nutritionBlock);
+  }
+  if (receipt.strTags && receipt.strTags !== []) {
+    let tagBlockInn = [];
+    receipt.strTags.forEach((el, i) => {
+      const keyTag = "tag " + i;
+      tagBlockInn.push(<div key={keyTag} className="tag">{el}</div>)
+    })
+    strTagsBlock = (<div className="receipt-tags">{tagBlockInn}</div>);
+    // strDescriptionBlock.push(tagsBlock);
+    }
+
+  if (receipt.strDescription) strDescriptionBlock.push(<div className="receipt-description">{receipt.strDescription}</div>);
   if (receipt.strDrinkAlternate) strDrinkAlternateBlock = (<div className="receipt-drink-alternate">{receipt.strDrinkAlternate}</div>);
-  if (receipt.strSubCategory) strSubCategoryBlock = (<div className="receipt-cat">{receipt.strSubCategory}</div>);
-  if (receipt.strArea) strAreaBlock = (<div className="receipt-cat">{receipt.strArea}</div>);
-  if (receipt.strTags) strTagsBlock = (<div className="receipt-tags">{receipt.strTags}</div>);
+  if (receipt.strSubCategory) strSubCategoryBlock = (<div className="receipt-subcat">{receipt.strSubCategory}</div>);
+  if (receipt.strArea) strAreaBlock = (<div className="receipt-area">{receipt.strArea}</div>);
   if (receipt.strYoutube) strYoutubeBlock = (<div className="receipt-youtube">{receipt.strYoutube}</div>);
+
+  if (receipt.strInstructions && receipt.strInstructions !== []) {
+    receiptInstruction = [];
+    receipt.strInstructions.forEach((str, i) => {
+      const keyI = i + ' step-instruction';
+      receiptInstruction.push(<div key={keyI} class={keyI}>{str}</div>)
+    })
+  }
 
   if (receipt.strIngredient1) receiptIngredient1Block = (
           <div className="receipt-ingredient 1">
@@ -172,26 +229,31 @@ function Modal(props) {
     <>
     <div className={show ? "overlay" : "hide"} onClick={closeModal} />
       <div className={show ? "modal" : "hide"}>
-        <button onClick={closeModal}>X</button>
+        <button onClick={closeModal} className="close material-icons">cancel</button>
         <div className="modal-receipt">
-        <div className="receipt-meal"><h1>{receipt.strMeal}</h1></div>
-            {strTagsBlock}
+        <div className="receipt-meal"><h2>{receipt.strMeal}</h2></div>
           <div className="receipt-category">
-             <div className="receipt-cat">{receipt.strRequestsCounter}</div>
+             {/* <div className="receipt-cat">{receipt.strRequestsCounter}</div> */}
              <div className="receipt-cat">{receipt.strCategory}</div>
              {strSubCategoryBlock}
              {strAreaBlock}
-             <div className="receipt-cat"><a target="_blank" rel="noreferrer" href={receipt.strSource} title={sourceTitle}>{source}</a></div>
+             {strTagsBlock}
+             <div className="receipt-source"><a target="_blank" rel="noreferrer" href={receipt.strSource} title={sourceTitle}>{source}</a></div>
              {strYoutubeBlock}
           </div>
          {strDrinkAlternateBlock}
          <div className="receipt-thumb"><img src={receipt.strMealThumb} alt={receipt.strMeal} /></div>
-         {strDescriptionBlock}
+         <div className="receipt-descriptions">{strDescriptionBlock}</div>
          <div className="receipt-ingredients">
          <div className="receipt-persons">
-         <div className="receipt-persons-minus">-</div>
-         <div className="receipt-persons-value">{receipt.strForPersons}</div>
-         <div className="receipt-persons-plus">+</div>
+         {/* <div  className="receipt-minus material-icons">remove_circle</div>  */}
+         <div className="timer" alt={timerDescription}>
+          <div className="timer-icon material-icons">timelapse</div>
+          <div className="timer-value">{receipt.strTimer ? receipt.strTimer : null}</div>
+         </div>
+         <div onClick={clickEvent} className="persons-descript">{portions}</div>
+         <div id="persons-value" className="persons-value">{receipt.strForPersons}</div>
+         {/* <div onClick={clickEvent} className="receipt-plus material-icons">add_circle</div> */}
          </div>
          {receiptIngredient1Block}
          {receiptIngredient2Block}
@@ -213,8 +275,10 @@ function Modal(props) {
          {receiptIngredient18Block}
          {receiptIngredient19Block}
          {receiptIngredient20Block}
-           <div className="receipt-instruction">{receipt.strInstructions}</div>
-        </div>
+         </div>
+         <div className="receipt-instruction">
+         {receiptInstruction}
+         </div>
       </div>
       </div>
     </>

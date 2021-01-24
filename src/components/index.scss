@@ -125,23 +125,23 @@ code {
   font-family: Helvetica, Arial, sans-serif;
   width: 85vw;
   height: 90vh;
-  overflow: scroll;
   z-index: 5;
 }
 
 .modal button {
-  position: fixed;
-  right: 1rem;
-  top: 1rem;
-  width: 2rem;
-  height: 2rem;
-  padding: 0.5rem;
-  margin: 0 auto;
-  border-radius: 50%;
-  box-shadow: 1px 1px 1px #0000003a;
-  cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, 0.562);
-  z-index: 100;
+    position: fixed;
+    right: 60px;
+    top: 5px;
+    width: 0;
+    height: 0;
+    /* margin: 0 auto; */
+    /* border-radius: 45%; */
+    box-shadow: 1px 1px 1px #0000003a;
+    /* cursor: pointer; */
+    /* border: 1px solid rgba(0, 0, 0, 0.562); */
+    z-index: 100;
+    font-size: 45px;
+    color: inherit;
 }
 
 .content {
