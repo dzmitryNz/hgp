@@ -21,7 +21,7 @@ const ChangeCategory = (e) => {
     localStorage.setItem('hgp-properties', JSON.stringify(localProp))
   }
   if (propertiesChanged)  {
-    UpdateCategory()
+    // UpdateCategory()
   }
 }
 
