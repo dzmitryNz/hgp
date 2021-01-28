@@ -5,6 +5,8 @@ import Modal from './ReceiptModal.js';
 import ModeHeader from "../modeHeader";
 const PropertiesJson = require("../json/properties.json");
 const DictJson = require("../json/dict.json");
+let favLocal = JSON.parse(localStorage.getItem("hgp-favorite"));
+let menuLocal = JSON.parse(localStorage.getItem("hgp-menu"));
 
 function Receipts() {
   const language = PropertiesJson.language;
@@ -12,6 +14,9 @@ function Receipts() {
   const [data, setData] = useState([]);
   const [categoriesData, setCategories] = useState([]);
   const [recentsData, setRecents] = useState([]);
+  const [favoritesData, setFavorites] = useState([]);
+  const [menusData, setMenus] = useState([]);
+  const [menus, setMenusList] = useState(menuLocal);
   const [query, setQuery] = useState('Основные блюда');
   const [categoryHeader, setCategoryHeader] = useState(categoryStr);
   const [show, setShow] = useState(false);
@@ -19,10 +24,13 @@ function Receipts() {
   useEffect(() => {
     let ignore = false;
     const serverUrl = PropertiesJson.serverUrl;
+    const favLocal = JSON.parse(localStorage.getItem("hgp-favorite"));
+    const menuLocal = JSON.parse(localStorage.getItem("hgp-menu"));
 
     async function fetchData() {
       const categoryUrl = serverUrl + '/rec/cat/';
       const categoriesUrl = serverUrl + '/rec/cat/';
+      const arrayUrl = serverUrl + '/rec/array';
       const categoryResult = await axios(categoryUrl + query);
       if (!ignore) setData(categoryResult.data);
 
@@ -30,12 +38,27 @@ function Receipts() {
       if (!ignore) setCategories(categoriesResult.data);
 
       const recentsArr = PropertiesJson.recents;
-      const regEx = recentsArr.join("|");
-      const recentsUrl = serverUrl + '/rec/array';
-      const config = { el: "idMeal", reg: regEx};
+      const regExRec = recentsArr.join("|");
+      const config = { el: "idMeal", reg: regExRec};
 
-      const recentsResult = await axios.post(recentsUrl, config);
+      const recentsResult = await axios.post(arrayUrl, config);
       if (!ignore) setRecents(recentsResult.data);
+
+      const favoritesArr = favLocal ? favLocal : PropertiesJson.favorites;
+      const regExFav = favoritesArr.join("|");
+      const configFav = { el: "idMeal", reg: regExFav};
+
+      const favoritesResult = await axios.post(arrayUrl, configFav);
+      if (!ignore) setFavorites(favoritesResult.data);
+
+      const menusArr = menus ? menus : false;
+      if (menusArr) {
+        const regExMenu = menusArr.join("|");
+        const configMenu = { el: "idMeal", reg: regExMenu};
+
+        const menusResult = await axios.post(arrayUrl, configMenu);
+        if (!ignore) setMenus(menusResult.data);
+      }
     }
 
     fetchData();
@@ -49,7 +72,6 @@ function Receipts() {
     console.log(e.target.innerText); 
     setQuery(e.target.innerText);
     setCategoryHeader(e.target.innerText);
-
   };
 
   const openModal = (e) => {
@@ -65,8 +87,11 @@ function Receipts() {
       case('receipt'):
         receiptSee = data[target];
         break;
-      case('favorie'):
-        receiptSee = recentsData[target];
+      case('favorite'):
+        receiptSee = favoritesData[target];
+        break;
+      case('menue'):
+        receiptSee = menusData[target];
         break;
       default:
     }
@@ -78,7 +103,6 @@ function Receipts() {
 
   const addFavorite = (e) => {
     const target = e.target.classList[0];
-    let favLocal = JSON.parse(localStorage.getItem("hgp-favorite"));
     let favNew = favLocal ? favLocal = Array.from(favLocal): [];
     favNew.push(target);
     const favSet = new Set(favNew);
@@ -90,10 +114,13 @@ function Receipts() {
   const addMenu = (e) => {
     const target = e.target.classList[0];
     console.log(e.target.classList)
-    let menuLocal = JSON.parse(localStorage.getItem("hgp-menu"));
     let menuNew = menuLocal ? menuLocal = Array.from(menuLocal): [];
     menuNew.push(target);
+    const menuSet = new Set(menuNew);
+    menuNew = Array.from(menuSet);
     localStorage.setItem("hgp-menu", JSON.stringify(menuNew))
+    PropertiesJson.menu = menuNew;
+    setMenusList(menuNew)
   }   
 
   let categories = [];
@@ -128,7 +155,7 @@ function Receipts() {
   })
 
   const favoritesArr = [];
-  recentsData.forEach((rec, i) => {
+  favoritesData.forEach((rec, i) => {
     const clasRN = i + " favorite";
     const clasRM = i + " favorite-meal";
     const clasRB = i + " favorite-buttons";
@@ -138,6 +165,23 @@ function Receipts() {
     favoritesArr.push(<div key={rec.idMeal} className={ clasRN } >
       <div className={clasRB}>
         <div onClick={addMenu} className={clasAdd}>add_circle</div>
+        <div onClick={addFavorite} className={clasFvr}>remove_circle</div>
+      </div>
+      <div onClick={openModal} className={clasRM}>{rec.strMeal}</div>
+    </div>)
+  })
+
+  const menusArr = [];
+  menusData.forEach((rec, i) => {
+    const clasRN = i + " menue";
+    const clasRM = i + " menue-meal";
+    const clasRB = i + " menue-buttons";
+    const clasFvr =  rec.idMeal + " menue-favorite material-icons";
+    const clasAdd =  rec.idMeal + " menue-add material-icons";
+
+    menusArr.push(<div key={rec.idMeal} className={ clasRN } >
+      <div className={clasRB}>
+        <div onClick={addMenu} className={clasAdd}>remove_circle</div>
         <div onClick={addFavorite} className={clasFvr}>favorite_border</div>
       </div>
       <div onClick={openModal} className={clasRM}>{rec.strMeal}</div>
@@ -183,6 +227,12 @@ function Receipts() {
       })}
       </div>
       </div>
+    <div className="menus">
+    <div className="menus-header">{DictJson[language].menu}</div>
+      <div className="menus-content">
+      {menusArr}
+      </div>
+    </div>
     <div className="recents">
     <div className="recents-header">{DictJson[language].recent}</div>
       <div className="recents-content">
