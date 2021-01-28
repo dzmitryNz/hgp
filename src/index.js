@@ -6,7 +6,7 @@ import Header from './components/header/header';
 import Menu from './components/menu/menu';
 import Family from './components/family/Family';
 import Planner from './components/planner/Planner';
-import Receipts from './components/receipts/Receipts';
+import Receipts from './components/receipts/ReceiptsFull';
 import Storages from './components/storages/Storages';
 import Ingredients from './components/ingredients/Ingredients';
 import Export from './components/export/Export';

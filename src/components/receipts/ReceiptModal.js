@@ -71,10 +71,10 @@ const clickEvent = (e) => {
     let nutritionBlockInn = [];
     receipt.arrNutrition.forEach((el, i) => {
       const keyNutr = "nutrition " + i;
-      nutritionBlockInn.push(<div key={keyNutr} className="nutrition">
-      <div key={keyNutr} className="nutrition-name">{el.name}</div>
-      <div key={keyNutr} className="nutrition-weight">{el.weight}</div>
-      <div key={keyNutr} className="nutrition-measure">{el.measure}</div>
+      nutritionBlockInn.push(<div key={keyNutr} className={keyNutr}>
+      <div  className="nutrition-name">{el.name}</div>
+      <div  className="nutrition-weight">{el.weight}</div>
+      <div  className="nutrition-measure">{el.measure}</div>
       </div>)
     })
     const nutritionBlock = (<div className="nutritions">{nutritionBlockInn}</div>);
@@ -100,7 +100,7 @@ const clickEvent = (e) => {
     receiptInstruction = [];
     receipt.strInstructions.forEach((str, i) => {
       const keyI = i + ' step-instruction';
-      receiptInstruction.push(<div key={keyI} class={keyI}>{str}</div>)
+      receiptInstruction.push(<div key={keyI} className={keyI}>{str}</div>)
     })
   }
 

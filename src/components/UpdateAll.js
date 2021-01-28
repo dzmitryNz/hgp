@@ -5,7 +5,7 @@ import Header from './header/header';
 import Menu from './menu/menu';
 import Family from './family/Family';
 import Planner from './planner/Planner';
-import Receipts from './receipts/Receipts';
+import Receipts from './receipts/ReceiptsFull';
 import Storages from './storages/Storages';
 import Ingredients from './ingredients/Ingredients';
 import Export from './export/Export';
