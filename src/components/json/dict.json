@@ -28,6 +28,7 @@
         "noDataMessage": "Отсутствуют данные, простите",
         "loadingMessage": "Погодите, получение данных может занять некоторое время :)",
         "source": "Источник",
+        "emptyHere": "Здесь пока пусто",
         "sourceTitle": "Рецепт мы взяли здесь"
     },
     "By": {
@@ -51,14 +52,15 @@
         "categories": "Катэгорыі",
         "areas": "Кухні розных краін",
         "popular": "Папулярныя рэцэпты",
-        "recent": "Недавние",
-        "favorites": "Избранные",
-        "menu": "Меню недели",
+        "recent": "Папулярныя",
+        "favorites": "Выбраныя",
+        "menu": "Меню тыдня",
         "receiptOverview": "Рэцэпт",
-        "portions": "Количество порций: ",
+        "portions": "Колькасць порцый: ",
         "noDataMessage": "Няма дадзеных, прабачце",
         "loadingMessage": "Трымайцеся, загрузка дадзеных можа заняць некаторы час :)",
         "source": "Крыніца",
+        "emptyHere": "Тут пакуль пуста",
         "sourceTitle": "Рэцэпт ўзялі адсюль"
      },
     "Ua": {
@@ -82,14 +84,15 @@
         "categories": "Категорії",
         "areas": "Кухні різних країн",
         "popular": "Популярні рецепти",
-        "recent": "Недавние",
-        "favorites": "Избранные",
-        "menu": "Меню недели",
+        "recent": "Популярні",
+        "favorites": "Вибрані",
+        "menu": "Меню тижні",
         "receiptOverview": "Рецепт",
-        "portions": "Количество порций: ",
+        "portions": "Кількість порцій: ",
         "noDataMessage": "Немає даних, вибачте",
         "loadingMessage": "Зачекайте, отримання даних може зайняти деякий час :)",
-        "source": "Источник",
+        "source": "Джерело",
+        "emptyHere": "Тут поки порожньо",
         "sourceTitle": "Рецепт взяли звідси"
     },
     "En": {
@@ -116,10 +119,11 @@
         "favorites": "Favorites",
         "menu": "Menu",
         "receiptOverview": "Receipt",
-        "portions": "Количество порций: ",
+        "portions": "Number of servings: ",
         "noDataMessage": "No data, sorry",
         "loadingMessage": "Hold on, fetching data may take some time :)",
         "source": "Source",
+        "emptyHere": "Empty here",
         "sourceTitle": "The recipe was taken from here"
     }
 }

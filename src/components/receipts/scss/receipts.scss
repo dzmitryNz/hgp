@@ -45,6 +45,11 @@
     height: 20px;
     }
 
+    .category-name:hover {
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
     .active-category {
       background-color: #508150;
       color: snow;
@@ -165,10 +170,8 @@
 
   .menue-meal:hover,
   .recent-meal:hover,
-  .favorite-meal:hover,
-  .recent-add:hover,
-  .recent-favorite:hover {
-      font-size: 15px;
+  .favorite-meal:hover {
+    font-size: 15px;
     font-weight: 600;
   }
 
