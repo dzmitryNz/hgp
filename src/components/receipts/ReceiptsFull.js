@@ -102,6 +102,7 @@ function Receipts() {
   const closeModal = () => setShow(false);
 
   const addFavorite = (e) => {
+    let favLocal = JSON.parse(localStorage.getItem("hgp-favorite"));
     const target = e.target.classList[0];
     let favNew = favLocal ? favLocal = Array.from(favLocal): [];
     favNew.push(target);
@@ -112,6 +113,7 @@ function Receipts() {
   }
 
   const addMenu = (e) => {
+    let menuLocal = JSON.parse(localStorage.getItem("hgp-menu"));
     const target = e.target.classList[0];
     console.log(e.target.classList)
     let menuNew = menuLocal ? menuLocal = Array.from(menuLocal): [];
