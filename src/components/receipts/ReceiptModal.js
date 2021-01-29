@@ -210,7 +210,7 @@ function Modal(props) {
   return (
     <>
     <div className={show ? "overlay" : "hide"} onClick={closeModal} />
-      <div className={show ? "modal" : "hideinner"}>
+      <div className={show ? "modal" : "hide"}>
         <button onClick={closeModal} className="close material-icons">cancel</button>
         <div className="modal-receipt">
         <div className="receipt-meal"><h2>{receipt.strMeal}</h2></div>

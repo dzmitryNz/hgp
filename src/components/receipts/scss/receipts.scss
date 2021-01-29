@@ -15,7 +15,7 @@
     "category category category menus"
     "category category category recents"
     "category category category favorites";
-  max-height: calc(100vh - 125px);
+  max-height: calc(100vh - 91px);
   max-width: calc(100vw - 105px);
   justify-content: space-around;
   background-color: inherit;
@@ -110,7 +110,7 @@
   border-top-right-radius: 10px;
   height: 25px;
   padding: 3px 0px;
-  margin: 0 50px 0 0px;
+  margin: 0 40% 0 0px;
   font-size: 16px;
   color: snow;
 }
@@ -121,7 +121,7 @@
   // display: flex;
   // flex-wrap: wrap;
   overflow: auto;
-  max-height: calc((100vh / 3) - 73px);
+  height: calc((100vh / 3) - 73px);
   justify-content: space-between;
   background-color: inherit;
   color: inherit;
@@ -139,7 +139,7 @@
   .menue-favorite,
   .favorite-add,
   .favorite-favorite {
-    font-size: 18px;
+    font-size: 21px;
   }
 
   .menue-meal,
@@ -149,6 +149,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    line-height: 23px;
+    font-size: 19px;
   }
 
 
@@ -171,7 +173,7 @@
   .menue-meal:hover,
   .recent-meal:hover,
   .favorite-meal:hover {
-    font-size: 15px;
+    font-size: 22px;
     font-weight: 600;
   }
 
@@ -277,7 +279,7 @@
   position: relative;
   width: calc(85vw - 30px) ;
   height: calc(90vh - 40px);
-  overflow: scroll;
+  overflow: auto;
   
   .receipt-category {
     grid-area: receipCat;

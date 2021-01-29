@@ -123,9 +123,7 @@ function Receipts() {
         receiptSee = recentsData[target];
         break;
       case('receipt'):
-        // receiptSee = data[target];
         receiptSee = category[target];
-    // console.log(target, receiptSee)
         break;
       case('favorite'):
         receiptSee = favoritesData[target];
