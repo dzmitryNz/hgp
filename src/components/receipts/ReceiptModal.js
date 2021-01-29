@@ -7,7 +7,8 @@ function Modal(props) {
   // const receiptOverviewTitle = DictJson[language].receiptOverview;
   const { show, closeModal } = props;
   const receipt = JSON.parse(localStorage.getItem("modalSee"));
-  if(receipt.length === 0) return (<div className="modal-empty"></div>);
+  if (!receipt) return (<div className="modal-empty"></div>);
+  if (receipt.length === 0) return (<div className="modal-empty"></div>);
   const source = DictJson[language].source;
   const sourceTitle = DictJson[language].sourceTitle;
   const portions = DictJson[language].portions;

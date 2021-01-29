@@ -9,6 +9,7 @@ let favLocal = JSON.parse(localStorage.getItem("hgp-favorite"));
 let menuLocal = JSON.parse(localStorage.getItem("hgp-menu"));
 let category = [];
 let categoryBlock = [];
+let count = '';
 
 function Receipts() {
   const language = PropertiesJson.language;
@@ -65,12 +66,12 @@ function Receipts() {
     // const menuLocal = JSON.parse(localStorage.getItem("hgp-menu"));
     async function fetchMenu() {
       const arrayUrl = serverUrl + '/rec/array';
-      const menusArr = menus ? menus : false;
+      const menusArr = menus ? menus : [];
       const regExMenu = menusArr.join("|");
       let configMenu = { };
       let menusResult = {data: {}};
       if (regExMenu.length !== 0) {
-        configMenu = { el: "idMeal", reg: regExMenu};
+        configMenu = { el: "idMeal", reg: regExMenu, cat: count};
         menusResult = await axios.post(arrayUrl, configMenu);
       }
       if (!ignore) setMenus(menusResult.data);
@@ -105,7 +106,7 @@ function Receipts() {
   // console.log(data, categoriesData)
 
   const changeCategory = (e) => { 
-    console.log(e.target.innerText); 
+    // console.log(e.target.innerText); 
     setQuery(e.target.innerText);
     setCategoryHeader(e.target.innerText);
     document.querySelector(".active-category").classList.remove("active-category");
@@ -124,7 +125,7 @@ function Receipts() {
       case('receipt'):
         // receiptSee = data[target];
         receiptSee = category[target];
-    console.log(target, receiptSee)
+    // console.log(target, receiptSee)
         break;
       case('favorite'):
         receiptSee = favoritesData[target];
@@ -184,6 +185,7 @@ function Receipts() {
     let menuLocal = JSON.parse(localStorage.getItem("hgp-menu"));
     const target = e.target.classList[0];
     let menuNew = menuLocal ? menuLocal = Array.from(menuLocal): [];
+    count = target;
     updateMenu(target, menuNew);
   }   
 
