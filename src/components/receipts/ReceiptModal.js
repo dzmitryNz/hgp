@@ -7,34 +7,11 @@ function Modal(props) {
   // const receiptOverviewTitle = DictJson[language].receiptOverview;
   const { show, closeModal } = props;
   const receipt = JSON.parse(localStorage.getItem("modalSee"));
-  if(receipt.length === 0) return (<div></div>);
+  if(receipt.length === 0) return (<div className="modal-empty"></div>);
   const source = DictJson[language].source;
   const sourceTitle = DictJson[language].sourceTitle;
   const portions = DictJson[language].portions;
   const timerDescription = DictJson[language].portions;
-
-const clickEvent = (e) => {
-        let complete = receipt;
-        const target = e.target.classList[0];
-        if(target.match(/-plus|-minus/)) {
-            const propTarget = target.split("-");
-            const propCat = propTarget[0];
-            const propIncr = propTarget[1];
-            const valueId = propCat + '-value';
-            const value = document.getElementById(valueId);
-            if (propIncr === "plus" ) {
-                // receipt. = complete[propCat] + 1;
-                // value.innerText = complete[propCat];
-            }
-            if (propIncr === "minus" && complete[propCat] > 0) {
-                // complete. = complete[propCat] - 1;
-                value.innerText = receipt.strForPersons;
-            }
-        }
-
-      localStorage.setItem("ghp-family", JSON.stringify(complete));
-    }
-
 
   let strDescriptionBlock = [];
   let strDrinkAlternateBlock = (<div className="receipt-drink-alternate"></div>);
@@ -70,13 +47,18 @@ const clickEvent = (e) => {
     let nutritionBlockInn = [];
     receipt.arrNutrition.forEach((el, i) => {
       const keyNutr = "nutrition " + i;
-      nutritionBlockInn.push(<div key={keyNutr} className={keyNutr}>
-      <div  className="nutrition-name">{el.name}</div>
-      <div  className="nutrition-weight">{el.weight}</div>
-      <div  className="nutrition-measure">{el.measure}</div>
-      </div>)
+      const keyNutrName = "nutrition-name " + i;
+      const keyNutrWeight = "nutrition-weight " + i;
+      const keyNutrMeasure = "nutrition-measure " + i;
+      nutritionBlockInn.push(
+      <div key={keyNutr} className={keyNutr}>
+      <div className={keyNutrName}>{el.name}</div>
+      <div className={keyNutrWeight}>{el.weight}</div>
+      <div className={keyNutrMeasure}>{el.measure}</div>
+      </div>
+      )
     })
-    const nutritionBlock = (<div className="nutritions">{nutritionBlockInn}</div>);
+    const nutritionBlock = (<div key="nutritins" className="nutritions">{nutritionBlockInn}</div>);
     strDescriptionBlock.push(nutritionBlock);
   }
   if (receipt.strTags && receipt.strTags !== []) {
@@ -86,7 +68,7 @@ const clickEvent = (e) => {
       tagBlockInn.push(<div key={keyTag} className="tag">{el}</div>)
     })
     strTagsBlock = (<div className="receipt-tags">{tagBlockInn}</div>);
-    // strDescriptionBlock.push(tagsBlock);
+    // strDescriptionBlock.push(strTagsBlock);
     }
 
   if (receipt.strDescription) strDescriptionBlock.push(<div className="receipt-description">{receipt.strDescription}</div>);
@@ -227,7 +209,7 @@ const clickEvent = (e) => {
   return (
     <>
     <div className={show ? "overlay" : "hide"} onClick={closeModal} />
-      <div className={show ? "modal" : "hide"}>
+      <div className={show ? "modal" : "hideinner"}>
         <button onClick={closeModal} className="close material-icons">cancel</button>
         <div className="modal-receipt">
         <div className="receipt-meal"><h2>{receipt.strMeal}</h2></div>
@@ -250,7 +232,7 @@ const clickEvent = (e) => {
           <div className="timer-icon material-icons">timelapse</div>
           <div className="timer-value">{receipt.strTimer ? receipt.strTimer : null}</div>
          </div>
-         <div onClick={clickEvent} className="persons-descript">{portions}</div>
+         <div className="persons-descript">{portions}</div>
          <div id="persons-value" className="persons-value">{receipt.strForPersons}</div>
          {/* <div onClick={clickEvent} className="receipt-plus material-icons">add_circle</div> */}
          </div>

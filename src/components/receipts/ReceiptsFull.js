@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 
-import Modal from './ReceiptModal.js';
+import Modal from './ReceiptModal';
 import ModeHeader from "../modeHeader";
 const PropertiesJson = require("../json/properties.json");
 const DictJson = require("../json/dict.json");
