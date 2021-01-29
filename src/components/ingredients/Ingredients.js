@@ -14,6 +14,7 @@ function Ingredients() {
   let favLocal = JSON.parse(localStorage.getItem("hgp-favorite"));
   let menuLocal = JSON.parse(localStorage.getItem("hgp-menu"));
   if (!menuLocal) menuLocal = [];
+  if (!favLocal) favLocal = [];
   const language = PropertiesJson.language;
   const empty = (<div className="menue-meal empty">{DictJson[language].emptyHere}</div>);
   const [menusData, setMenus] = useState([]);

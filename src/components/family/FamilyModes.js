@@ -65,7 +65,7 @@ function FamilyModes() {
             }
         }
 
-        localStorage.setItem("ghp-family", JSON.stringify(complete));
+        localStorage.setItem("hgp-family", JSON.stringify(complete));
     }
 
     const adultsBlock = () =>{
