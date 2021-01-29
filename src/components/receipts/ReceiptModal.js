@@ -7,6 +7,7 @@ function Modal(props) {
   // const receiptOverviewTitle = DictJson[language].receiptOverview;
   const { show, closeModal } = props;
   const receipt = JSON.parse(localStorage.getItem("modalSee"));
+  if(receipt.length === 0) return (<div></div>);
   const source = DictJson[language].source;
   const sourceTitle = DictJson[language].sourceTitle;
   const portions = DictJson[language].portions;
@@ -34,8 +35,6 @@ const clickEvent = (e) => {
       localStorage.setItem("ghp-family", JSON.stringify(complete));
     }
 
-
-  if(!receipt) return (<div></div>);
 
   let strDescriptionBlock = [];
   let strDrinkAlternateBlock = (<div className="receipt-drink-alternate"></div>);

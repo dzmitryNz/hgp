@@ -7,6 +7,8 @@ const PropertiesJson = require("../json/properties.json");
 const DictJson = require("../json/dict.json");
 let favLocal = JSON.parse(localStorage.getItem("hgp-favorite"));
 let menuLocal = JSON.parse(localStorage.getItem("hgp-menu"));
+let category = [];
+let categoryBlock = [];
 
 function Receipts() {
   const language = PropertiesJson.language;
@@ -22,7 +24,6 @@ function Receipts() {
   const [recent, setRecentList] = useState(favLocal);
   const [categoryHeader, setCategoryHeader] = useState(categoryStr);
   const [show, setShow] = useState(false);
-  let curentActiveCat = {};
 
   useEffect(() => {
     let ignore = false;
@@ -88,7 +89,7 @@ function Receipts() {
       const arrayUrl = serverUrl + '/rec/array';
       const favoritesArr = favorite ? favorite : PropertiesJson.favorites;
       const regExFav = favoritesArr.join("|");
-      console.log(regExFav, favoritesArr, regExFav === [] ? true : false)
+      // console.log(regExFav, favoritesArr, regExFav === [] ? true : false)
       let favoritesResult = {data: {}};
       let configFav = {};
       if (regExFav.length !== 0) {
@@ -114,7 +115,6 @@ function Receipts() {
   const openModal = (e) => {
     const target = e.target.classList[0]
     const from = e.target.classList[1].split('-')[0]
-    // console.log(target, from)
     
     let receiptSee = {};
     switch (from) {
@@ -122,7 +122,9 @@ function Receipts() {
         receiptSee = recentsData[target];
         break;
       case('receipt'):
-        receiptSee = data[target];
+        // receiptSee = data[target];
+        receiptSee = category[target];
+    console.log(target, receiptSee)
         break;
       case('favorite'):
         receiptSee = favoritesData[target];
@@ -132,8 +134,10 @@ function Receipts() {
         break;
       default:
     }
-    localStorage.setItem("modalSee", JSON.stringify(receiptSee))
-    setShow(true);
+    if (receiptSee) {
+      localStorage.setItem("modalSee", JSON.stringify(receiptSee));
+      setShow(true);
+    }
   }
 
   const closeModal = () => setShow(false);
@@ -263,6 +267,37 @@ function Receipts() {
   })
   }
 
+  const setCategory = (searchExp, categoryData) => {
+    if (!searchExp) category = categoryData;
+    else {
+    category = categoryData.filter(rec => rec.strMeal.includes(searchExp.toLowerCase()))
+    }
+    // console.log(searchExp, category.length)
+    categoryBlock = category.map((rec, i) => {
+        const clasNm =  i + " receipt";
+        const clasNM =  i + " receipt-meal";
+        const clasNS =  i + " receipt-see";
+        const clasNB =  i + " receipt-buttons";
+        const clasFvr =  rec.idMeal + " receipt-favorite material-icons";
+        const clasAdd =  rec.idMeal + " receipt-add material-icons";
+
+        const divStyle = {
+           backgroundImage: 'url(' + rec.strMealThumb + ')',
+              };
+        return (
+          <div style={divStyle} key={rec.idMeal} className={ clasNm } >
+            <div className={clasNB}>
+            <div onClick={addMenu} className={clasAdd}>add_circle</div>
+            <div onClick={addFavorite} className={clasFvr}>favorite_border</div>
+            </div>
+            <div onClick={openModal} className={clasNS}></div>
+            <div className={clasNM}>{rec.strMeal}</div>
+            </div>
+        )} )
+      }
+  
+  setCategory(null, data)
+
   return (
     <div id='receipts' className='receipts'>
       <ModeHeader mode={ 'receipts' }/>
@@ -274,32 +309,12 @@ function Receipts() {
            </div>
         </div>
       </div>
-      {/* <input value={query} onChange={e => setQuery(e.target.value)} /> */}
     <div id='category' className='category'>
-    <div className="category-header">{ categoryHeader }</div>
+    <div className="category-header">{ categoryHeader }
+      {/* <input onChange={e => setCategory(e.target.value, data)} /> */}
+    </div>
     <div className='category-content'>
-      {data.map((categor, i) => {
-        const clasNm =  i + " receipt";
-        const clasNM =  i + " receipt-meal";
-        const clasNS =  i + " receipt-see";
-        const clasNB =  i + " receipt-buttons";
-        const clasFvr =  categor.idMeal + " receipt-favorite material-icons";
-        const clasAdd =  categor.idMeal + " receipt-add material-icons";
-
-        const divStyle = {
-           backgroundImage: 'url(' + categor.strMealThumb + ')',
-              };
-        return (
-          <div style={divStyle} key={categor.idMeal} className={ clasNm } >
-            <div className={clasNB}>
-            <div onClick={addMenu} className={clasAdd}>add_circle</div>
-            <div onClick={addFavorite} className={clasFvr}>favorite_border</div>
-            </div>
-            <div onClick={openModal} className={clasNS}></div>
-            <div className={clasNM}>{categor.strMeal}</div>
-            </div>
-        );
-      })}
+        {categoryBlock}
       </div>
       </div>
     <div className="menus">
