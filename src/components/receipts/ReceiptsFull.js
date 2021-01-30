@@ -49,12 +49,10 @@ function Receipts() {
   useEffect(() => {
     let ignore = false;
     const serverUrl = PropertiesJson.serverUrl;
-    const arrayUrl = serverUrl + '/rec/array';
-    const recentsArr = PropertiesJson.recents;
-    const regExRec = recentsArr.join("|");
-    const config = { el: "idMeal", reg: regExRec};
+    const popularUrl = serverUrl + '/rec/popular';
+
     async function fetchRecents() {
-    const recentsResult = await axios.post(arrayUrl, config);
+    const recentsResult = await axios(popularUrl);
      if (!ignore) setRecents(recentsResult.data);
     }
       fetchRecents();
@@ -326,7 +324,7 @@ function Receipts() {
       </div>
     </div>
     <div className="recents">
-    <div className="recents-header">{DictJson[language].recent}</div>
+    <div className="recents-header">{DictJson[language].popular}</div>
       <div className="recents-content">
       {recentsArr}
       </div>
