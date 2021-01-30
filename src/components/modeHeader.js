@@ -1,4 +1,5 @@
 import React from 'react';
+import UpdateAll from './UpdateAll';
 const PropertiesJson = require("./json/properties.json");
 const DictJson = require("./json/dict.json");
 
@@ -8,8 +9,9 @@ const nextMode = () => {
   let rootClassList = root.classList;
   const indexMode = modes.indexOf(rootClassList[1]);
   const ClassName = indexMode === modes.length - 1 ? modes[0] : modes[indexMode + 1];
-  root.classList.remove(rootClassList[1]);
-  root.classList.add(ClassName);
+  // root.classList.remove(rootClassList[1]);
+  // root.classList.add(ClassName);
+  UpdateAll(ClassName)
 }
 
 function ModeHeader(data) {

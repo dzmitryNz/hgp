@@ -16,5 +16,5 @@
 "family": {"adults": 2, "children": 1, "adultsdiet": 1, "childrendiet": 1, "pets": ["cat", "fish", "turtle"]},
 "party": {"adults": 8, "children": 2, "adultsdiet": 1, "childrendiet": 1},
 "modes": ["mode_family", "mode_storages", "mode_planner", "mode_receipts", "mode_ingredients", "mode_export"],
-"serverUrl": "http://clonewars.ga:3000"
+"serverUrl": "http://192.168.1.66:3000"
 }

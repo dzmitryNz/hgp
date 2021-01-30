@@ -7,6 +7,7 @@ let root = document.getElementById("root");
 
 function showMenu(e) {
   const target = e.target.className.split(' ')[0];
+  console.log(target)
   let themesHidden = document.querySelector(".themes-hidden");
   let langsHidden = document.querySelector(".langs-hidden");
   let themes = document.querySelector(".themes");
@@ -22,10 +23,11 @@ function showMenu(e) {
     if (langsHidden) langsHidden.className = "langs"
     if (langs) langs.className = "langs-hidden"
   }
-  if (target === "footer") {
-    if (footrHidden) langsHidden.className = "footer"
-    if (footer) langs.className = "footer-hidden"
+  if (target === "footer-switcher") {
+    if (footrHidden) footrHidden.className = "footer"
+    if (footer) footer.className = "footer-hidden"
   }
+
 }
 
 function changeProperties(e) {
@@ -97,6 +99,27 @@ function Menu() {
     const classNames = el + " lang";
     langs.push(<div key={el} className={classNames} onClick={ changeProperties }>{el}</div>)
     })
+  const footer = (
+    <div className="footer-wrapper">
+      <div className="year">2021</div>
+      <div className="git">
+      <div className="git-icon"></div>
+      <a target="_blank" href="https://github.com/dzmitrynz" rel="noreferrer"><span>dzmitryNz</span></a>
+      </div>
+      <div className="git">
+      <div className="git-icon"></div>
+      <a target="_blank" href="https://github.com/chernataly2020" rel="noreferrer"><span>chernataly</span></a>
+      </div>
+      <div className="git">
+      <div className="git-icon"></div>
+      <a target="_blank" href="https://github.com/Saylance2503" rel="noreferrer"><span>Saylance</span></a>
+      </div>
+      <div className="git">
+      <div className="git-icon"></div>
+      <a target="_blank" href="https://github.com/kosmodromm" rel="noreferrer"><span>kosmodromm</span></a>
+      </div>
+      <div className="rsschool"></div>
+    </div>) 
 
   return (
     <div className="menu">
@@ -132,7 +155,7 @@ function Menu() {
         <div className="theme material-icons" onClick={ showMenu }>{ iconTheme }</div>
       </div>
       <div className="footer-switcher" onClick={ showMenu }>{footerTitle}</div>
-        <div className="footer-hidden">{ themes }</div>
+        <div className="footer-hidden">{ footer }</div>
       </div>
     </div>
   );
