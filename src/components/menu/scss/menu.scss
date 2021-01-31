@@ -20,7 +20,7 @@
     grid-area: header;
     font-size: 14px;
     text-align: left;
-    line-height: 30px;
+    line-height: 25px;
     margin: 5px;
     max-width: 100px;
   }
@@ -53,11 +53,11 @@
     }
 
     .tabi { 
-    height: 50px;
+    height: 8vh;
     width: 100px;
     background-size: contain;
     position: relative;
-    top: 10px;
+    top: 3px;
     }
 
     .tab:hover { 
@@ -77,9 +77,6 @@
     align-self: self-end;
     color: inherit;
     background: inherit;
-
-    div {
-    }
 
     .footer-switcher:hover,
     .theme:hover,
@@ -139,9 +136,10 @@
   .footer,
   .theme,
   .lang {
-    margin: 8px 8px;
+    margin: 0.5vh 8px;
     background-color: #3B5337;
     border-radius: 10px;
+    color: inherit;
   }
 
   .footer-wrapper {
@@ -149,7 +147,7 @@
     position: absolute;
     width: fit-content;
     bottom: 0px;
-    left: 20px;
+    left: 80px;
     z-index: 120;
     background-color: #3B5337;
     border-radius: 10px;

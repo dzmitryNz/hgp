@@ -7,12 +7,12 @@
 
     .content {
       display: grid;
-      grid-template-rows: 30px calc(100vh - 140px);
+      grid-template-rows: 0px calc(100vh - 92px);
       grid-template-columns: 1fr 1fr;
       grid-template-areas:
         "modes modes"
         "mode mode";
-      max-height: calc(100vh - 125px);
+      max-height: calc(100vh - 91px);
       max-width: calc(100vw - 105px);
       justify-content: space-around;
       color: inherit;
@@ -36,12 +36,7 @@
       width: 100%;   
       color: inherit;
       background-color: inherit;
-    /* border: 1px solid white; */
-    /* border-top-left-radius: 10px; */
-    /* border-top-right-radius: 10px; */
-    /* margin: 0 5px; */
-    /* background: cadetblue; */
-    /* border-bottom-width: 0px; */
+      overflow: auto;
     }
 
     .adults-header,
@@ -87,13 +82,13 @@
 
     .pets {
       display: grid;
-      grid-template-rows: 40px 18vh;
+      grid-template-rows: 40px 15vh;
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-areas:
         "petsicon petsheader petsheader"
         "petsicon petsswitcher petsswitcher";
       justify-content: space-around;
-      font-size: 35px;
+      font-size: 2rem;
       margin-left: 10px;
       color: inherit;
       background-color: inherit;
@@ -108,12 +103,16 @@
           grid-area: petsicon;
           background: url(../assets/images/cat-animal.svg) no-repeat center center;
           height: 18vh;
+          align-self: center;
         }
 
         .pets-header {
           grid-area: petsheader;
-          text-align: left;
+          text-align: center;
           padding: 0 12vw;
+          display: flex;
+          white-space: nowrap;
+          overflow: hidden;
         }
 
         .pets-switcher {
@@ -142,13 +141,13 @@
     }
       .children {
       display: grid;
-      grid-template-rows: 40px 18vh;
+      grid-template-rows: 40px 15vh;
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-areas:
         "childrenicon childrenheader childrendietheader"
         "childrenicon childrenswitcher childrendietswitcher";
       justify-content: space-around;
-      font-size: 35px;
+      font-size: 2rem;
       margin-left: 10px;
       // max-height: calc(100vh - 125px);
       // max-width: calc(100vw - 105px);
@@ -157,6 +156,7 @@
         grid-area: childrenicon;
         background: url(../assets/images/kids-children.svg) no-repeat center center;
         height: 18vh;
+        align-self: center;
       }
 
       .children-header {
@@ -173,7 +173,9 @@
 
         .childrendiet-header {
           grid-area: childrendietheader;
-          text-align: left;
+          text-align: center;
+          white-space: nowrap;
+          overflow: hidden; 
         }
 
         .childrendiet-switcher {
@@ -186,13 +188,13 @@
 
     .adults {
         display: grid;
-      grid-template-rows: 40px 18vh;
+      grid-template-rows: 40px 15vh;
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-areas:
         "adultsicon adultsheader adultsdietheader"
         "adultsicon adultsswitcher adultsdietswitcher";
       justify-content: space-around;
-      font-size: 35px;
+      font-size: 2rem;
       margin-left: 10px;
       // max-height: calc(100vh - 125px);
       // max-width: calc(100vw - 105px);
@@ -201,6 +203,7 @@
         grid-area: adultsicon;
         background: url(../assets/images/couplefamily.svg) no-repeat center center;
         height: 18vh;
+        align-self: center;
       }
 
       .adults-header {
@@ -217,7 +220,9 @@
 
         .adultsdiet-header {
           grid-area: adultsdietheader;
-          text-align: left;
+          text-align: center;
+          white-space: nowrap;
+          overflow: hidden;  
         }
 
         .adultsdiet-switcher {
