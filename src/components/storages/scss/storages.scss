@@ -24,26 +24,23 @@
      background-color: inherit;
     }
 
-    .mode-family {
-      grid-area: mode;
-      padding: 6px 0px;
-      width: 100%;   
-      color: inherit;
-      background-color: inherit;
-      overflow: auto;
-    }
-
     .fridge-header,
     .fridgetemp-header,
+    .pantry-header,
+    .pantrytemp-header,
     .freezertemp-header,
     .freezer-header,
     .pantry-header{
       color: #518051;
+      
     }
 
     .fridge-minus, .fridge-plus,
     .fridgemin-minus, .fridgemin-plus,
     .fridgemax-minus, .fridgemax-plus,
+    .pantry-minus, .pantry-plus,
+    .pantrymin-minus, .pantrymin-plus,
+    .pantrymax-minus, .pantrymax-plus,
     .freezer-minus, .freezer-plus,
     .freezermax-minus, .freezermax-plus,
     .freezermin-minus, .freezermin-plus {
@@ -55,6 +52,10 @@
     .fridgemin-minus::selection, .fridgemin-plus::selection,
     .fridgemax-minus::selection, .fridgemax-plus::selection,
     .freezertemp-minus::selection, .freezertemp-plus::selection,
+    .pantry-minus::selection, .pantry-plus::selection,
+    .pantrymin-minus::selection, .pantrymin-plus::selection,
+    .pantrymax-minus::selection, .pantrymax-plus::selection,
+    .freezertemp-minus::selection, .freezertemp-plus::selection,
     .freezer-minus::selection, .freezer-plus::selection {
       background: none;
     }
@@ -62,6 +63,9 @@
     .fridge-minus:hover, .fridge-plus:hover,
     .fridgemin-minus:hover, .fridgemin-plus:hover,
     .fridgemax-minus:hover, .fridgemax-plus:hover,
+    .pantry-minus:hover, .pantry-plus:hover,
+    .pantrymin-minus:hover, .pantrymin-plus:hover,
+    .pantrymax-minus:hover, .pantrymax-plus:hover,
     .freezertemp-minus:hover, .freezertemp-plus:hover,
     .freezer-minus:hover, .freezer-plus:hover {
       cursor: pointer;
@@ -72,6 +76,8 @@
     .fridge-minus:active, .fridge-plus:active,
     .fridgemin-minus:active, .fridgemin-plus:active,
     .fridgemax-minus:active, .fridgemax-plus:active,
+    .pantrymin-minus:active, .pantrymin-plus:active,
+    .pantrymax-minus:active, .pantrymax-plus:active,
     .freezertemp-minus:active, .freezertemp-plus:active,
     .freezer-minus:active, .freezer-plus:active,
     .pantry-plus:active, .pantry-minus:active  {
@@ -95,7 +101,7 @@
 
       .pantry-icon {
         grid-area: pantryicon;
-        background: url(../assets/images/shelf-shelves.svg) no-repeat center center;
+        background: url(../assets/images/pantry.svg) no-repeat center center;
         height: 18vh;
         align-self: center;
       }
