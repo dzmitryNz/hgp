@@ -29,6 +29,16 @@
         "loadingMessage": "Погодите, получение данных может занять некоторое время :)",
         "source": "Источник",
         "emptyHere": "Здесь пока пусто",
+        "fridge": "Холодильник",
+        "freezer": "Морозильник",
+        "kitchen0": "Кухонные ящики",
+        "kitchen1": "Кухонные шкафы",
+        "pantry": "Кладовая",
+        "cellar": "Подвал",
+        "temp": "Температура",
+        "capacity": "Ёмкость, л.",
+        "tMax": "t \u00b0С макс",
+        "tMin": "t \u00b0С мин",
         "sourceTitle": "Рецепт мы взяли здесь"
     },
     "By": {
@@ -61,6 +71,16 @@
         "loadingMessage": "Трымайцеся, загрузка дадзеных можа заняць некаторы час :)",
         "source": "Крыніца",
         "emptyHere": "Тут пакуль пуста",
+        "fridge": "Халадзільнік",
+        "freezer": "Маразільнік",
+        "kitchen0": "Кухонныя скрыні",
+        "kitchen1": "Кухонныя шафы",
+        "pantry": "Камора",
+        "cellar": "Падвал",
+        "temp": "Тэмпература",
+        "capacity": "Ёмістасць, л.",
+        "tMax": "t \u00b0С макс",
+        "tMin": "t \u00b0С мiн",
         "sourceTitle": "Рэцэпт ўзялі адсюль"
      },
     "Ua": {
@@ -93,6 +113,16 @@
         "loadingMessage": "Зачекайте, отримання даних може зайняти деякий час :)",
         "source": "Джерело",
         "emptyHere": "Тут поки порожньо",
+        "fridge": "Холодильник",
+        "freezer": "Морозильник",
+        "kitchen0": "Кухонні ящики",
+        "kitchen1": "Кухонні шафи",
+        "pantry": "Комора",
+        "cellar": "Підвал",
+        "temp": "Температура",
+        "capacity": "Ємність, л.",
+        "tMax": "t \u00b0С макс",
+        "tMin": "t \u00b0С мин",
         "sourceTitle": "Рецепт взяли звідси"
     },
     "En": {
@@ -124,6 +154,16 @@
         "loadingMessage": "Hold on, fetching data may take some time :)",
         "source": "Source",
         "emptyHere": "Empty here",
+        "fridge": "Fridge",
+        "freezer": "Freezer",
+        "kitchen0": "Kitchen drawers",
+        "kitchen1": "Kitchen cabinets",
+        "pantry": "Pantry",
+        "cellar": "Cellar",
+        "temp": "Temperature",
+        "capacity": "Capacity, l.",
+        "tMax": "t \u00b0С max",
+        "tMin": "t \u00b0С min",
         "sourceTitle": "The recipe was taken from here"
     }
 }

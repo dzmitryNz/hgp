@@ -125,14 +125,14 @@ function Menu() {
     <div className="menu">
       <header className="menu-header">{ title }</header>
       <div className="tabs">
+        <div className={tabPlanner}> 
+        <div onClick={changeProperties} className="tab-planner tabi"></div>
+        </div>
         <div className={tabFamily}> 
         <div onClick={changeProperties} className="tab-family tabi"></div>
         </div>
         <div className={tabStorages}> 
         <div onClick={changeProperties} className="tab-storages tabi"></div>
-        </div>
-        <div className={tabPlanner}> 
-        <div onClick={changeProperties} className="tab-planner tabi"></div>
         </div>
         <div className={tabReceipts}> 
         <div onClick={changeProperties} className="tab-receipts tabi"></div>

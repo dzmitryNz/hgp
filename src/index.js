@@ -22,11 +22,11 @@ if (localProp) {
 
 ReactDOM.render(
   <React.StrictMode>
+    <Planner />
     <Header />
     <Menu />
     <Family />
     <Storages />
-    <Planner />
     <Receipts />
     <Ingredients />
     <Export />

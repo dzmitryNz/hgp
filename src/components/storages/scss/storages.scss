@@ -6,18 +6,12 @@
   background-color: inherit;
 
     .content {
-      display: grid;
-      grid-template-rows: 0px calc(100vh - 92px);
-      grid-template-columns: 1fr 1fr;
-      grid-template-areas:
-        "modes modes"
-        "mode mode";
-      max-height: calc(100vh - 91px);
-      max-width: calc(100vw - 105px);
-      justify-content: space-around;
-      color: inherit;
-      background-color: inherit;
-
+    max-height: calc(100vh - 100px);
+    max-width: calc(100vw - 111px);
+    justify-content: space-around;
+    color: inherit;
+    background-color: inherit;
+    overflow: auto;
     }
 
     .storages-modes {
@@ -39,194 +33,248 @@
       overflow: auto;
     }
 
-    .adults-header,
-    .adultsdiet-header,
-    .childrendiet-header,
-    .children-header,
-    .pets-header{
+    .fridge-header,
+    .fridgetemp-header,
+    .freezertemp-header,
+    .freezer-header,
+    .pantry-header{
       color: #518051;
     }
 
-    .adults-minus, .adults-plus,
-    .adultsdiet-minus, .adultsdiet-plus,
-    .childrendiet-minus, .childrendiet-plus,
-    .children-minus, .children-plus {
+    .fridge-minus, .fridge-plus,
+    .fridgemin-minus, .fridgemin-plus,
+    .fridgemax-minus, .fridgemax-plus,
+    .freezer-minus, .freezer-plus,
+    .freezermax-minus, .freezermax-plus,
+    .freezermin-minus, .freezermin-plus {
       margin: 0 20px;
       font-size: 45px;
     }
 
-    .adults-minus::selection, .adults-plus::selection,
-    .adultsdiet-minus::selection, .adultsdiet-plus::selection,
-    .childrendiet-minus::selection, .childrendiet-plus::selection,
-    .children-minus::selection, .children-plus::selection {
+    .fridge-minus::selection, .fridge-plus::selection,
+    .fridgemin-minus::selection, .fridgemin-plus::selection,
+    .fridgemax-minus::selection, .fridgemax-plus::selection,
+    .freezertemp-minus::selection, .freezertemp-plus::selection,
+    .freezer-minus::selection, .freezer-plus::selection {
       background: none;
     }
 
-    .adults-minus:hover, .adults-plus:hover,
-    .adultsdiet-minus:hover, .adultsdiet-plus:hover,
-    .childrendiet-minus:hover, .childrendiet-plus:hover,
-    .children-minus:hover, .children-plus:hover {
+    .fridge-minus:hover, .fridge-plus:hover,
+    .fridgemin-minus:hover, .fridgemin-plus:hover,
+    .fridgemax-minus:hover, .fridgemax-plus:hover,
+    .freezertemp-minus:hover, .freezertemp-plus:hover,
+    .freezer-minus:hover, .freezer-plus:hover {
       cursor: pointer;
       transition: all 0.2s;
       color: #518051;
     }
     
-    .adults-minus:active, .adults-plus:active,
-    .adultsdiet-minus:active, .adultsdiet-plus:active,
-    .childrendiet-minus:active, .childrendiet-plus:active,
-    .children-minus:active, .children-plus:active,
-    .pets-plus:active {
+    .fridge-minus:active, .fridge-plus:active,
+    .fridgemin-minus:active, .fridgemin-plus:active,
+    .fridgemax-minus:active, .fridgemax-plus:active,
+    .freezertemp-minus:active, .freezertemp-plus:active,
+    .freezer-minus:active, .freezer-plus:active,
+    .pantry-plus:active, .pantry-minus:active  {
       transition: all 0.2s;
       color: #91ad91;
     }
 
-    .pets {
-      display: grid;
-      grid-template-rows: 40px 15vh;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-areas:
-        "petsicon petsheader petsheader"
-        "petsicon petsswitcher petsswitcher";
-      justify-content: space-around;
-      font-size: 2rem;
-      margin-left: 10px;
-      color: inherit;
-      background-color: inherit;
-      // max-height: calc(100vh - 125px);
-      // max-width: calc(100vw - 105px);
-      
-      .pets-plus {
-        color: inherit;
-      }
-      
-      .pets-icon {
-          grid-area: petsicon;
-          background: url(../assets/images/fridge.svg) no-repeat center center;
-          height: 18vh;
-          align-self: center;
-        }
-
-        .pets-header {
-          grid-area: petsheader;
-          text-align: center;
-          padding: 0 12vw;
-          display: flex;
-          white-space: nowrap;
-          overflow: hidden;
-        }
-
-        .pets-switcher {
-          grid-area: petsswitcher;
-          display: flex;
-          justify-content: right;
-          align-items: center;
-          padding: 0 12vw;
-        }
-
-        .pet {
-          display: flex;
-          margin: 10px 0;
-
-          .material-icons:hover {
-            cursor: pointer;
-            transition: all 0.2s;
-            color: #518051;
-          }
-
-          .material-icons:active {
-           transition: all 0.2s;
-           color: #91ad91;
-          }
-        }
-    }
-      .children {
-      display: grid;
-      grid-template-rows: 40px 15vh;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-areas:
-        "childrenicon childrenheader childrendietheader"
-        "childrenicon childrenswitcher childrendietswitcher";
-      justify-content: space-around;
-      font-size: 2rem;
-      margin-left: 10px;
+    .pantry {
+     display: grid;
+     grid-template-rows: 40px 20px 13vh;
+     grid-template-columns: 12vw 1fr 1fr;
+     grid-template-areas:
+        "pantryicon pantryheader pantrytempheader"
+        "pantryicon pantrymeasure pantrytempmeasure"
+        "pantryicon pantryswitcher pantrytempswitcher";
+     justify-content: space-around;
+     font-size: 2rem;
+     margin-left: 10px;
       // max-height: calc(100vh - 125px);
       // max-width: calc(100vw - 105px);
 
-      .children-icon {
-        grid-area: childrenicon;
+      .pantry-icon {
+        grid-area: pantryicon;
         background: url(../assets/images/shelf-shelves.svg) no-repeat center center;
         height: 18vh;
         align-self: center;
       }
 
-      .children-header {
-          grid-area: childrenheader;
+      .pantry-header {
+          grid-area: pantryheader;
           text-align: center;
         }
 
-        .children-switcher {
-          grid-area: childrenswitcher;
+        .pantry-switcher {
+          grid-area: pantryswitcher;
           display: flex;
           justify-content: center;
           align-items: center;
         }
 
-        .childrendiet-header {
-          grid-area: childrendietheader;
+        .pantrytemp-header {
+          grid-area: pantrytempheader;
           text-align: center;
           white-space: nowrap;
           overflow: hidden; 
         }
 
-        .childrendiet-switcher {
-          grid-area: childrendietswitcher;
+        .pantrytemp-switcher {
+          grid-area: pantrytempswitcher;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .pantry-subheader {
+          grid-area: pantrymeasure;
+          text-align: center;
+        }
+
+      .freezertemp-subheader {
+          grid-area: freezertempmeasure;
+          text-align: center;
+        }
+
+      .freezertemp-header {
+          grid-area: freezertempheader;
+          text-align: center;
+          white-space: nowrap;
+          overflow: hidden;  
+        }
+
+      .freezertemp-switcher {
+          grid-area: freezertempswitcher;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+    }
+    
+    .freezer {
+     display: grid;
+     grid-template-rows: 40px 20px 13vh;
+     grid-template-columns: 12vw 1fr 1fr;
+     grid-template-areas:
+        "freezericon freezerheader freezertempheader"
+        "freezericon freezermeasure freezertempmeasure"
+        "freezericon freezerswitcher freezertempswitcher";
+     justify-content: space-around;
+     font-size: 2rem;
+     margin-left: 10px;
+      // max-height: calc(100vh - 125px);
+      // max-width: calc(100vw - 105px);
+
+      .freezer-icon {
+        grid-area: freezericon;
+        background: url(../assets/images/freezer.svg) no-repeat center center;
+        height: 18vh;
+        align-self: center;
+      }
+
+      .freezer-header {
+          grid-area: freezerheader;
+          text-align: center;
+        }
+
+        .freezer-switcher {
+          grid-area: freezerswitcher;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .freezertemp-header {
+          grid-area: freezertempheader;
+          text-align: center;
+          white-space: nowrap;
+          overflow: hidden; 
+        }
+
+        .freezertemp-switcher {
+          grid-area: freezertempswitcher;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .freezer-subheader {
+          grid-area: freezermeasure;
+          text-align: center;
+        }
+
+      .freezertemp-subheader {
+          grid-area: freezertempmeasure;
+          text-align: center;
+        }
+
+      .freezertemp-header {
+          grid-area: freezertempheader;
+          text-align: center;
+          white-space: nowrap;
+          overflow: hidden;  
+        }
+
+      .freezertemp-switcher {
+          grid-area: freezertempswitcher;
           display: flex;
           justify-content: center;
           align-items: center;
         }
     }
 
-    .adults {
+    .fridge {
         display: grid;
-      grid-template-rows: 40px 15vh;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 40px 20px 13vh;
+      grid-template-columns: 12vw 1fr 1fr;
       grid-template-areas:
-        "adultsicon adultsheader adultsdietheader"
-        "adultsicon adultsswitcher adultsdietswitcher";
+        "fridgeicon fridgeheader fridgetempheader"
+        "fridgeicon fridgemeasure fridgetempmeasure"
+        "fridgeicon fridgeswitcher fridgetempswitcher";
       justify-content: space-around;
       font-size: 2rem;
       margin-left: 10px;
       // max-height: calc(100vh - 125px);
       // max-width: calc(100vw - 105px);
 
-      .adults-icon {
-        grid-area: adultsicon;
-        background: url(../assets/images/freezer.svg) no-repeat center center;
+      .fridge-icon {
+        grid-area: fridgeicon;
+        background: url(../assets/images/fridge.svg) no-repeat center center;
         height: 18vh;
         align-self: center;
       }
 
-      .adults-header {
-          grid-area: adultsheader;
+      .fridge-header {
+          grid-area: fridgeheader;
           text-align: center;
         }
 
-        .adults-switcher {
-          grid-area: adultsswitcher;
+      .fridge-subheader {
+          grid-area: fridgemeasure;
+          text-align: center;
+        }
+
+      .fridgetemp-subheader {
+          grid-area: fridgetempmeasure;
+          text-align: center;
+        }
+
+        .fridge-switcher {
+          grid-area: fridgeswitcher;
           display: flex;
           justify-content: center;
           align-items: center;
         }
 
-        .adultsdiet-header {
-          grid-area: adultsdietheader;
+        .fridgetemp-header {
+          grid-area: fridgetempheader;
           text-align: center;
           white-space: nowrap;
           overflow: hidden;  
         }
 
-        .adultsdiet-switcher {
-          grid-area: adultsdietswitcher;
+        .fridgetemp-switcher {
+          grid-area: fridgetempswitcher;
           display: flex;
           justify-content: center;
           align-items: center;
