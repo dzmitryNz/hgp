@@ -70,7 +70,7 @@
   flex-wrap: wrap;
   overflow: auto;
   max-width: calc(100vw - 107px);
-  max-height: calc(100vh - 185px);
+  max-height: calc(100vh - 116px);
   justify-content: space-between;
   background-color: inherit;
   color: inherit;
@@ -121,7 +121,7 @@
   // display: flex;
   // flex-wrap: wrap;
   overflow: auto;
-  height: calc((100vh / 3) - 80px);
+  height: calc((100vh / 3) - 58px);
   justify-content: space-between;
   background-color: inherit;
   color: inherit;
@@ -485,6 +485,26 @@
   background-color: inherit;
   color: inherit;
   border-color: inherit;
+}
+
+.category-content {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  max-width: calc(100vw - 107px);
+  max-height: calc(100vh - 185px);
+}
+
+.recents-content,
+.favorites-content,
+.menus-content {
+  // display: flex;
+  // flex-wrap: wrap;
+  overflow: auto;
+  height: calc((100vh / 3) - 80px);
+  justify-content: space-between;
+  background-color: inherit;
+  color: inherit;
 }
 
 .modal-receipt {
