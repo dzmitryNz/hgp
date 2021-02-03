@@ -85,7 +85,7 @@ code {
   height: 100%;
   display: grid;
   // gap: 5px;
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: 0px 1fr;
   grid-template-columns: 100px auto;
   // grid-template-areas:
   //   "menu header"
@@ -105,7 +105,7 @@ code {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100%; 
   height: 100%;
   background: #0000003a;
   transition: opacity 0.2s ease;
@@ -125,23 +125,23 @@ code {
   font-family: Helvetica, Arial, sans-serif;
   width: 85vw;
   height: 90vh;
-  overflow: scroll;
   z-index: 5;
 }
 
 .modal button {
-  position: fixed;
-  right: 1rem;
-  top: 1rem;
-  width: 2rem;
-  height: 2rem;
-  padding: 0.5rem;
-  margin: 0 auto;
-  border-radius: 50%;
-  box-shadow: 1px 1px 1px #0000003a;
-  cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, 0.562);
-  z-index: 100;
+    position: fixed;
+    right: 60px;
+    top: 5px;
+    width: 0;
+    height: 0;
+    /* margin: 0 auto; */
+    /* border-radius: 45%; */
+    box-shadow: 1px 1px 1px #0000003a;
+    /* cursor: pointer; */
+    /* border: 1px solid rgba(0, 0, 0, 0.562); */
+    z-index: 100;
+    font-size: 45px;
+    color: inherit;
 }
 
 .content {
@@ -203,8 +203,7 @@ code {
   grid-template-areas:
     "menu header"
     "menu family";
-    // "footer footer footer footer footer footer"
-  
+
   .storages,
   .planner,
   .receipts,
@@ -234,7 +233,6 @@ grid-template-areas:
   grid-template-areas:
     "menu header"
     "menu planner";
-    // "footer footer footer footer footer footer"
   
   .family,
   .storages,
@@ -249,7 +247,6 @@ grid-template-areas:
   grid-template-areas:
     "menu header"
     "menu receipts";
-    // "footer footer footer footer footer footer"
 
   .family,
   .storages,
@@ -264,7 +261,6 @@ grid-template-areas:
   grid-template-areas:
     "menu header"
     "menu ingredients";
-    // "footer footer footer footer footer footer"
 
   .family,
   .storages,
@@ -279,7 +275,6 @@ grid-template-areas:
   grid-template-areas:
     "menu header"
     "menu export";
-    // "footer footer footer footer footer footer"
 
   .family,
   .storages,
@@ -288,4 +283,69 @@ grid-template-areas:
   .ingredients {
     display: none;
   }
+}
+
+@media screen and (max-width: 800px) {
+  .header{
+    display: none;
+  }
+
+  [id="root"] {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 70px 1fr;
+  grid-template-columns: 100px auto;
+  }
+
+    .menu .tabs .active-tab {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  }
+
+  .mode_family {
+  grid-template-areas:
+    "menu menu"
+    "family family";
+  }
+
+  .mode_storages {
+
+    grid-template-areas:
+    "menu menu"
+    "storages storages";
+  }
+
+  .mode_receipts {
+    grid-template-areas:
+    "menu menu"
+    "receipts receipts";
+  }
+
+  .mode_planner {
+    grid-template-areas:
+    "menu menu"
+    "planner planner";
+  }
+
+  .mode_ingredients {
+    grid-template-areas:
+    "menu menu"
+    "ingredients ingredients";
+  }
+
+.mode_export {
+    grid-template-areas:
+    "menu menu"
+    "export export";
+  }
+
+  .modal {
+  position: fixed;
+  left: 5vw;
+  padding: 5px;
+  width: 90vw;
+  height: 90vh;
+}
+
 }
