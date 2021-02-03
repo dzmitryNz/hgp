@@ -29,6 +29,6 @@ function ModeHeader(data) {
             { button }
         </header>
     );
-  };
+  }
 
 export default ModeHeader;

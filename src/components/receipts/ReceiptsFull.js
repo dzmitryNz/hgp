@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 
+
 import Modal from './ReceiptModal';
 import ModeHeader from "../modeHeader";
 const PropertiesJson = require("../json/properties.json");
@@ -24,7 +25,7 @@ function Receipts() {
   const [query, setQuery] = useState('Основные блюда');
   const [menus, setMenusList] = useState(menuLocal);
   const [favorite, setFarvoritesList] = useState(favLocal);
-  const [recent, setRecentList] = useState(favLocal);
+  const [recent] = useState(favLocal);
   const [categoryHeader, setCategoryHeader] = useState(categoryStr);
   const [show, setShow] = useState(false);
 

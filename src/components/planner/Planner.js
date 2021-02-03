@@ -1,24 +1,57 @@
 import React from 'react';
 import ModeHeader from "../modeHeader";
-// import FamilyModes from './FamilyModes'
-// import Header from './components/header/header';
-// import reportWebVitals from './reportWebVitals';
 const PropertiesJson = require("../json/properties.json");
+const DictJson = require("../json/dict.json");
 
-const localProp = JSON.parse(localStorage.getItem("hgp-properties"));
+let localProp = JSON.parse(localStorage.getItem("hgp-properties"));
 if (localProp) {
   PropertiesJson.language = localProp.language;
   PropertiesJson.theme = localProp.theme;
   PropertiesJson.mode = localProp.mode;
-  }
+  } else { localProp = PropertiesJson }
+
+const clickEvent = () => {}
 
 const Planner = () => {
 
+const language = PropertiesJson.language;
+
+let localFamily = JSON.parse(localStorage.getItem("hgp-family"));
+
+let familyData = localFamily ? localFamily : PropertiesJson.family;
+
+const modeBlock = () =>{
+      return (<div className="mode">
+      <div className="planner-mode">{DictJson[language].plannerWeek}</div> 
+      <div className="planner-mode">{DictJson[language].plannerDay}</div> 
+      <div className="planner-icon"></div>
+      </div>)
+    } 
+
+
+// const plannerMode = () => {
+//   return (<>
+//       <div className="week-switcher"> 
+//       <div onClick={clickEvent} className="adults-minus material-icons">remove_circle</div> 
+//          <div id="adults-value" className="adults-value">{familyData.adults}</div>
+//          <div onClick={clickEvent} className="adults-plus material-icons">add_circle</div>
+//       </div>
+//       <div className="week-switcher"> 
+//         <div onClick={clickEvent} className="adultsdiet-minus material-icons">remove_circle</div>
+//         <div id="adultsdiet-value" className="adultsdiet-value">{familyData.adultsdiet}</div>
+//         <div onClick={clickEvent} className="adultsdiet-plus material-icons">add_circle</div>
+//       </div>
+//       </>)
+// }
+
     return (  
     <div className = "planner">
-      <ModeHeader mode={ 'planner' }/>            
-      {/* <FamilyModes /> */}
+      <ModeHeader mode={ 'planner' }/>
+      <div className="content">
+      {modeBlock()}
+      </div>
     </div>
+
     )
 }
 

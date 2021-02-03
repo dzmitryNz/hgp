@@ -1,0 +1,72 @@
+.planner {
+  grid-area: planner;
+  text-align: center;
+  max-width: calc(100vw - 105px);
+  color: inherit;
+  background-color: inherit;
+  border-color: inherit;
+
+    .content {
+      display: grid;
+      grid-template-rows: 70px calc(100vh - 92px);
+      grid-template-columns: 100%;
+      grid-template-areas:
+        "mode"
+        "modecontent";
+      max-height: calc(100vh - 91px);
+      max-width: calc(100vw - 105px);
+      justify-content: space-around;
+      color: inherit;
+      background-color: inherit;
+      border-color: inherit;
+
+    }
+
+    .mode {
+    grid-area: mode;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    font-size: 20px;
+    /* color: inherit; */
+    background-color: inherit;
+    border-color: inherit;
+    align-items: center;
+    
+     .planner-mode {
+        width: 35vw;
+        height: 60px;
+        border-radius: 10px;
+        color: white;
+        background-color: #508150;
+        margin: 0 3vw;
+        line-height: 60px;
+     }
+
+    .planner-mode:hover {
+    background-color: #306130;
+    cursor: pointer;
+    }
+
+    .planner-mode:active {
+    background-color: #9DBA96;
+    }
+}
+
+    .mode-content {
+      grid-area: modecontent;
+      padding: 6px 0px;
+      width: 100%;   
+      color: inherit;
+      background-color: inherit;
+      overflow: auto;
+    }
+
+    .adults-minus, .adults-plus,
+    .adultsdiet-minus, .adultsdiet-plus,
+    .childrendiet-minus, .childrendiet-plus,
+    .children-minus, .children-plus {
+      margin: 0 20px;
+      font-size: 45px;
+    }
+}

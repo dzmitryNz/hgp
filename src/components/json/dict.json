@@ -39,6 +39,8 @@
         "capacity": "Ёмкость, л.",
         "tMax": "t \u00b0С макс",
         "tMin": "t \u00b0С мин",
+        "plannerWeek": "Недельное планирование",
+        "plannerDay": "Планируем на встречу",
         "sourceTitle": "Рецепт мы взяли здесь"
     },
     "By": {
@@ -81,6 +83,8 @@
         "capacity": "Ёмістасць, л.",
         "tMax": "t \u00b0С макс",
         "tMin": "t \u00b0С мiн",
+        "plannerWeek": "Недельное планирование",
+        "plannerDay": "Планируем встречу",
         "sourceTitle": "Рэцэпт ўзялі адсюль"
      },
     "Ua": {
@@ -123,6 +127,8 @@
         "capacity": "Ємність, л.",
         "tMax": "t \u00b0С макс",
         "tMin": "t \u00b0С мин",
+        "plannerWeek": "Недельное планирование",
+        "plannerDay": "Планируем встречу",
         "sourceTitle": "Рецепт взяли звідси"
     },
     "En": {
@@ -164,6 +170,8 @@
         "capacity": "Capacity, l.",
         "tMax": "t \u00b0С max",
         "tMin": "t \u00b0С min",
+        "plannerWeek": "Недельное планирование",
+        "plannerDay": "Планируем встречу",
         "sourceTitle": "The recipe was taken from here"
     }
 }
