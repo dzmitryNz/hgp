@@ -340,5 +340,12 @@ grid-template-areas:
     "export export";
   }
 
+  .modal {
+  position: fixed;
+  left: 5vw;
+  padding: 5px;
+  width: 90vw;
+  height: 90vh;
+}
 
 }

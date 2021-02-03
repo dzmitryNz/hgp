@@ -70,7 +70,7 @@
   flex-wrap: wrap;
   overflow: auto;
   max-width: calc(100vw - 107px);
-  max-height: calc(100vh - 117px);
+  max-height: calc(100vh - 185px);
   justify-content: space-between;
   background-color: inherit;
   color: inherit;
@@ -421,6 +421,7 @@
   .nutritions {
     display: flex;
     border-color: inherit;
+    justify-content: center;
 
     .nutrition {
       margin: 0 5px;
@@ -485,6 +486,109 @@
   color: inherit;
   border-color: inherit;
 }
+
+.modal-receipt {
+  display: grid;
+  grid-template-rows: 30px 40px auto auto auto auto auto;
+  grid-template-columns: 100%;
+  grid-template-areas:
+    "receipHeader"
+    "receipCat"
+    "receipThumb"
+    "receipIng"
+    "receipIng"
+    "receipDescriptions"
+    "receipInstruction";
+  background-color: inherit;
+  color: inherit;
+  border-color: inherit;
+  position: relative;
+  width: calc(90vw - 10px) ;
+  height: calc(90vh - 10px);
+  overflow: auto;
+  
+  .receipt-category {
+    grid-area: receipCat;
+    display: flex;
+    justify-content: center;
+    background-color: #88ad88ad;
+    border-radius: 5px;
+  }
+
+  .receipt-meal {
+    grid-area: receipHeader;
+  }
+
+  .receipt-descriptions {
+    grid-area: receipDescriptions;
+    border-color: inherit;
+
+  }
+
+  .receipt-cat, .receipt-tags, .receipt-source, 
+  .receipt-subcat, .receipt-area {
+    margin: 5px 15px;
+  }
+
+  .receipt-cat {
+    font-size: 18px;
+    margin: 3px 15px;
+  }
+  
+  a {
+    text-decoration: none;  
+  }
+  
+  .receipt-persons {
+    display: flex;
+    margin: 15px 0;
+    font-size: 35px;
+    justify-content: center;
+    align-items: center;
+  
+  .timer {
+    font-size: 16px;
+  }
+
+  .persons-descript {
+    font-size: 16px;
+    margin: 0 10px;
+  }
+
+  .receipt-persons-value {
+    margin: 15px 0;
+    font-size: 35px;
+    background-color: inherit;
+    border: 1px solid grey;
+    border-radius: 5px;
+    width: 50px;
+    padding: 5px 0;
+  }
+
+  .receipt-persons-minus,
+  .receipt-persons-plus {
+    margin: 15px 20px;
+    font-size: 35px;
+    background-color: yellowgreen;
+    border-radius: 5px;
+    width: 50px;
+  }
+
+  .receipt-persons-minus:hover,
+  .receipt-persons-plus:hover {
+    cursor: pointer;
+    background-color: rgb(128, 172, 42);
+    transition: all 0.2s;
+  }
+
+  .receipt-persons-minus:active,
+  .receipt-persons-plus:active {
+    cursor: pointer;
+    background-color: rgb(108, 172, 42);
+    transition: all 0.2s;
+  }
+  }
+  }
   }
 }
 
