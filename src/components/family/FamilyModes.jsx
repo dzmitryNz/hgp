@@ -2,9 +2,7 @@
 /* eslint-disable operator-assignment */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
-// import CategoriesList from './CategoriesList';
-// import CategoryList from './CategoryList';
-// import RecentsList from './RecentsList';
+
 const PropertiesJson = require('../json/properties.json');
 const DictJson = require('../json/dict.json');
 
@@ -107,14 +105,14 @@ function FamilyModes() {
   );
   const pets = [];
   complete.pets.forEach((pet) => {
-    const minusClassName = `${pet}-minus material-icons`;
+    const minusCN = `${pet}-minus material-icons`;
     const valueClassName = `${pet}-value`;
     const petClassName = `${pet} pet`;
     const block = (
       <div id={pet} key={petClassName} className={petClassName}>
         <div key={valueClassName} className="pets-switcher">
           <div key={valueClassName} className={valueClassName}>{pet}</div>
-          <div onClick={clickEvent} key={minusClassName} className={minusClassName}>remove_circle</div>
+          <div onClick={clickEvent} key={minusCN} className={minusCN}>remove_circle</div>
         </div>
       </div>
     );

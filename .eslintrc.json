@@ -18,9 +18,9 @@
     ],
     "rules": {
   "react/prop-types": "off",
-  "ignoreUrls": true,
-"ignoreStrings": true,
-"ignoreTemplateLiterals": true,
-"ignoreRegExpLiterals": true
+  "ignoreUrls": 0,
+"ignoreStrings": 0,
+"ignoreTemplateLiterals": 0,
+"ignoreRegExpLiterals": 0
     }
 }

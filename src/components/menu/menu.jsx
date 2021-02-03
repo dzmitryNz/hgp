@@ -1,14 +1,17 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable import/no-cycle */
 import React from 'react';
 import UpdateAll from '../UpdateAll';
 
 const PropertiesJson = require('../json/properties.json');
 const DictJson = require('../json/dict.json');
 
-const root = document.getElementById('root');
+let root = document.getElementById('root');
 
 function showMenu(e) {
   const target = e.target.className.split(' ')[0];
-  console.log(target);
+  // console.log(target);
   const themesHidden = document.querySelector('.themes-hidden');
   const langsHidden = document.querySelector('.langs-hidden');
   const themes = document.querySelector('.themes');
@@ -30,7 +33,7 @@ function showMenu(e) {
 }
 
 function changeProperties(e) {
-  const root = document.getElementById('root');
+  root = document.getElementById('root');
   // const langsClass = document.getElementById('langs');
   const rootClassList = root.classList;
   let propertiesChanged = false;
