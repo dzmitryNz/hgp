@@ -1,7 +1,7 @@
 {"language": "Ru", 
 "category": "Основные блюда",
 "theme": "schedule", 
-"mode": "mode_planner",
+"mode": "mode_family",
 "langList": [ "By", "En", "Ru", "Ua"],
 "themeList": ["dark_mode", "light_mode", "schedule"],
 "familyModes": ["family", "party"],
