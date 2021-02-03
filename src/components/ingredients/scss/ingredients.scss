@@ -32,20 +32,72 @@
   overflow: auto;
 
     .time, .ingredient {
-        display: flex;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto 1fr auto auto;
+    grid-template-areas:
+      "ingname ingdotted ingmeasure ingqty";
+    min-width: 350px;
+    margin: 5px 0;
 
       .ingredient-name {
+        grid-area: ingname;
+        text-align: left;
+        width: fit-content;
+        margin: 0 10px;
+        place-self: end;
         margin: 0 5px;
         font-size: 18px;
         white-space: nowrap;
+      }
+      .ingredient-gridname {
+        grid-area: ingname;
+        text-align: left;
+        width: fit-content;
+        margin: 0 10px;
+        place-self: end;
+        margin: 0 5px;
+        font-size: 18px;
+        white-space: nowrap;
+        line-height: 2em;
+      }
+      .ingredient-dotted {
+      grid-area: ingdotted;
+      border-bottom: 1px dotted;
+      border-color: inherit;
+      min-width: 20px;
+      }
+
+      .ingredient-grid {
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: auto auto;
+      grid-template-areas:
+      "ingmeas ingmeas"
+      "ingqt ingqt";
+
+      .ingredient-gridmeas {
+      grid-area: ingmeas;
+      margin: 0px 3px;
+      line-height: 20px;
+      }
+      }
+
+      .ingredient-meas {
+       grid-area: ingmeasure;
+       text-align: right;
+       width: fit-content;
+       place-self: end;
+       margin: 0 5px;
       }
 
       .ingredient-qty {
+        grid-area: ingqty;
         margin: 0 5px;
         font-size: 18px;
         white-space: nowrap;
+       margin: 0 5px;
       }
-
     }
 }
 

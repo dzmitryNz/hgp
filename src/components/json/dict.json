@@ -41,6 +41,7 @@
         "tMin": "t \u00b0С мин",
         "plannerWeek": "Недельное планирование",
         "plannerDay": "Планируем на встречу",
+        "timeTitle": "Ориентировочное время: ",
         "sourceTitle": "Рецепт мы взяли здесь"
     },
     "By": {
@@ -83,8 +84,9 @@
         "capacity": "Ёмістасць, л.",
         "tMax": "t \u00b0С макс",
         "tMin": "t \u00b0С мiн",
-        "plannerWeek": "Недельное планирование",
-        "plannerDay": "Планируем встречу",
+        "plannerWeek": "Тыднёвае планаванне",
+        "plannerDay": "Плануем сустрэчу",
+        "timeTitle": "Арыентыровачны час: ",
         "sourceTitle": "Рэцэпт ўзялі адсюль"
      },
     "Ua": {
@@ -127,8 +129,9 @@
         "capacity": "Ємність, л.",
         "tMax": "t \u00b0С макс",
         "tMin": "t \u00b0С мин",
-        "plannerWeek": "Недельное планирование",
-        "plannerDay": "Планируем встречу",
+        "plannerWeek": "Тижневе планування",
+        "plannerDay": "Плануємо зустріч",
+        "timeTitle": "Орієнтовний час: ",
         "sourceTitle": "Рецепт взяли звідси"
     },
     "En": {
@@ -170,8 +173,9 @@
         "capacity": "Capacity, l.",
         "tMax": "t \u00b0С max",
         "tMin": "t \u00b0С min",
-        "plannerWeek": "Недельное планирование",
-        "plannerDay": "Планируем встречу",
+        "plannerWeek": "Weekly planning",
+        "plannerDay": "Planning a meeting",
+        "timeTitle": "Approximate time: ",
         "sourceTitle": "The recipe was taken from here"
     }
 }

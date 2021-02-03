@@ -223,6 +223,7 @@ function Ingredients() {
             ingredientsArr.push(
               <div key="time" className="time">
                 <div className="time-icon material-icons" />
+                <div className="time-title">{DictJson[language].timeTitle}</div>
                 <div className="time-value">{value}</div>
               </div>,
             );
@@ -232,7 +233,8 @@ function Ingredients() {
               // console.log(valueArr)
               ingredientInner = (
                 <>
-                  <div className="ingredient-name">{`${key} - `}</div>
+                  <div className="ingredient-name">{`${key}`}</div>
+                  <div className="ingredient-dotted" />
                   <div className="ingredient-qty">{valueArr[1]}</div>
                   <div className="ingredient-meas">{valueArr[0]}</div>
                 </>
@@ -241,18 +243,18 @@ function Ingredients() {
 
             if (value.size > 1) {
               const valuesArr = [];
+              const keysArr = [];
               value.forEach((inValue, inKey) => {
-                valuesArr.push(
-                  <div key={key + inKey} className={`${key + inKey} ingredient-meas`}>{inKey}</div>,
-                );
-                valuesArr.push(
-                  <div key={key + inValue} className={`${key + inValue} ingredient-qty`}>{inValue}</div>,
-                );
+                keysArr.push(<div className={`${key} ingredient-gridmeas`}>{`${inKey}\n${inValue}`}</div>);
               });
               ingredientInner = (
                 <>
-                  <div className="ingredient-name">{`${key} - `}</div>
-                  {valuesArr}
+                  <div className="ingredient-gridname">{`${key}`}</div>
+                  <div className="ingredient-dotted" />
+                  <div className="ingredient-grid">
+                    <div className={`${key} ingredient-gridmeas`}>{keysArr}</div>
+                    <div className={`${key} ingredient-gridqty`}>{valuesArr}</div>
+                  </div>
                 </>
               );
             }
