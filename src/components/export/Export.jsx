@@ -11,11 +11,20 @@ if (localProp) {
   PropertiesJson.mode = localProp.mode;
 }
 
+// const [ingredients, setIngr] = useState();
+
 const Export = () => (
   <div className="export">
     <ModeHeader mode="export" />
   </div>
 );
+
+// exportToCsv('export.csv', [
+//   ['Имя', 'Десерт'],
+//   ['david', '123'],
+//   ['jona', '""'],
+//   ['a', 'b'],
+// ]);
 
 export default Export;
 // to log results (for example: reportWebVitals(console.log))

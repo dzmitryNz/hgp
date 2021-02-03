@@ -42,6 +42,8 @@
         "plannerWeek": "Недельное планирование",
         "plannerDay": "Планируем на встречу",
         "timeTitle": "Ориентировочное время: ",
+        "portionsIng": "Порций",
+        "mealName": "Название блюда",
         "sourceTitle": "Рецепт мы взяли здесь"
     },
     "By": {
@@ -87,6 +89,8 @@
         "plannerWeek": "Тыднёвае планаванне",
         "plannerDay": "Плануем сустрэчу",
         "timeTitle": "Арыентыровачны час: ",
+        "portionsIng": "Порцый",
+        "mealName": "Назва блюда",
         "sourceTitle": "Рэцэпт ўзялі адсюль"
      },
     "Ua": {
@@ -132,6 +136,8 @@
         "plannerWeek": "Тижневе планування",
         "plannerDay": "Плануємо зустріч",
         "timeTitle": "Орієнтовний час: ",
+        "portionsIng": "Порцій",
+        "mealName": "Назва блюда",
         "sourceTitle": "Рецепт взяли звідси"
     },
     "En": {
@@ -176,6 +182,8 @@
         "plannerWeek": "Weekly planning",
         "plannerDay": "Planning a meeting",
         "timeTitle": "Approximate time: ",
+        "portionsIng": "Portions",
+        "mealName": "Meal name",
         "sourceTitle": "The recipe was taken from here"
     }
 }

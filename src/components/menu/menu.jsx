@@ -116,7 +116,9 @@ function Menu() {
         <div className="git-icon" />
         <a target="_blank" href="https://github.com/kosmodromm" rel="noreferrer"><span>kosmodromm</span></a>
       </div>
-      <div className="rsschool" />
+      <a target="_blank" href="https://rs.school/js/" rel="noreferrer">
+        <div className="rsschool" />
+      </a>
     </div>
   );
 

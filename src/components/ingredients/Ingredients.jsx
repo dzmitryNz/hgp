@@ -16,8 +16,11 @@ const DictJson = require('../json/dict.json');
 const min = ' мин.';
 const hours = ' час. ';
 const count = '';
+const root = document.getElementById('root').className;
 
 function Ingredients() {
+  let hook = false;
+  if (root.match(/ingredients/)) hook = true;
   let favLocal = JSON.parse(localStorage.getItem('hgp-favorite'));
   let menuLocal = JSON.parse(localStorage.getItem('hgp-menu'));
   if (!menuLocal) menuLocal = [];
@@ -28,6 +31,7 @@ function Ingredients() {
   const [menusData, setMenus] = useState([]);
   const [menus, setMenusList] = useState(menuLocal);
   const [show, setShow] = useState(false);
+  // const [ingredients, setIngr] = useState();
   // const [favorite, setFarvoritesList] = useState(favLocal);
   // const [show, setShow] = useState(false);
 
@@ -49,7 +53,7 @@ function Ingredients() {
     fetchMenu();
 
     return () => { ignore = true; };
-  }, [menus, fav]);
+  }, [menus, fav, root, hook]);
 
   const closeModal = () => setShow(false);
 
@@ -217,6 +221,8 @@ function Ingredients() {
           });
         });
         // console.log(fullMap)
+        localStorage.setItem('hgp-ingredients', fullMap);
+        // setIngr(fullMap);
         fullMap.forEach((value, key) => {
           let ingredientInner = (<></>);
           if (key === 'time') {
@@ -242,10 +248,9 @@ function Ingredients() {
             }
 
             if (value.size > 1) {
-              const valuesArr = [];
               const keysArr = [];
               value.forEach((inValue, inKey) => {
-                keysArr.push(<div className={`${key} ingredient-gridmeas`}>{`${inKey}\n${inValue}`}</div>);
+                keysArr.push(<div key={inKey} className="ingredient-gridmeas">{`${inKey}\n${inValue}`}</div>);
               });
               ingredientInner = (
                 <>
@@ -253,7 +258,6 @@ function Ingredients() {
                   <div className="ingredient-dotted" />
                   <div className="ingredient-grid">
                     <div className={`${key} ingredient-gridmeas`}>{keysArr}</div>
-                    <div className={`${key} ingredient-gridqty`}>{valuesArr}</div>
                   </div>
                 </>
               );
@@ -285,10 +289,10 @@ function Ingredients() {
           <div key="header-menue" className="header-menue">
             <div className="portions">
               <div className="plus menue-portions" />
-              <div className="menue-portions-value">Порций</div>
+              <div className="menue-portions-value">{DictJson[language].portionsIng}</div>
               <div className="minus menue-portions" />
             </div>
-            <div className="menue-meal">Название блюда</div>
+            <div className="menue-meal">{DictJson[language].mealName}</div>
             <div className="menue-buttons">
               <div className="menue-favorite material-icons" />
               <div className="menue-add material-icons" />
