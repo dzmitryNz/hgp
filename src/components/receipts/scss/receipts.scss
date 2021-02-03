@@ -1,7 +1,7 @@
 .receipts {
   grid-area: receipts;
   text-align: center;
-  max-width: calc(100vw - 105px);
+  max-width: calc(100vw - 110px);
   background-color: inherit;
   color: inherit;
   border-color: inherit;
@@ -15,7 +15,7 @@
     "category category category menus"
     "category category category recents"
     "category category category favorites";
-  max-height: calc(100vh - 91px);
+  max-height: calc(100vh - 42px);
   max-width: calc(100vw - 105px);
   justify-content: space-around;
   background-color: inherit;
@@ -70,7 +70,7 @@
   flex-wrap: wrap;
   overflow: auto;
   max-width: calc(100vw - 107px);
-  max-height: calc(100vh - 165px);
+  max-height: calc(100vh - 117px);
   justify-content: space-between;
   background-color: inherit;
   color: inherit;
@@ -121,7 +121,7 @@
   // display: flex;
   // flex-wrap: wrap;
   overflow: auto;
-  height: calc((100vh / 3) - 73px);
+  height: calc((100vh / 3) - 80px);
   justify-content: space-between;
   background-color: inherit;
   color: inherit;
@@ -460,4 +460,31 @@
   }
 }
 
+@media screen and (max-width: 800px) {
+
+  .receipts {
+  grid-area: receipts;
+  text-align: center;
+  max-width: 100vw;
+  color: inherit;
+  background-color: inherit;
+
+    .content {
+  display: grid;
+  grid-template-rows: 50px 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 250px;
+  grid-template-areas:
+    "categories categories categories categories"
+    "category category category menus"
+    "category category category recents"
+    "category category category favorites";
+  max-height: calc(100vh - 110px);
+  max-width: 100vw;
+  justify-content: space-around;
+  background-color: inherit;
+  color: inherit;
+  border-color: inherit;
+}
+  }
+}
 

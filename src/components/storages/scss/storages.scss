@@ -1,12 +1,12 @@
 .storages {
   grid-area: storages;
   text-align: center;
-  max-width: calc(100vw - 105px);
+  max-width: calc(100vw - 110px);
   color: inherit;
   background-color: inherit;
 
     .content {
-    max-height: calc(100vh - 100px);
+    max-height: calc(100vh - 42px);
     max-width: calc(100vw - 111px);
     justify-content: space-around;
     color: inherit;
@@ -32,7 +32,6 @@
     .freezer-header,
     .pantry-header{
       color: #518051;
-      
     }
 
     .fridge-minus, .fridge-plus,
@@ -87,7 +86,7 @@
 
     .pantry {
      display: grid;
-     grid-template-rows: 40px 20px 13vh;
+     grid-template-rows: 30px 30px 13vh;
      grid-template-columns: 12vw 1fr 1fr;
      grid-template-areas:
         "pantryicon pantryheader pantrytempheader"
@@ -288,3 +287,55 @@
     }
 }
 
+@media screen and (max-width: 800px) {
+
+  .storages {
+  grid-area: storages;
+  text-align: center;
+  max-width: 100vw;
+  color: inherit;
+  background-color: inherit;
+
+    .content {
+    max-height: calc(100vh - 120px);
+    max-width: 100vw;
+    justify-content: space-around;
+    color: inherit;
+    background-color: inherit;
+    overflow: auto;
+    }
+
+      .fridge-minus, .fridge-plus,
+    .fridgemin-minus, .fridgemin-plus,
+    .fridgemax-minus, .fridgemax-plus,
+    .pantry-minus, .pantry-plus,
+    .pantrymin-minus, .pantrymin-plus,
+    .pantrymax-minus, .pantrymax-plus,
+    .freezer-minus, .freezer-plus,
+    .freezermax-minus, .freezermax-plus,
+    .freezermin-minus, .freezermin-plus {
+      margin: 0 1px;
+      font-size: 30px;
+    }
+
+    .fridge-header,
+    .fridgetemp-header,
+    .pantry-header,
+    .pantrytemp-header,
+    .freezertemp-header,
+    .freezer-header,
+    .pantry-header{
+      font-size: 24px;
+    }
+
+    .fridgetemp-subheader,
+    .fridge-subheader,
+    .pantrytemp-subheader,
+    .freezer-subheader,
+    .freezertemp-subheader,
+    .pantry-subheader {
+      font-size: 22px;
+    }
+
+  }
+}
