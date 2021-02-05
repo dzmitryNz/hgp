@@ -208,11 +208,12 @@ function Ingredients() {
               const fullMapKey = fullMap.get(key[0]);
               // console.log(key[0], value)
               const keyValue = value.keys().next().value;
-              const valueValue = value.values().next().value;
+              const valV = value.values().next().value;
               if (fullMapKey) {
                 if (fullMapKey) {
-                  const oldValue = fullMapKey.get(keyValue) ? Number(fullMapKey.get(keyValue)) : 0;
-                  const newValue = fullMapKey.set(keyValue, oldValue + Number(valueValue));
+                  const fmk = fullMapKey.get(keyValue);
+                  const oldValue = fmk ? Number(fmk) : 0;
+                  const newValue = fullMapKey.set(keyValue, oldValue + Math.ceil(Number(valV)));
                   // console.log(fullMapKey + valueValue)
                   fullMap.set(key[0], newValue);
                 } else { fullMap.set(key[0], fullMapKey + value); }
