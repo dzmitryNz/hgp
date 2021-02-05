@@ -26,7 +26,7 @@ function Ingredients() {
   if (!menuLocal) menuLocal = [];
   if (!favLocal) favLocal = [];
   const { language } = PropertiesJson;
-  const empty = (<div className="menue-meal empty">{DictJson[language].emptyHere}</div>);
+  const empty = (<div className="menue-meal empty">{DictJson[language].reload}</div>);
   const [fav, setFav] = useState([favLocal]);
   const [menusData, setMenus] = useState([]);
   const [menus, setMenusList] = useState(menuLocal);
