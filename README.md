@@ -1,4 +1,4 @@
-# CloneWars
+# Home Grocery Planner
 
 ## Инсрукция по запуску приложения
 
