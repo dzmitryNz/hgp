@@ -122,7 +122,7 @@ function FamilyModes() {
     <div className="pets">
       <div className="pets-header">
         {petsTitle}
-        <div onClick={clickEvent} className="pets-plus material-icons">add_circle</div>
+        {/* <div onClick={clickEvent} className="pets-plus material-icons">add_circle</div> */}
       </div>
       <div id="pets-icon" className="pets-icon" />
       <div className="pets-list">

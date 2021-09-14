@@ -1,16 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import App from './App';
 import './components/index.css';
-import Header from './components/header/header';
-import Menu from './components/menu/menu';
-import Family from './components/family/Family';
-import Planner from './components/planner/Planner';
-import Receipts from './components/receipts/ReceiptsFull';
-import Storages from './components/storages/Storages';
-import Ingredients from './components/ingredients/Ingredients';
-import Export from './components/export/Export';
+import store from './store';
 // import reportWebVitals from './reportWebVitals';
-const PropertiesJson = require('./components/json/properties.json');
+const PropertiesJson = require('./components/shared/json/properties.json');
 
 const localProp = JSON.parse(localStorage.getItem('hgp-properties'));
 if (localProp) {
@@ -21,14 +16,9 @@ if (localProp) {
 
 ReactDOM.render(
   <React.StrictMode>
-    <Header />
-    <Menu />
-    <Family />
-    <Planner />
-    <Storages />
-    <Receipts />
-    <Ingredients />
-    <Export />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
 );

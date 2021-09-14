@@ -1,8 +1,13 @@
+$background-color-hover: #535353;
+$background-color: #3B5337;
+$color: #F9F9F9;
+
+
 .menu {
   grid-area: menu;
   text-align: center;
-  background-color: #3B5337;
-  color: #F9F9F9;
+  background-color: $background-color;
+  color: $color;
   display: grid;
   gap: 5px;
   grid-template-rows: 80px 1fr 80px;
@@ -61,7 +66,7 @@
     }
 
     .tab:hover { 
-      background-color: #535353;
+      background-color: $background-color-hover;
       cursor: pointer;
       border-bottom-left-radius: 10px;
       border-top-left-radius: 10px;
@@ -82,7 +87,7 @@
     .theme:hover,
     .lang:hover {
       cursor: pointer;
-      color: royalblue;
+      background-color: $background-color-hover;
       }
 
     .footer:active,
@@ -90,6 +95,7 @@
     .lang:active {
       cursor: pointer;
       color: rosybrown;
+      background-color: $background-color-hover;
       }
 
     .langs {
@@ -101,7 +107,7 @@
     position: fixed;
     bottom: 100px;
     left: 45px;
-    background-color: #3B5337;
+    background-color: $background-color;
     border-radius: 10px;
     z-index: 120;
     }
@@ -116,7 +122,7 @@
     position: fixed;
     left: 45px;
     bottom: 60px;
-    background-color: #3B5337;
+    background-color: $background-color;
     border-radius: 10px;
     z-index: 1000;
 
@@ -137,7 +143,7 @@
   .theme,
   .lang {
     margin: 0.5vh 8px;
-    background-color: #3B5337;
+    background-color: $background-color;
     border-radius: 10px;
     color: inherit;
   }
@@ -149,7 +155,7 @@
     bottom: 0px;
     left: 80px;
     z-index: 120;
-    background-color: #3B5337;
+    background-color: $background-color;
     border-radius: 10px;
 
     .year {
@@ -178,7 +184,7 @@
 
      a:hover {
       cursor: pointer;
-      color: royalblue;
+      background-color: $background-color-hover;
      }
     }
 
@@ -197,8 +203,6 @@
 .menu {
   grid-area: menu;
   text-align: center;
-  background-color: #3B5337;
-  color: #F9F9F9;
   display: grid;
   gap: 5px;
   grid-template-rows: 70px;
@@ -225,8 +229,6 @@
     }
 
     .tab:hover { 
-    background-color: #535353;
-    cursor: pointer;
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
     }
@@ -248,7 +250,6 @@
     bottom: 0px;
     left: 0px;
     z-index: 120;
-    background-color: #3B5337;
     border-radius: 10px;
     font-size: 14px;
 
@@ -276,7 +277,7 @@
     }
     }
 
-      .themes {
+    .themes {
     width: fit-content;
     height: -moz-fit-content;
     height: fit-content;

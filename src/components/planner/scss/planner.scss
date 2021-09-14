@@ -8,7 +8,7 @@
 
     .content {
       display: grid;
-      grid-template-rows: 70px calc(100vh - 42px);
+      grid-template-rows: 70px calc(100vh - 115px);
       grid-template-columns: 100%;
       grid-template-areas:
         "mode"
@@ -22,7 +22,7 @@
 
     }
 
-    .mode {
+    .modes {
     grid-area: mode;
     display: flex;
     justify-content: space-evenly;

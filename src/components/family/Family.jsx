@@ -1,10 +1,10 @@
 /* eslint-disable import/no-cycle */
 
 import React from 'react';
-import ModeHeader from '../modeHeader';
+import ModeHeader from '../shared/modeHeader';
 import FamilyModes from './FamilyModes';
 
-const PropertiesJson = require('../json/properties.json');
+const PropertiesJson = require('../shared/json/properties.json');
 
 const localProp = JSON.parse(localStorage.getItem('hgp-properties'));
 if (localProp) {

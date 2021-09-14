@@ -1,33 +1,30 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable import/no-cycle */
-/* eslint-disable react/button-has-type */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import ModeHeader from '../modeHeader';
-import setMap from './setMap';
+import React, { useEffect, useState } from 'react';
 import Modal from '../receipts/ReceiptModal';
+import ModeHeader from '../shared/modeHeader';
+import setMap from './setMap';
 
-const PropertiesJson = require('../json/properties.json');
+const PropertiesJson = require('../shared/json/properties.json');
 
-const DictJson = require('../json/dict.json');
+const DictJson = require('../shared/json/dict.json');
 
 const min = ' мин.';
 const hours = ' час. ';
 const count = '';
-const root = document.getElementById('root').className;
+// const root = document.getElementById('root').className;
 
 function Ingredients() {
-  let hook = false;
-  if (root.match(/ingredients/)) hook = true;
+  // let hook = false;
+  // if (root.match(/ingredients/)) hook = true;
   let favLocal = JSON.parse(localStorage.getItem('hgp-favorite'));
   let menuLocal = JSON.parse(localStorage.getItem('hgp-menu'));
   if (!menuLocal) menuLocal = [];
   if (!favLocal) favLocal = [];
   const { language } = PropertiesJson;
   const empty = (<div className="menue-meal empty">{DictJson[language].reload}</div>);
-  const [fav, setFav] = useState([favLocal]);
+  // const [fav, setFav] = useState([favLocal]);
   const [menusData, setMenus] = useState([]);
   const [menus, setMenusList] = useState(menuLocal);
   const [show, setShow] = useState(false);
@@ -39,13 +36,13 @@ function Ingredients() {
     let ignore = false;
     const { serverUrl } = PropertiesJson;
     async function fetchMenu() {
-      const arrayUrl = `${serverUrl}/rec/array`;
+      const arrayUrl = `${serverUrl}rec/array`;
       const menusArr = menus || [];
       const regExMenu = menusArr.join('|');
       let menusResult = {};
       if (regExMenu.length !== 0) {
-        const configMenu = { el: 'idMeal', reg: regExMenu, cat: count };
-        menusResult = await axios.post(arrayUrl, configMenu);
+        const configMenu = { data: { el: 'idMeal', reg: regExMenu, cat: count } };
+        menusResult = await axios.get(arrayUrl, configMenu);
       }
       if (!ignore) setMenus(menusResult.data);
     }
@@ -53,9 +50,10 @@ function Ingredients() {
     fetchMenu();
 
     return () => { ignore = true; };
-  }, [menus, fav, root, hook]);
+  }, [menus]);
 
   const closeModal = () => setShow(false);
+  const handleKeyUp = () => {};
 
   const openModal = (e) => {
     const target = e.target.classList[0];
@@ -82,7 +80,7 @@ function Ingredients() {
     }
     localStorage.setItem('hgp-favorite', JSON.stringify(favNew));
     PropertiesJson.favorites = favNew;
-    setFav(favNew);
+    // setFav(favNew);
   };
 
   const removeMenu = (e) => {
@@ -146,8 +144,8 @@ function Ingredients() {
             [rec.strIngredient25]: rec.strMeasure25,
           };
 
-          let favAdd = (<div onClick={addFavorite} className={`${rec.idMeal} menue-favorite material-icons`}>favorite_border</div>);
-          const favRem = (<div onClick={removeFavorite} className={`${rec.idMeal}  menue-favorite material-icons`}>favorite</div>);
+          let favAdd = (<div onClick={addFavorite} onKeyUp={handleKeyUp} role="button" tabIndex={0} className={`${rec.idMeal} menue-favorite material-icons`}>favorite_border</div>);
+          const favRem = (<div onClick={removeFavorite} onKeyUp={handleKeyUp} role="button" tabIndex={0} className={`${rec.idMeal}  menue-favorite material-icons`}>favorite</div>);
           favAdd = favLocal.indexOf(rec.idMeal) !== -1 ? favRem : favAdd;
           menusArr.push(
             <div key={rec.idMeal} className={`${i} menue`}>
@@ -156,9 +154,9 @@ function Ingredients() {
                 <div className={`${i} menue-portions`}>{rec.strForPersons}</div>
                 <div className={`minus ${i} menue-portions`}>-</div>
               </div>
-              <div onClick={openModal} className={`${i} menue-meal`}>{rec.strMeal}</div>
+              <div onClick={openModal} onKeyUp={handleKeyUp} role="button" tabIndex={0} className={`${i} menue-meal`}>{rec.strMeal}</div>
               <div className={`${i} menue-buttons`}>
-                <div onClick={removeMenu} className={`${rec.idMeal} menue-add material-icons`}>remove_circle</div>
+                <div onClick={removeMenu} onKeyUp={handleKeyUp} role="button" tabIndex={0} className={`${rec.idMeal} menue-add material-icons`}>remove_circle</div>
                 {favAdd}
               </div>
             </div>,
@@ -186,7 +184,6 @@ function Ingredients() {
               // const id = key[0];
               let time = fullMap.get('time') ? fullMap.get('time') : 0;
               const times = key[1].split(' ');
-
               if (times.length === 2 && times[1].match(/мин/)) mins += Number(times[0]);
               if (times.length === 2 && times[1].match(/час/)) hrs += Number(times[0]);
               if (times.length === 4) {

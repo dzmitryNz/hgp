@@ -104,21 +104,6 @@ function Menu() {
         <div className="git-icon" />
         <a target="_blank" href="https://github.com/dzmitrynz" rel="noreferrer"><span>dzmitryNz</span></a>
       </div>
-      <div className="git">
-        <div className="git-icon" />
-        <a target="_blank" href="https://github.com/chernataly2020" rel="noreferrer"><span>chernataly</span></a>
-      </div>
-      <div className="git">
-        <div className="git-icon" />
-        <a target="_blank" href="https://github.com/Saylance2503" rel="noreferrer"><span>Saylance</span></a>
-      </div>
-      <div className="git">
-        <div className="git-icon" />
-        <a target="_blank" href="https://github.com/kosmodromm" rel="noreferrer"><span>kosmodromm</span></a>
-      </div>
-      <a target="_blank" href="https://rs.school/js/" rel="noreferrer">
-        <div className="rsschool" />
-      </a>
     </div>
   );
 

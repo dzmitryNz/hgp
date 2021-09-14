@@ -1,53 +1,44 @@
 /* eslint-disable import/no-cycle */
 import React from 'react';
-import ModeHeader from '../modeHeader';
+import ModeHeader from '../shared/modeHeader';
 
-const PropertiesJson = require('../json/properties.json');
-const DictJson = require('../json/dict.json');
+const PropertiesJson = require('../shared/json/properties.json');
+const DictJson = require('../shared/json/dict.json');
 
-let localProp = JSON.parse(localStorage.getItem('hgp-properties'));
-if (localProp) {
-  PropertiesJson.language = localProp.language;
-  PropertiesJson.theme = localProp.theme;
-  PropertiesJson.mode = localProp.mode;
-} else { localProp = PropertiesJson; }
+const clickEvent = () => {};
+const handleKeyUp = () => {};
 
-// const clickEvent = () => {};
-
-const Planner = () => {
+const Planner = (familyData) => {
   const { language } = PropertiesJson;
+  const localFamily = JSON.parse(localStorage.getItem('hgp-family'));
+  const familyDataEnd = !familyData ? localFamily : familyData;
 
-  // const localFamily = JSON.parse(localStorage.getItem('hgp-family'));
-
-  // const familyData = localFamily || PropertiesJson.family;
-
-  const modeBlock = () => (
-    <div className="mode">
+  const modesBlock = () => (
+    <div className="modes">
       <div className="planner-mode">{DictJson[language].plannerWeek}</div>
       <div className="planner-mode">{DictJson[language].plannerDay}</div>
-      <div className="planner-icon" />
+      <div className="planner-mode">{DictJson[language].plannerSurviver}</div>
     </div>
   );
 
-  // const plannerMode = () => {
-  //   return (<>
-  //       <div className="week-switcher">
-  //       <div onClick={clickEvent} className="adults-minus material-icons">remove_circle</div>
-  //          <div id="adults-value" className="adults-value">{familyData.adults}</div>
-  //          <div onClick={clickEvent} className="adults-plus material-icons">add_circle</div>
-  //       </div>
-  //       <div className="week-switcher">
-  // <div onClick={clickEvent} className="adultsdiet-minus material-icons">remove_circle</div>
-  //         <div id="adultsdiet-value" className="adultsdiet-value">{familyData.adultsdiet}</div>
-  //         <div onClick={clickEvent} className="adultsdiet-plus material-icons">add_circle</div>
-  //       </div>
-  //       </>)
-  // }
+  const modeBlock = () => (
+    <>
+      <div className="mode-content planner-week">
+        <div onClick={clickEvent} onKeyUp={handleKeyUp} role="button" tabIndex={0} className="adults-minus material-icons">remove_circle</div>
+        <div id="adults-value" className="adults-value">{familyDataEnd.adults}</div>
+        <div onClick={clickEvent} onKeyUp={handleKeyUp} role="button" tabIndex={0} className="adults-plus material-icons">add_circle</div>
+        <div onClick={clickEvent} onKeyUp={handleKeyUp} role="button" tabIndex={0} className="adultsdiet-minus material-icons">remove_circle</div>
+        <div id="adultsdiet-value" className="adultsdiet-value">{familyDataEnd.adultsdiet}</div>
+        <div onClick={clickEvent} onKeyUp={handleKeyUp} role="button" tabIndex={0} className="adultsdiet-plus material-icons">add_circle</div>
+      </div>
+    </>
+  );
 
   return (
     <div className="planner">
       <ModeHeader mode="planner" />
       <div className="content">
+        {modesBlock()}
         {modeBlock()}
       </div>
     </div>

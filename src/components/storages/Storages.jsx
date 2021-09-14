@@ -2,10 +2,10 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable import/no-cycle */
 import React from 'react';
-import ModeHeader from '../modeHeader';
+import ModeHeader from '../shared/modeHeader';
 
-const PropertiesJson = require('../json/properties.json');
-const DictJson = require('../json/dict.json');
+const PropertiesJson = require('../shared/json/properties.json');
+const DictJson = require('../shared/json/dict.json');
 
 function Storages() {
   const { language } = PropertiesJson;
