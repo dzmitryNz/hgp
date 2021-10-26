@@ -1,8 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import rootReducer from './components/shared/redux/reducer';
+import rootReducer from './components/shared/redux/slicer';
+// import rootReducer from './components/shared/redux/reducer';
 
 const store = configureStore({
-  reduser: rootReducer,
+  reducer: rootReducer,
   devTools: process.env.NODE_ENV !== 'production',
 });
 

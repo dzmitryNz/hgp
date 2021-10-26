@@ -1,14 +1,9 @@
-/* eslint-disable no-console */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable react/no-array-index-key */
 /* eslint-disable import/no-cycle */
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import fetchData from '../shared/api/fetchData';
 import { Empty, Spinner } from '../shared/constants';
 import { serverUrl } from '../shared/json/properties.json';
-import ModeHeader from '../shared/modeHeader';
 import Favorites from './Favorites';
 import Modal from './ReceiptModal';
 
@@ -147,14 +142,22 @@ function Receipts() {
 
   const categories = [];
 
-  categoriesData.forEach((cat, i) => {
+  categoriesData.forEach((cat) => {
     const category0 = cat[0];
     const activeClassName = `${category0} category-name active-category`;
     const categoryClassName = `${category0} category-name`;
     const catClassName = category0 === categoryStr ? activeClassName : categoryClassName;
     categories.push(
-      <div key={i} className="list-item">
-        <div onClick={changeCategory} className={catClassName}>{category0}</div>
+      <div key={cat[0]} className="list-item">
+        <div
+          className={catClassName}
+          onClick={changeCategory}
+          onKeyDown={changeCategory}
+          role="button"
+          tabIndex="0"
+        >
+          {category0}
+        </div>
         {/* <div className='category-qty'>{cat[1]}</div> */}
       </div>,
     );
@@ -171,10 +174,34 @@ function Receipts() {
     recentsArr.push(
       <div key={rec.idMeal} className={clasRN}>
         <div className={clasRB}>
-          <div onClick={addMenu} className={clasAdd}>add_circle</div>
-          <div onClick={addFavorite} className={clasFvr}>favorite_border</div>
+          <div
+            className={clasAdd}
+            onClick={addMenu}
+            onKeyDown={addMenu}
+            role="button"
+            tabIndex="0"
+          >
+            add_circle
+          </div>
+          <div
+            className={clasFvr}
+            onClick={addFavorite}
+            onKeyDown={addFavorite}
+            role="button"
+            tabIndex="0"
+          >
+            favorite_border
+          </div>
         </div>
-        <div onClick={openModal} className={clasRM}>{rec.strMeal}</div>
+        <div
+          className={clasRM}
+          onClick={openModal}
+          onKeyDown={openModal}
+          role="button"
+          tabIndex="0"
+        >
+          {rec.strMeal}
+        </div>
       </div>,
     );
   });
@@ -191,10 +218,34 @@ function Receipts() {
       menusArr.push(
         <div key={rec.idMeal} className={clasRN}>
           <div className={clasRB}>
-            <div onClick={removeMenu} className={clasAdd}>remove_circle</div>
-            <div onClick={addFavorite} className={clasFvr}>favorite_border</div>
+            <div
+              onClick={removeMenu}
+              className={clasAdd}
+              onKeyDown={removeMenu}
+              role="button"
+              tabIndex="0"
+            >
+              remove_circle
+            </div>
+            <div
+              className={clasFvr}
+              onClick={addFavorite}
+              onKeyDown={addFavorite}
+              role="button"
+              tabIndex="0"
+            >
+              favorite_border
+            </div>
           </div>
-          <div onClick={openModal} className={clasRM}>{rec.strMeal}</div>
+          <div
+            className={clasRM}
+            onClick={openModal}
+            onKeyDown={openModal}
+            role="button"
+            tabIndex="0"
+          >
+            {rec.strMeal}
+          </div>
         </div>,
       );
     });
@@ -220,10 +271,34 @@ function Receipts() {
       return (
         <div style={divStyle} key={rec.idMeal} className={clasNm}>
           <div className={clasNB}>
-            <div onClick={addMenu} className={clasAdd}>add_circle</div>
-            <div onClick={addFavorite} className={clasFvr}>favorite_border</div>
+            <div
+              className={clasAdd}
+              onClick={addMenu}
+              onKeyDown={addMenu}
+              role="button"
+              tabIndex="0"
+            >
+              add_circle
+            </div>
+            <div
+              className={clasFvr}
+              onClick={addFavorite}
+              onKeyDown={addFavorite}
+              role="button"
+              tabIndex="0"
+            >
+              favorite_border
+            </div>
           </div>
-          <div onClick={openModal} className={clasNS} />
+          <div
+            className={clasNS}
+            onClick={openModal}
+            onKeyDown={openModal}
+            role="button"
+            tabIndex="0"
+          >
+            Open
+          </div>
           <div className={clasNM}>{rec.strMeal}</div>
         </div>
       );
@@ -234,7 +309,6 @@ function Receipts() {
 
   return (
     <div id="receipts" className="receipts">
-      <ModeHeader mode="receipts" />
       <div className="content">
         <div className="categories">
           <div className="categories-wrapper">

@@ -1,42 +1,80 @@
-/* eslint-disable import/no-cycle */
 import React from 'react';
-import ModeHeader from '../shared/modeHeader';
+import { useDispatch, useSelector } from 'react-redux';
+import { setPlanner } from '../shared/redux/slicer';
 
-const PropertiesJson = require('../shared/json/properties.json');
 const DictJson = require('../shared/json/dict.json');
 
-const clickEvent = () => {};
-const handleKeyUp = () => {};
+const Planner = () => {
+  const dispatch = useDispatch();
+  const {
+    language, family, planner, plannerModes,
+  } = useSelector((state) => state);
 
-const Planner = (familyData) => {
-  const { language } = PropertiesJson;
-  const localFamily = JSON.parse(localStorage.getItem('hgp-family'));
-  const familyDataEnd = !familyData ? localFamily : familyData;
+  const complete = {
+    adults: planner.adults,
+    adultsdiet: planner.adultsdiet,
+    children: planner.children,
+    childrendiet: planner.childrendiet,
+    pets: planner.pets,
+  };
 
-  const modesBlock = () => (
-    <div className="modes">
-      <div className="planner-mode">{DictJson[language].plannerWeek}</div>
-      <div className="planner-mode">{DictJson[language].plannerDay}</div>
-      <div className="planner-mode">{DictJson[language].plannerSurviver}</div>
-    </div>
-  );
+  const clickEvent = (index, set) => {
+    if (set === 'increase') complete[index] += 1;
+    if (set === 'decrease' && complete[index] !== 0) complete[index] -= 1;
+    if (complete.adultsdiet > complete.adults) complete.adults = complete.adultsdiet;
+    if (complete.childrendiet > complete.children) complete.children = complete.childrendiet;
+    dispatch(setPlanner(complete));
+  };
+  const handleKeyUp = () => {};
+
+  const modesBlock = () => {
+    const plannerModesArr = [];
+    plannerModes.forEach((mode) => {
+      plannerModesArr.push(<div className="planner-mode">{DictJson[language][mode].toUpperCase()}</div>);
+    });
+    return (
+      <div className="modes">
+        {plannerModesArr}
+      </div>
+    );
+  };
 
   const modeBlock = () => (
     <>
       <div className="mode-content planner-week">
-        <div onClick={clickEvent} onKeyUp={handleKeyUp} role="button" tabIndex={0} className="adults-minus material-icons">remove_circle</div>
-        <div id="adults-value" className="adults-value">{familyDataEnd.adults}</div>
-        <div onClick={clickEvent} onKeyUp={handleKeyUp} role="button" tabIndex={0} className="adults-plus material-icons">add_circle</div>
-        <div onClick={clickEvent} onKeyUp={handleKeyUp} role="button" tabIndex={0} className="adultsdiet-minus material-icons">remove_circle</div>
-        <div id="adultsdiet-value" className="adultsdiet-value">{familyDataEnd.adultsdiet}</div>
-        <div onClick={clickEvent} onKeyUp={handleKeyUp} role="button" tabIndex={0} className="adultsdiet-plus material-icons">add_circle</div>
+        <div className="description">{DictJson[language].descriptionPlanner}</div>
+        <div className="adults">
+          <div className="adults-header">{DictJson[language].adultsTitle}</div>
+          <div className="adults-icon" />
+          <div className="adults-switcher">
+            <div
+              className="adults-minus material-icons"
+              onClick={clickEvent}
+              onKeyUp={handleKeyUp}
+              role="button"
+              tabIndex={0}
+            >
+              remove_circle
+            </div>
+            <div id="adults-value" className="adults-value">{family.adults}</div>
+            <div
+              onClick={clickEvent}
+              onKeyUp={handleKeyUp}
+              role="button"
+              tabIndex={0}
+              className="adults-plus material-icons"
+            >
+              add_circle
+            </div>
+          </div>
+          <div className="adultsdiet-header">{DictJson[language].adultsDietTitle}</div>
+        </div>
       </div>
     </>
   );
 
   return (
     <div className="planner">
-      <ModeHeader mode="planner" />
       <div className="content">
         {modesBlock()}
         {modeBlock()}

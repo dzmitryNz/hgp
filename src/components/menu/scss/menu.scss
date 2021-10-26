@@ -18,7 +18,7 @@ $color: #F9F9F9;
     "buttons";
 
   *::selection {
-    background: none;  
+    background: none;
   }
 
   .menu-header{
@@ -33,11 +33,11 @@ $color: #F9F9F9;
   .tabs{
     grid-area: tabs;
 
-    .tab { 
+    .tab {
     height: 9vh;
     width: 100px;
     }
-    
+
     .tab-family{
     background: url(../assets/images/familySVG.svg) no-repeat center center;
     }
@@ -57,7 +57,7 @@ $color: #F9F9F9;
     background: url(../assets/images/export.svg) no-repeat center center;
     }
 
-    .tabi { 
+    .tabi {
     height: 8vh;
     width: 100px;
     background-size: contain;
@@ -65,7 +65,7 @@ $color: #F9F9F9;
     top: 3px;
     }
 
-    .tab:hover { 
+    .tab:hover {
       background-color: $background-color-hover;
       cursor: pointer;
       border-bottom-left-radius: 10px;
@@ -132,7 +132,7 @@ $color: #F9F9F9;
     width: 100px;
     height: 50px;
   }
-  
+
   .footer-hidden,
   .themes-hidden,
   .langs-hidden {
@@ -223,17 +223,17 @@ $color: #F9F9F9;
     grid-area: tabs;
     display: flex;
 
-    .tab { 
+    .tab {
     height: 100px;
     width: 10vw;
     }
 
-    .tab:hover { 
+    .tab:hover {
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
     }
 
-    .tabi { 
+    .tabi {
     height:50px;
     width: 9vw;
     background-size: contain;
@@ -312,7 +312,7 @@ $color: #F9F9F9;
     left: 62vw;
     top: 100px;
   }
-  
+
   .themes {
     left: 70vw;
     top: 60px;

@@ -1,5 +1,9 @@
 import {
-  ADD_MENU, FAIL, RECEIVE, REMOVE_MENU, REQUEST,
+  ADD_MENU,
+  FAIL,
+  RECEIVE,
+  REMOVE_MENU,
+  REQUEST,
 } from './actions';
 
 const initialState = {};
@@ -28,6 +32,4 @@ function receipts(state = initialState, action) {
   }
 }
 
-exports = [
-  receipts,
-];
+export default receipts;

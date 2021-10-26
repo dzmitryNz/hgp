@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import Export from './components/export/Export';
 import Family from './components/family/Family';
 import Header from './components/header/header';
@@ -10,16 +11,21 @@ import Receipts from './components/receipts/ReceiptsFull';
 import Storages from './components/storages/Storages';
 
 export default function App() {
+  const state = useSelector((st) => st);
+  const mode = useSelector((st) => st.mode);
+
+  if (state) localStorage.setItem('hgp-properties', JSON.stringify(state));
+
   return (
     <>
       <Header />
       <Menu />
-      <Family />
-      <Planner />
-      <Storages />
-      <Receipts />
-      <Ingredients />
-      <Export />
+      {mode === 'family' && <Family />}
+      {mode === 'planner' && <Planner />}
+      {mode === 'storages' && <Storages />}
+      {mode === 'receipts' && <Receipts />}
+      {mode === 'ingredients' && <Ingredients />}
+      {mode === 'export' && <Export />}
     </>
   );
 }

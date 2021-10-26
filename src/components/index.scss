@@ -14,9 +14,9 @@
 
 $hoverColor: rgb(0,50,255);
 $backgroundDark: rgb(49, 49, 49);
-$backgroundLight: rgb(186, 216, 186); 
-$colorDark: rgb(229, 229, 229); 
-$colorLight: rgb(29, 29, 29); 
+$backgroundLight: rgb(186, 216, 186);
+$colorDark: rgb(229, 229, 229);
+$colorLight: rgb(29, 29, 29);
 $backgroundColor: $backgroundLight;
 $сolor: $colorLight;
 
@@ -85,7 +85,7 @@ code {
   height: 100%;
   display: grid;
   // gap: 5px;
-  grid-template-rows: 0px 1fr;
+  grid-template-rows: 42px 1fr;
   grid-template-columns: 100px auto;
   // grid-template-areas:
   //   "menu header"
@@ -105,7 +105,7 @@ code {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%; 
+  width: 100%;
   height: 100%;
   background: #0000003a;
   transition: opacity 0.2s ease;
@@ -156,27 +156,22 @@ code {
 }
 
 .family ,
-.storages, 
-.planner, 
-.receipts, 
-.ingredients, 
+.storages,
+.planner,
+.receipts,
+.ingredients,
 .exports {
   text-align: center;
   // border: 1px solid grey;
   border-radius: 5px;
 }
 
-  .family-header,
-  .storages-header,
-  .planner-header,
-  .receipts-header,
-  .ingredients-header,
-  .export-header {
-  text-align: left;
-  margin: 5px 20px;
-  display: flex;
-  justify-content: space-between;
-}
+//   .header {
+//   text-align: left;
+//   margin: 5px 20px;
+//   display: flex;
+//   justify-content: space-between;
+// }
 
 .next-button {
   color: white;
@@ -218,7 +213,7 @@ code {
 grid-template-areas:
     "menu header"
     "menu storages";
-  
+
   .family,
   .planner,
   .receipts,
@@ -233,7 +228,7 @@ grid-template-areas:
   grid-template-areas:
     "menu header"
     "menu planner";
-  
+
   .family,
   .storages,
   .receipts,

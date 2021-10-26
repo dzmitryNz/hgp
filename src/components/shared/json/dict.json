@@ -7,8 +7,8 @@
         "exportTitle": "Заказ / Экспорт",
         "next": "Дальше", "footer": "footer",
         "familyMode": "Составить меню для семьи",
-        "adults": "Взрослые", "children": "Дети", "adultsDiet": "с отдельной диетой",
-        "childrenDiet": "с отдельной диетой", "pets": "Домашние питомцы",
+        "adultsTitle": "Взрослые", "childrenTitle": "Дети", "adultsDietTitle": "с отдельной диетой",
+        "childrenDietTitle": "с отдельной диетой", "petsTitle": "Домашние питомцы",
         "cat": "Кот", "fish": "Рыбки", "turtle": "Черепашка", "dog": "Собака", "parrot": "Попугай",
         "partyMode": "Составить меню для встречи",
         "categories": "Категории", "areas": "Кухни разных стран", "popular": "Популярные рецепты",
@@ -25,7 +25,8 @@
         "timeTitle": "Ориентировочное время: ", "portionsIng": "Порций",
         "mealName": "Название блюда", "reload": "Бэкэнд просыпается",
         "sourceTitle": "Рецепт мы взяли здесь",
-        "isLoading": "Загрузка"
+        "isLoading": "Загрузка",
+        "descriptionPlanner": "Необходимо выбрать количество порций для каждой персоны"
     },
     "By": {
         "title": "Планавальнік хатніх запасаў", "familyTitle": "Склад сям'і (сустрэчы)",
@@ -34,8 +35,8 @@
         "ingredientsTitle": "Iнгрэдыенты", "exportTitle": "Заказ / Экспарт",
         "next": "Далей", "footer": "footer",
         "familyMode": "Скласці меню для сям'і",
-        "adults": "Дарослыя", "children": "Дзеці",
-        "adultsDiet": "з асобнай дыетай", "childrenDiet": "з асобнай дыетай", "pets": "Хатнія гадаванцы",
+        "adultsTitle": "Дарослыя", "childrenTitle": "Дзеці",
+        "adultsDietTitle": "з асобнай дыетай", "childrenDietTitle": "з асобнай дыетай", "petsTitle": "Хатнія гадаванцы",
         "cat": "Кот", "fish": "Рыбы", "turtle": "Чарапашка", "dog": "Сабака", "parrot": "Папугай",
         "partyMode": "Скласці меню для сустрэчы", "categories": "Катэгорыі",
         "areas": "Кухні розных краін", "popular": "Папулярныя рэцэпты", "recent": "Папулярныя",
@@ -51,7 +52,8 @@
         "timeTitle": "Арыентыровачны час: ", "portionsIng": "Порцый",
         "mealName": "Назва блюда", "reload": "Бэкэнд просыпается",
         "sourceTitle": "Рэцэпт ўзялі адсюль",
-        "isLoading": "Загрузка"
+        "isLoading": "Загрузка",
+        "descriptionPlanner": "Патрэбна вызначыць колькасць порцiй дзеля кожнай персоны"
      },
     "Ua": {
         "title": "Планувальник домашніх запасів", "familyTitle": "Склад сім'ї (зустрічі)",
@@ -60,8 +62,8 @@
         "ingredientsTitle": "Iнгредієнти", "exportTitle": "Замовлення / Експорт",
         "next": "Далi", "footer": "footer",
         "familyMode": "Скласти меню для сім'ї", "partyMode": "Скласти меню для зустрічі",
-        "adults": "Дорослі", "children": "Діти", "adultsDiet": "з окремою дієтою",
-        "childrenDiet": "з окремою дієтою", "pets": "Домашні улюбленці",
+        "adultsTitle": "Дорослі", "childrenTitle": "Діти", "adultsDietTitle": "з окремою дієтою",
+        "childrenDietTitle": "з окремою дієтою", "petsTitle": "Домашні улюбленці",
         "cat": "Cat", "fish": "Fish", "turtle": "Turtle", "dog": "Dog", "parrot": "Parrot",
         "categories": "Категорії", "areas": "Кухні різних країн", "popular": "Популярні рецепти",
         "recent": "Популярні", "favorites": "Вибрані", "menu": "Меню тижні",
@@ -77,15 +79,16 @@
         "timeTitle": "Орієнтовний час: ", "portionsIng": "Порцій",
         "mealName": "Назва блюда", "reload": "Бэкэнд просыпается",
         "sourceTitle": "Рецепт взяли звідси",
-        "isLoading": "Загрузка"
+        "isLoading": "Загрузка",
+        "descriptionPlanner": "Необходимо выбрать количество порций для каждой персоны"
     },
     "En": {
         "title": "Home grocery planner", "familyTitle": "Family composition (meetings)",
         "storagesTitle": "Storages", "plannerTitle": "Planning", "receiptsTitle": "Complete menu",
         "ingredientsTitle": "Ingredients", "exportTitle": "Order / Export",
         "next": "Next", "footer": "footer", "familyMode": "Make a family menu",
-        "adults": "Adults", "children": "Children", "pets": "Pets",
-        "adultsDiet": "with personal diet", "childrenDiet": "with personal diet",
+        "adultsTitle": "Adults", "childrenTitle": "Children", "petsTitle": "Pets",
+        "adultsDietTitle": "with personal diet", "childrenDietTitle": "with personal diet",
         "cat": "Cat", "fish": "Fish", "turtle": "Turtle", "dog": "Dog", "parrot": "Parrot",
         "partyMode": "Create a menu for a meeting",
         "categories": "Сategories", "areas": "Areas cousines", "popular": "Popular recipes",
@@ -101,6 +104,7 @@
         "timeTitle": "Approximate time: ", "portionsIng": "Portions",
         "mealName": "Meal name", "reload": "Backend still wakening",
         "sourceTitle": "The recipe was taken from here",
-        "isLoading": "Loading"
+        "isLoading": "Loading",
+        "descriptionPlanner": "Need to choose quality of portions for persons"
     }
 }

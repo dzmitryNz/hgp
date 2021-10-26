@@ -1,6 +1,5 @@
 /* eslint-disable import/no-cycle */
 import React from 'react';
-import ModeHeader from '../shared/modeHeader';
 
 const PropertiesJson = require('../shared/json/properties.json');
 
@@ -14,9 +13,7 @@ if (localProp) {
 // const [ingredients, setIngr] = useState();
 
 const Export = () => (
-  <div className="export">
-    <ModeHeader mode="export" />
-  </div>
+  <div className="export" />
 );
 
 // exportToCsv('export.csv', [

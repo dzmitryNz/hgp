@@ -1,9 +1,7 @@
-/* eslint-disable react/no-array-index-key */
 /* eslint-disable import/no-cycle */
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Modal from '../receipts/ReceiptModal';
-import ModeHeader from '../shared/modeHeader';
 import setMap from './setMap';
 
 const PropertiesJson = require('../shared/json/properties.json');
@@ -248,21 +246,21 @@ function Ingredients() {
             if (value.size > 1) {
               const keysArr = [];
               value.forEach((inValue, inKey) => {
-                keysArr.push(<div key={inKey} className="ingredient-gridmeas">{`${inKey}\n${inValue}`}</div>);
+                keysArr.push(<div key={inValue} className="ingredient-gridmeas">{`${inKey}\n${inValue}`}</div>);
               });
               ingredientInner = (
                 <>
                   <div className="ingredient-gridname">{`${key}`}</div>
                   <div className="ingredient-dotted" />
                   <div className="ingredient-grid">
-                    <div className={`${key} ingredient-gridmeas`}>{keysArr}</div>
+                    <div className={`${value} ingredient-gridmeas`}>{keysArr}</div>
                   </div>
                 </>
               );
             }
           }
           ingredientsArr.push(
-            <div key={`${key} ingredient`} className={`${key} ingredient`}>
+            <div key={`${value} ingredient`} className={`${key} ingredient`}>
               {ingredientInner}
             </div>,
           );
@@ -276,7 +274,6 @@ function Ingredients() {
 
   return (
     <div className="ingredients">
-      <ModeHeader mode="ingredients" />
       <div className="content">
         <div className="ingredients-wrapper">
           {/* <div className='ingredients-header'></div> */}
