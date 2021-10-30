@@ -24,7 +24,7 @@ const defaultState = {
     storageDef: { tMax: 25, tMin: 15, capacity: 50 },
   },
   family: {
-    adults: 2, children: 1, adultsdiet: 1, childrendiet: 1, pets: [],
+    adults: 2, children: 1, adultsdiet: 1, childrendiet: 1, pets: ['turtle', 'cat'],
   },
   planner: {
     adults: 8, children: 2, adultsdiet: 1, childrendiet: 1, pets: {},

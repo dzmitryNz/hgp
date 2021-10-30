@@ -33,7 +33,7 @@
     .mode-family {
       grid-area: mode;
       padding: 6px 0px;
-      width: 100%;   
+      width: 100%;
       color: inherit;
       background-color: inherit;
       overflow: auto;
@@ -70,7 +70,7 @@
       transition: all 0.2s;
       color: #518051;
     }
-    
+
     .adults-minus:active, .adults-plus:active,
     .adultsdiet-minus:active, .adultsdiet-plus:active,
     .childrendiet-minus:active, .childrendiet-plus:active,
@@ -82,11 +82,12 @@
 
     .pets {
       display: grid;
-      grid-template-rows: 40px 15vh;
+      grid-template-rows: 40px 15vh 40px;
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-areas:
         "petsicon petsheader petsheader"
-        "petsicon petsswitcher petsswitcher";
+        "petsicon petsswitcher petsswitcher"
+        "petsadd petsswitcher petsswitcher";
       justify-content: space-around;
       font-size: 2rem;
       margin-left: 10px;
@@ -94,11 +95,11 @@
       background-color: inherit;
       // max-height: calc(100vh - 125px);
       // max-width: calc(100vw - 105px);
-      
+
       .pets-plus {
         color: inherit;
       }
-      
+
       .pets-icon {
           grid-area: petsicon;
           background: url(../assets/images/cat-animal.svg) no-repeat center center;
@@ -118,25 +119,37 @@
         .pets-switcher {
           grid-area: petsswitcher;
           display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          height: fit-content;
           justify-content: right;
-          align-items: center;
+          align-items: left;
           padding: 0 12vw;
         }
 
         .pet {
           display: flex;
           margin: 10px 0;
+        }
 
-          .material-icons:hover {
+        .material-icons:hover {
             cursor: pointer;
             transition: all 0.2s;
             color: #518051;
-          }
+        }
 
-          .material-icons:active {
+        .material-icons:active {
            transition: all 0.2s;
            color: #91ad91;
-          }
+        }
+
+        .pets-add {
+          width: 15vw;
+          text-align: center;
+          border: 1px solid black;
+          border-radius: 10px;
+          color: inherit;
+          background-color: inherit;
         }
     }
       .children {
@@ -175,7 +188,7 @@
           grid-area: childrendietheader;
           text-align: center;
           white-space: nowrap;
-          overflow: hidden; 
+          overflow: hidden;
         }
 
         .childrendiet-switcher {
@@ -222,7 +235,7 @@
           grid-area: adultsdietheader;
           text-align: center;
           white-space: nowrap;
-          overflow: hidden;  
+          overflow: hidden;
         }
 
         .adultsdiet-switcher {
