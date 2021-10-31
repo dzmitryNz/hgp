@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { React, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -101,7 +100,6 @@ function Family() {
     e.preventDefault();
     if (pets.indexOf(newPet) !== -1) return;
     pets.push(newPet);
-    console.log(pets);
     complete.pets = pets;
     familySet(complete);
     showNewPets(false);
@@ -135,6 +133,8 @@ function Family() {
             <div id="pets-icon" className="pets-icon" />
             <div className="pets-header">{petsTitle}</div>
             <div
+              role="button"
+              tabIndex="0"
               onClick={() => showNewPets(!showingNewPets)}
               className="pets-plus material-icons"
             >
@@ -150,6 +150,8 @@ function Family() {
                 onChange={(e) => handleChange(e)}
               />
               <div
+                role="button"
+                tabIndex="0"
                 className="pets-plus material-icons"
                 onClick={(e) => handleSubmit(e)}
                 type="submit"
