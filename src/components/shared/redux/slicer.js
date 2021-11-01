@@ -5,7 +5,7 @@ const localProp = JSON.parse(localStorage.getItem('hgp-properties'));
 const defaultState = {
   language: 'Ru',
   category: 'Основные блюда',
-  theme: 'schedule',
+  theme: 'light_mode',
   mode: 'family',
   langList: ['By', 'En', 'Ru', 'Ua'],
   themesList: ['dark_mode', 'light_mode', 'schedule'],
@@ -13,12 +13,12 @@ const defaultState = {
   plannerModes: ['plannerWeek', 'plannerDay', 'plannerSurviver'],
   pets: ['cat', 'fish', 'turtle', 'dog', 'parrot'],
   storages: {
-    names: ['fridge', 'freezer', 'kitchen0', 'kitchen1', 'kitchen2', 'cellar0', 'cellar1'],
+    places: ['fridge', 'freezer', 'pantry', 'kitchen0', 'kitchen1', 'cellar0', 'cellar1'],
     fridge: { tMax: 6, tMin: 1, capacity: 200 },
     freezer: { tMax: -5, tMin: -25, capacity: 160 },
+    pantry: { tMax: 25, tMin: 18, capacity: 200 },
     kitchen0: { tMax: 25, tMin: 18, capacity: 250 },
     kitchen1: { tMax: 25, tMin: 18, capacity: 200 },
-    pantry: { tMax: 25, tMin: 18, capacity: 200 },
     cellar0: { tMax: 18, tMin: 10, capacity: 100 },
     cellar1: { tMax: 15, tMin: 5, capacity: 500 },
     storageDef: { tMax: 25, tMin: 15, capacity: 50 },
