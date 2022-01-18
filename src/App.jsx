@@ -23,6 +23,7 @@ export default function App() {
       {mode === 'receipts' ? <Receipts /> : ''}
       {mode === 'ingredients' ? <Ingredients /> : ''}
       {mode === 'export' ? <Export /> : ''}
+
     </>
   );
 }

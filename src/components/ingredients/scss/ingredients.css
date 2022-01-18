@@ -1,0 +1,311 @@
+.ingredients {
+  grid-area: ingredients;
+  text-align: center;
+  max-width: calc(100vw - 105px);
+  background-color: inherit;
+  color: inherit;
+  border-color: inherit;
+}
+
+.ingredients .content {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 350px;
+  grid-template-areas: "ingredient menus" "ingredient menus" "ingredient favorites";
+  max-height: calc(100vh - 42px);
+  max-width: calc(100vw - 105px);
+  justify-content: space-around;
+  background-color: inherit;
+  color: inherit;
+  border-color: inherit;
+}
+
+.ingredients .ingredients-wrapper {
+  grid-area: ingredient;
+  display: block;
+  background-color: inherit;
+  max-height: calc(100vh - 45px);
+  color: inherit;
+  border-color: inherit;
+  overflow: auto;
+}
+
+.ingredients .ingredients-wrapper .time, .ingredients .ingredients-wrapper .ingredient {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto 1fr auto auto;
+  grid-template-areas: "ingname ingdotted ingmeasure ingqty";
+  min-width: 300px;
+  margin: 5px 0;
+}
+
+.ingredients .ingredients-wrapper .time .ingredient-name, .ingredients .ingredients-wrapper .ingredient .ingredient-name {
+  grid-area: ingname;
+  text-align: left;
+  width: fit-content;
+  margin: 0 10px;
+  place-self: end;
+  margin: 0 5px;
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+.ingredients .ingredients-wrapper .time .ingredient-gridname, .ingredients .ingredients-wrapper .ingredient .ingredient-gridname {
+  grid-area: ingname;
+  text-align: left;
+  width: fit-content;
+  margin: 0 10px;
+  place-self: end;
+  margin: 0 5px;
+  font-size: 18px;
+  white-space: nowrap;
+  line-height: 2em;
+}
+
+.ingredients .ingredients-wrapper .time .ingredient-dotted, .ingredients .ingredients-wrapper .ingredient .ingredient-dotted {
+  grid-area: ingdotted;
+  border-bottom: 1px dotted;
+  border-color: inherit;
+  min-width: 20px;
+}
+
+.ingredients .ingredients-wrapper .time .ingredient-grid, .ingredients .ingredients-wrapper .ingredient .ingredient-grid {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto auto;
+  grid-template-areas: "ingmeas ingmeas" "ingqt ingqt";
+}
+
+.ingredients .ingredients-wrapper .time .ingredient-grid .ingredient-gridmeas, .ingredients .ingredients-wrapper .ingredient .ingredient-grid .ingredient-gridmeas {
+  grid-area: ingmeas;
+  margin: 0px 3px;
+  line-height: 20px;
+}
+
+.ingredients .ingredients-wrapper .time .ingredient-meas, .ingredients .ingredients-wrapper .ingredient .ingredient-meas {
+  grid-area: ingmeasure;
+  text-align: right;
+  width: fit-content;
+  place-self: end;
+  margin: 0 5px;
+}
+
+.ingredients .ingredients-wrapper .time .ingredient-qty, .ingredients .ingredients-wrapper .ingredient .ingredient-qty {
+  grid-area: ingqty;
+  margin: 0 5px;
+  font-size: 18px;
+  white-space: nowrap;
+  margin: 0 5px;
+}
+
+.ingredients .menus {
+  grid-area: menus;
+  display: block;
+  background-color: inherit;
+  color: inherit;
+  border-color: inherit;
+}
+
+.ingredients .favorites {
+  grid-area: favorites;
+  display: block;
+  background-color: inherit;
+  color: inherit;
+  border-color: inherit;
+}
+
+.ingredients .category-header,
+.ingredients .menus-header,
+.ingredients .favorites-header {
+  background-color: #508150;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 25px;
+  padding: 3px 0px;
+  margin: 0 35% 0 0px;
+  font-size: 16px;
+  color: snow;
+}
+
+.ingredients .favorites-content,
+.ingredients .menus-content {
+  overflow: auto;
+  max-height: calc(100vh / 2);
+  justify-content: space-between;
+  background-color: inherit;
+  color: inherit;
+}
+
+.ingredients .menue,
+.ingredients .favorite {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ingredients .menue-add,
+.ingredients .menue-favorite,
+.ingredients .favorite-add,
+.ingredients .favorite-favorite {
+  font-size: 24px;
+}
+
+.ingredients .header-menue {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid;
+  border-color: inherit;
+  padding: 3px 2px;
+}
+
+.ingredients .menue {
+  text-align: left;
+}
+
+.ingredients .menue .portions {
+  display: flex;
+}
+
+.ingredients .menue .portions .menue-portions {
+  margin: 0 2px;
+  font-size: 20px;
+}
+
+.ingredients .menue .menue-buttons {
+  display: flex;
+}
+
+.ingredients .menue .menue-meal {
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  margin: 2px 0 2px 5px;
+  line-height: 23px;
+  font-size: 19px;
+}
+
+.ingredients .menue .menue-meal:hover,
+.ingredients .menue .recent-meal:hover,
+.ingredients .menue .favorite-meal:hover,
+.ingredients .menue .recent-add:hover,
+.ingredients .menue .recent-favorite:hover,
+.ingredients .menue .menue-add:hover,
+.ingredients .menue .menue-favorite:hover,
+.ingredients .menue .favorite-add:hover,
+.ingredients .menue .favorite-favorite:hover,
+.ingredients .menue .menue-add:hover,
+.ingredients .menue .menue-favorite:hover {
+  cursor: pointer;
+  color: #508150;
+  transition: all 0.2s;
+  font-weight: 600;
+}
+
+.ingredients .menue .menue-meal:hover,
+.ingredients .menue .recent-meal:hover,
+.ingredients .menue .favorite-meal:hover {
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.ingredients .receipt {
+  display: grid;
+  grid-template-rows: auto 30px 10px;
+  grid-template-columns: 190px;
+  grid-template-areas: "see" "buttons" "mealName";
+  width: 190px;
+  height: 190px;
+  margin: 0px 10px 70px 10px;
+  border-radius: 100px;
+}
+
+.ingredients .receipt .receipt-buttons {
+  grid-area: buttons;
+  display: flex;
+  justify-content: space-around;
+}
+
+.ingredients .receipt .receipt-buttons .receipt-add {
+  position: relative;
+  text-align: left;
+  right: 25px;
+  top: 10px;
+  z-index: 1;
+}
+
+.ingredients .receipt .receipt-buttons .receipt-favorite {
+  position: relative;
+  text-align: right;
+  left: 25px;
+  top: 10px;
+  z-index: 1;
+}
+
+.ingredients .receipt .receipt-buttons .receipt-add:hover,
+.ingredients .receipt .receipt-buttons .receipt-favorite:hover {
+  cursor: pointer;
+}
+
+.ingredients .receipt .receipt-see {
+  grid-area: see;
+}
+
+.ingredients .receipt .receipt-see:hover {
+  cursor: pointer;
+}
+
+.ingredients .receipt .receipt-meal {
+  grid-area: mealName;
+  position: relative;
+  height: 56px;
+  top: 10px;
+  font-size: 15px;
+  padding: 2px 5px;
+  text-emphasis: none;
+}
+
+.ingredients .receipt .receipt-ingrredients {
+  position: relative;
+  top: 30px;
+}
+
+.ingredients .receipt:hover {
+  border-radius: 10px;
+  transition: all 0.1s;
+  width: 200px;
+  height: 200px;
+  margin: 0px 5px 45px 5px;
+}
+
+.ingredients .receipt:hover .receipt-meal {
+  position: relative;
+  top: 10px;
+  font-size: 18px;
+  padding: 2px 5px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .ingredients {
+    grid-area: ingredients;
+    text-align: center;
+    max-width: 100vw;
+    color: inherit;
+    background-color: inherit;
+  }
+  .ingredients .content {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 250px;
+    grid-template-areas: "ingredient menus" "ingredient menus" "ingredient favorites";
+    max-height: calc(100vh - 110px);
+    max-width: 100vw;
+    justify-content: space-around;
+    background-color: inherit;
+    color: inherit;
+    border-color: inherit;
+  }
+}
+/*# sourceMappingURL=ingredients.css.map */

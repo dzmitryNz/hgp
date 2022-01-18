@@ -44,6 +44,7 @@
         "timeTitle": "Ориентировочное время: ",
         "portionsIng": "Порций",
         "mealName": "Название блюда",
+        "reload": "Пусто или нужно перезагрузить страницу",
         "sourceTitle": "Рецепт мы взяли здесь"
     },
     "By": {
@@ -91,6 +92,7 @@
         "timeTitle": "Арыентыровачны час: ",
         "portionsIng": "Порцый",
         "mealName": "Назва блюда",
+        "reload": "Пуста ці перазагрузіць трэба старонку",        
         "sourceTitle": "Рэцэпт ўзялі адсюль"
      },
     "Ua": {
@@ -138,6 +140,7 @@
         "timeTitle": "Орієнтовний час: ",
         "portionsIng": "Порцій",
         "mealName": "Назва блюда",
+        "reload": "Пусто або перезавантажити потрібно",
         "sourceTitle": "Рецепт взяли звідси"
     },
     "En": {
@@ -184,6 +187,7 @@
         "timeTitle": "Approximate time: ",
         "portionsIng": "Portions",
         "mealName": "Meal name",
+        "reload": "Empty or need to reload the page",
         "sourceTitle": "The recipe was taken from here"
     }
 }

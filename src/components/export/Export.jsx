@@ -1,8 +1,7 @@
 /* eslint-disable import/no-cycle */
 import React from 'react';
-import ModeHeader from '../modeHeader';
 
-const PropertiesJson = require('../json/properties.json');
+const PropertiesJson = require('../shared/json/properties.json');
 
 const localProp = JSON.parse(localStorage.getItem('hgp-properties'));
 if (localProp) {
@@ -14,9 +13,7 @@ if (localProp) {
 // const [ingredients, setIngr] = useState();
 
 const Export = () => (
-  <div className="export">
-    <ModeHeader mode="export" />
-  </div>
+  <div className="export" />
 );
 
 // exportToCsv('export.csv', [

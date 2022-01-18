@@ -1,0 +1,320 @@
+.storages {
+  grid-area: storages;
+  text-align: center;
+  max-width: calc(100vw - 110px);
+  color: inherit;
+  background-color: inherit;
+}
+
+.storages .content {
+  max-height: calc(100vh - 42px);
+  max-width: calc(100vw - 111px);
+  justify-content: space-around;
+  color: inherit;
+  background-color: inherit;
+  overflow: auto;
+}
+
+.storages .storages-modes {
+  grid-area: modes;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  font-size: 16px;
+  color: inherit;
+  background-color: inherit;
+}
+
+.storages .fridge-header,
+.storages .fridgetemp-header,
+.storages .pantry-header,
+.storages .pantrytemp-header,
+.storages .freezertemp-header,
+.storages .freezer-header,
+.storages .pantry-header {
+  color: #518051;
+}
+
+.storages .minus, .storages .plus {
+  margin: 0 20px;
+  font-size: 45px;
+  width: 45px;
+}
+
+.storages .minus::selection, .storages .plus::selection, .storages .placeminus::selection {
+  background: none;
+}
+
+.storages .minus:hover, .storages .plus:hover {
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #518051;
+}
+
+.storages .minus:active, .storages .plus:active {
+  transition: all 0.2s;
+  color: #91ad91;
+  font-size: 40px;
+  width: 45px;
+}
+
+.storages .pantry {
+  display: grid;
+  grid-template-rows: 30px 30px 13vh;
+  grid-template-columns: 12vw 1fr 1fr;
+  grid-template-areas: "pantryicon pantryheader pantrytempheader" "pantryicon pantrymeasure pantrytempmeasure" "pantryicon pantryswitcher pantrytempswitcher";
+  justify-content: space-around;
+  font-size: 2rem;
+  margin-left: 10px;
+}
+
+.storages .pantry .pantry-icon {
+  grid-area: pantryicon;
+  background: url(../assets/images/pantry.svg) no-repeat center center;
+  height: 18vh;
+  align-self: center;
+}
+
+.storages .pantry .pantry-header {
+  grid-area: pantryheader;
+  text-align: center;
+}
+
+.storages .pantry .pantry-switcher {
+  grid-area: pantryswitcher;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.storages .pantry .pantrytemp-header {
+  grid-area: pantrytempheader;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.storages .pantry .pantrytemp-switcher {
+  grid-area: pantrytempswitcher;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.storages .pantry .pantry-subheader {
+  grid-area: pantrymeasure;
+  text-align: center;
+}
+
+.storages .pantry .freezertemp-subheader {
+  grid-area: freezertempmeasure;
+  text-align: center;
+}
+
+.storages .pantry .freezertemp-header {
+  grid-area: freezertempheader;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.storages .pantry .freezertemp-switcher {
+  grid-area: freezertempswitcher;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.storages .placeplus {
+  display: flex;
+  align-self: flex-start;
+}
+
+.storages .placeminus {
+  display: flex;
+  justify-content: flex-start;
+  opacity: 0.3;
+  width: 100%;
+  height: 100%;
+}
+
+.storages .placeminus:hover {
+  transition: all 0.2s;
+  cursor: pointer;
+  opacity: 1;
+  font-size: 45px;
+}
+
+.storages .placeminus:active {
+  font-size: 40px;
+  transition: all 0.2s;
+  color: #91ad91;
+}
+
+.storages .freezer {
+  display: grid;
+  grid-template-rows: 40px 20px 13vh;
+  grid-template-columns: 12vw 1fr 1fr;
+  grid-template-areas: "freezericon freezerheader freezertempheader" "freezericon freezermeasure freezertempmeasure" "freezericon freezerswitcher freezertempswitcher";
+  justify-content: space-around;
+  font-size: 2rem;
+  margin-left: 10px;
+}
+
+.storages .freezer .freezer-icon {
+  grid-area: freezericon;
+  background: url(../assets/images/freezer.svg) no-repeat center center;
+  height: 18vh;
+  align-self: center;
+}
+
+.storages .freezer .freezer-header {
+  grid-area: freezerheader;
+  text-align: center;
+}
+
+.storages .freezer .freezer-switcher {
+  grid-area: freezerswitcher;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.storages .freezer .freezertemp-header {
+  grid-area: freezertempheader;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.storages .freezer .freezertemp-switcher {
+  grid-area: freezertempswitcher;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.storages .freezer .freezer-subheader {
+  grid-area: freezermeasure;
+  text-align: center;
+}
+
+.storages .freezer .freezertemp-subheader {
+  grid-area: freezertempmeasure;
+  text-align: center;
+}
+
+.storages .freezer .freezertemp-header {
+  grid-area: freezertempheader;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.storages .freezer .freezertemp-switcher {
+  grid-area: freezertempswitcher;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.storages .fridge {
+  display: grid;
+  grid-template-rows: 40px 20px 13vh;
+  grid-template-columns: 12vw 1fr 1fr;
+  grid-template-areas: "fridgeicon fridgeheader fridgetempheader" "fridgeicon fridgemeasure fridgetempmeasure" "fridgeicon fridgeswitcher fridgetempswitcher";
+  justify-content: space-around;
+  font-size: 2rem;
+  margin-left: 10px;
+}
+
+.storages .fridge .fridge-icon {
+  grid-area: fridgeicon;
+  background: url(../assets/images/fridge.svg) no-repeat center center;
+  height: 18vh;
+  align-self: center;
+}
+
+.storages .fridge .fridge-header {
+  grid-area: fridgeheader;
+  text-align: center;
+}
+
+.storages .fridge .fridge-subheader {
+  grid-area: fridgemeasure;
+  text-align: center;
+}
+
+.storages .fridge .fridgetemp-subheader {
+  grid-area: fridgetempmeasure;
+  text-align: center;
+}
+
+.storages .fridge .fridge-switcher {
+  grid-area: fridgeswitcher;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.storages .fridge .fridgetemp-header {
+  grid-area: fridgetempheader;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.storages .fridge .fridgetemp-switcher {
+  grid-area: fridgetempswitcher;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 800px) {
+  .storages {
+    grid-area: storages;
+    text-align: center;
+    max-width: 100vw;
+    color: inherit;
+    background-color: inherit;
+  }
+  .storages .content {
+    max-height: calc(100vh - 120px);
+    max-width: 100vw;
+    justify-content: space-around;
+    color: inherit;
+    background-color: inherit;
+    overflow: auto;
+  }
+  .storages .fridge-minus, .storages .fridge-plus,
+  .storages .fridgemin-minus, .storages .fridgemin-plus,
+  .storages .fridgemax-minus, .storages .fridgemax-plus,
+  .storages .pantry-minus, .storages .pantry-plus,
+  .storages .pantrymin-minus, .storages .pantrymin-plus,
+  .storages .pantrymax-minus, .storages .pantrymax-plus,
+  .storages .freezer-minus, .storages .freezer-plus,
+  .storages .freezermax-minus, .storages .freezermax-plus,
+  .storages .freezermin-minus, .storages .freezermin-plus {
+    margin: 0 1px;
+    font-size: 30px;
+  }
+  .storages .fridge-header,
+  .storages .fridgetemp-header,
+  .storages .pantry-header,
+  .storages .pantrytemp-header,
+  .storages .freezertemp-header,
+  .storages .freezer-header,
+  .storages .pantry-header {
+    font-size: 24px;
+  }
+  .storages .fridgetemp-subheader,
+  .storages .fridge-subheader,
+  .storages .pantrytemp-subheader,
+  .storages .freezer-subheader,
+  .storages .freezertemp-subheader,
+  .storages .pantry-subheader {
+    font-size: 22px;
+  }
+}
+/*# sourceMappingURL=storages.css.map */

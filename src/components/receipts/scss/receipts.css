@@ -1,0 +1,557 @@
+.receipts {
+  grid-area: receipts;
+  text-align: center;
+  max-width: calc(100vw - 110px);
+  background-color: inherit;
+  color: inherit;
+  border-color: inherit;
+}
+
+.receipts .content {
+  display: grid;
+  grid-template-rows: 50px 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 250px;
+  grid-template-areas: "categories categories categories categories" "category category category menus" "category category category recents" "category category category favorites";
+  max-height: calc(100vh - 42px);
+  max-width: calc(100vw - 105px);
+  justify-content: space-around;
+  background-color: inherit;
+  color: inherit;
+  border-color: inherit;
+}
+
+.receipts .categories {
+  grid-area: categories;
+  background-color: inherit;
+  color: inherit;
+}
+
+.receipts .categories-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.receipts .categories-list .list-item {
+  display: block;
+  border: 1px solid #508150;
+  border-radius: 5px;
+}
+
+.receipts .categories-list .category-name {
+  padding: 3px 10px;
+  height: 20px;
+}
+
+.receipts .categories-list .category-name:hover {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.receipts .categories-list .active-category {
+  background-color: #508150;
+  color: snow;
+}
+
+.receipts .category {
+  grid-area: category;
+  display: block;
+  background-color: inherit;
+  color: inherit;
+  border-color: inherit;
+}
+
+.receipts .category-content {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  max-width: calc(100vw - 107px);
+  max-height: calc(100vh - 116px);
+  justify-content: space-between;
+  background-color: inherit;
+  color: inherit;
+}
+
+.receipts .menus {
+  grid-area: menus;
+  display: block;
+  background-color: inherit;
+  color: inherit;
+  border-color: inherit;
+}
+
+.receipts .favorites {
+  grid-area: favorites;
+  display: block;
+  background-color: inherit;
+  color: inherit;
+  border-color: inherit;
+}
+
+.receipts .recents {
+  grid-area: recents;
+  display: block;
+  background-color: inherit;
+  color: inherit;
+  border-color: inherit;
+}
+
+.receipts .category-header,
+.receipts .menus-header,
+.receipts .favorites-header,
+.receipts .recents-header {
+  background-color: #508150;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 25px;
+  padding: 3px 0px;
+  margin: 0 40% 0 0px;
+  font-size: 16px;
+  color: snow;
+}
+
+.receipts .recents-content,
+.receipts .favorites-content,
+.receipts .menus-content {
+  overflow: auto;
+  height: calc((100vh / 3) - 58px);
+  justify-content: space-between;
+  background-color: inherit;
+  color: inherit;
+}
+
+.receipts .recent,
+.receipts .menue,
+.receipts .favorite {
+  display: flex;
+}
+
+.receipts .recent-add,
+.receipts .recent-favorite,
+.receipts .menue-add,
+.receipts .menue-favorite,
+.receipts .favorite-add,
+.receipts .favorite-favorite {
+  font-size: 21px;
+}
+
+.receipts .menue-meal,
+.receipts .recent-meal,
+.receipts .favorite-meal {
+  max-width: calc(100% - 48px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 23px;
+  font-size: 19px;
+}
+
+.receipts .menue-meal:hover,
+.receipts .recent-meal:hover,
+.receipts .favorite-meal:hover,
+.receipts .recent-add:hover,
+.receipts .recent-favorite:hover,
+.receipts .menue-add:hover,
+.receipts .menue-favorite:hover,
+.receipts .favorite-add:hover,
+.receipts .favorite-favorite:hover,
+.receipts .menue-add:hover,
+.receipts .menue-favorite:hover {
+  cursor: pointer;
+  color: #508150;
+  transition: all 0.2s;
+}
+
+.receipts .menue-meal:hover,
+.receipts .recent-meal:hover,
+.receipts .favorite-meal:hover {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.receipts .receipt {
+  display: grid;
+  grid-template-rows: auto 30px 10px;
+  grid-template-columns: 190px;
+  grid-template-areas: "see" "buttons" "mealName";
+  width: 190px;
+  height: 190px;
+  margin: 0px 10px 70px 10px;
+  border-radius: 100px;
+}
+
+.receipts .receipt .receipt-buttons {
+  grid-area: buttons;
+  display: flex;
+  justify-content: space-around;
+}
+
+.receipts .receipt .receipt-buttons .receipt-add {
+  position: relative;
+  text-align: left;
+  right: 25px;
+  top: 10px;
+  z-index: 1;
+}
+
+.receipts .receipt .receipt-buttons .receipt-favorite {
+  position: relative;
+  text-align: right;
+  left: 25px;
+  top: 10px;
+  z-index: 1;
+}
+
+.receipts .receipt .receipt-buttons .receipt-add:hover,
+.receipts .receipt .receipt-buttons .receipt-favorite:hover {
+  cursor: pointer;
+}
+
+.receipts .receipt .receipt-see {
+  grid-area: see;
+}
+
+.receipts .receipt .receipt-see:hover {
+  cursor: pointer;
+}
+
+.receipts .receipt .receipt-meal {
+  grid-area: mealName;
+  position: relative;
+  height: 56px;
+  top: 10px;
+  font-size: 15px;
+  padding: 2px 5px;
+  text-emphasis: none;
+}
+
+.receipts .receipt .receipt-ingrredients {
+  position: relative;
+  top: 30px;
+}
+
+.receipts .receipt:hover {
+  border-radius: 10px;
+  transition: all 0.1s;
+  width: 200px;
+  height: 200px;
+  margin: 0px 5px 45px 5px;
+}
+
+.receipts .receipt:hover .receipt-meal {
+  position: relative;
+  top: 10px;
+  font-size: 18px;
+  padding: 2px 5px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.modal-receipt {
+  display: grid;
+  grid-template-rows: 30px 25px auto auto auto;
+  grid-template-columns: 155px 155px 1fr 1fr;
+  grid-template-areas: "receipHeader receipHeader receipHeader receipHeader" "receipCat receipCat receipCat receipCat" "receipThumb receipThumb receipIng receipIng" "receipDescriptions receipDescriptions receipIng receipIng" "receipInstruction receipInstruction receipInstruction receipInstruction";
+  background-color: inherit;
+  color: inherit;
+  border-color: inherit;
+  position: relative;
+  width: calc(85vw - 30px);
+  height: calc(90vh - 40px);
+  overflow: auto;
+}
+
+.modal-receipt .receipt-category {
+  grid-area: receipCat;
+  display: flex;
+  justify-content: center;
+  background-color: #88ad88ad;
+  border-radius: 5px;
+}
+
+.modal-receipt .receipt-meal {
+  grid-area: receipHeader;
+}
+
+.modal-receipt .receipt-descriptions {
+  grid-area: receipDescriptions;
+  border-color: inherit;
+}
+
+.modal-receipt .receipt-cat, .modal-receipt .receipt-tags, .modal-receipt .receipt-source,
+.modal-receipt .receipt-subcat, .modal-receipt .receipt-area {
+  margin: 5px 15px;
+}
+
+.modal-receipt .receipt-cat {
+  font-size: 18px;
+  margin: 3px 15px;
+}
+
+.modal-receipt a {
+  text-decoration: none;
+}
+
+.modal-receipt .receipt-persons {
+  display: flex;
+  margin: 15px 0;
+  font-size: 35px;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-receipt .receipt-persons .timer {
+  font-size: 16px;
+}
+
+.modal-receipt .receipt-persons .persons-descript {
+  font-size: 16px;
+  margin: 0 10px;
+}
+
+.modal-receipt .receipt-persons .receipt-persons-value {
+  margin: 15px 0;
+  font-size: 35px;
+  background-color: inherit;
+  border: 1px solid grey;
+  border-radius: 5px;
+  width: 50px;
+  padding: 5px 0;
+}
+
+.modal-receipt .receipt-persons .receipt-persons-minus,
+.modal-receipt .receipt-persons .receipt-persons-plus {
+  margin: 15px 20px;
+  font-size: 35px;
+  background-color: yellowgreen;
+  border-radius: 5px;
+  width: 50px;
+}
+
+.modal-receipt .receipt-persons .receipt-persons-minus:hover,
+.modal-receipt .receipt-persons .receipt-persons-plus:hover {
+  cursor: pointer;
+  background-color: #80ac2a;
+  transition: all 0.2s;
+}
+
+.modal-receipt .receipt-persons .receipt-persons-minus:active,
+.modal-receipt .receipt-persons .receipt-persons-plus:active {
+  cursor: pointer;
+  background-color: #6cac2a;
+  transition: all 0.2s;
+}
+
+.modal-receipt .receipt-thumb {
+  grid-area: receipThumb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-receipt .receipt-thumb img {
+  border-radius: 10px;
+}
+
+.modal-receipt .receipt-ingredients {
+  grid-area: receipIng;
+  display: grid;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.modal-receipt .receipt-ingredient {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "name dotted measure";
+  min-width: 350px;
+  margin: 5px 0;
+}
+
+.modal-receipt .receipt-ingredient-empty {
+  display: none;
+}
+
+.modal-receipt .receipt-ingredient-name {
+  grid-area: name;
+  text-align: left;
+  width: fit-content;
+  margin: 0 10px;
+  place-self: end;
+}
+
+.modal-receipt .receipt-ingredient-dotted {
+  grid-area: dotted;
+  border-bottom: 1px dotted;
+  border-color: inherit;
+  min-width: 20px;
+}
+
+.modal-receipt .receipt-ingredient-measure {
+  grid-area: measure;
+  text-align: right;
+  width: fit-content;
+  place-self: end;
+}
+
+.modal-receipt .nutritions {
+  display: flex;
+  border-color: inherit;
+  justify-content: center;
+}
+
+.modal-receipt .nutritions .nutrition {
+  margin: 0 5px;
+  border-color: inherit;
+}
+
+.modal-receipt .nutritions .nutrition-name {
+  border-bottom: 1px solid;
+  border-color: inherit;
+}
+
+.modal-receipt .nutritions .nutrition-weight {
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.modal-receipt .receipt-tags {
+  display: flex;
+  border-color: inherit;
+}
+
+.modal-receipt .receipt-tags .tag {
+  margin: 0 5px;
+}
+
+.modal-receipt .receipt-instruction {
+  grid-area: receipInstruction;
+  text-align: start;
+}
+
+.modal-receipt .receipt-instruction .step-instruction {
+  margin: 10px 10px;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .receipts {
+    grid-area: receipts;
+    text-align: center;
+    max-width: 100vw;
+    color: inherit;
+    background-color: inherit;
+  }
+  .receipts .content {
+    display: grid;
+    grid-template-rows: 50px 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 250px;
+    grid-template-areas: "categories categories categories categories" "category category category menus" "category category category recents" "category category category favorites";
+    max-height: calc(100vh - 110px);
+    max-width: 100vw;
+    justify-content: space-around;
+    background-color: inherit;
+    color: inherit;
+    border-color: inherit;
+  }
+  .receipts .category-content {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    max-width: calc(100vw - 107px);
+    max-height: calc(100vh - 185px);
+  }
+  .receipts .recents-content,
+  .receipts .favorites-content,
+  .receipts .menus-content {
+    overflow: auto;
+    height: calc((100vh / 3) - 80px);
+    justify-content: space-between;
+    background-color: inherit;
+    color: inherit;
+  }
+  .receipts .modal-receipt {
+    display: grid;
+    grid-template-rows: 30px 40px auto auto auto auto auto;
+    grid-template-columns: 100%;
+    grid-template-areas: "receipHeader" "receipCat" "receipThumb" "receipIng" "receipIng" "receipDescriptions" "receipInstruction";
+    background-color: inherit;
+    color: inherit;
+    border-color: inherit;
+    position: relative;
+    width: calc(90vw - 10px);
+    height: calc(90vh - 10px);
+    overflow: auto;
+  }
+  .receipts .modal-receipt .receipt-category {
+    grid-area: receipCat;
+    display: flex;
+    justify-content: center;
+    background-color: #88ad88ad;
+    border-radius: 5px;
+  }
+  .receipts .modal-receipt .receipt-meal {
+    grid-area: receipHeader;
+  }
+  .receipts .modal-receipt .receipt-descriptions {
+    grid-area: receipDescriptions;
+    border-color: inherit;
+  }
+  .receipts .modal-receipt .receipt-cat, .receipts .modal-receipt .receipt-tags, .receipts .modal-receipt .receipt-source,
+  .receipts .modal-receipt .receipt-subcat, .receipts .modal-receipt .receipt-area {
+    margin: 5px 15px;
+  }
+  .receipts .modal-receipt .receipt-cat {
+    font-size: 18px;
+    margin: 3px 15px;
+  }
+  .receipts .modal-receipt a {
+    text-decoration: none;
+  }
+  .receipts .modal-receipt .receipt-persons {
+    display: flex;
+    margin: 15px 0;
+    font-size: 35px;
+    justify-content: center;
+    align-items: center;
+  }
+  .receipts .modal-receipt .receipt-persons .timer {
+    font-size: 16px;
+  }
+  .receipts .modal-receipt .receipt-persons .persons-descript {
+    font-size: 16px;
+    margin: 0 10px;
+  }
+  .receipts .modal-receipt .receipt-persons .receipt-persons-value {
+    margin: 15px 0;
+    font-size: 35px;
+    background-color: inherit;
+    border: 1px solid grey;
+    border-radius: 5px;
+    width: 50px;
+    padding: 5px 0;
+  }
+  .receipts .modal-receipt .receipt-persons .receipt-persons-minus,
+  .receipts .modal-receipt .receipt-persons .receipt-persons-plus {
+    margin: 15px 20px;
+    font-size: 35px;
+    background-color: yellowgreen;
+    border-radius: 5px;
+    width: 50px;
+  }
+  .receipts .modal-receipt .receipt-persons .receipt-persons-minus:hover,
+  .receipts .modal-receipt .receipt-persons .receipt-persons-plus:hover {
+    cursor: pointer;
+    background-color: #80ac2a;
+    transition: all 0.2s;
+  }
+  .receipts .modal-receipt .receipt-persons .receipt-persons-minus:active,
+  .receipts .modal-receipt .receipt-persons .receipt-persons-plus:active {
+    cursor: pointer;
+    background-color: #6cac2a;
+    transition: all 0.2s;
+  }
+}
+/*# sourceMappingURL=receipts.css.map */

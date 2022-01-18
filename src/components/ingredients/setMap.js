@@ -6,6 +6,7 @@ const setMap = (value) => {
     const schepotkaMeas = 3;
     const chaynLoghkMeas = 5;
     const stolLoghkMeas = 20;
+    const zubchikMeas = 6;
     if (value === 'на кончике ножа') {
       result.set('г', konchNoghaMeas);
       return result;
@@ -17,6 +18,10 @@ const setMap = (value) => {
     const spl = value.split(' ');
     if (spl[1].match(/стак/)) {
       result.set('г', Number(spl[0]) * stakanMeas);
+      return result;
+    }
+    if (spl[1].match(/зубчик/)) {
+      result.set('г', Number(spl[0]) * zubchikMeas);
       return result;
     }
     if (spl.length === 3 && spl[2].match(/ложк/)) {

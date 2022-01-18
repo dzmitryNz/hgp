@@ -3,8 +3,8 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 
-const PropertiesJson = require('../json/properties.json');
-const DictJson = require('../json/dict.json');
+const PropertiesJson = require('../shared/json/properties.json');
+const DictJson = require('../shared/json/dict.json');
 
 function Modal(props) {
   const { language } = PropertiesJson;
