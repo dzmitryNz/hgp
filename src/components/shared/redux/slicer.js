@@ -13,7 +13,8 @@ const defaultState = {
   plannerModes: ['plannerWeek', 'plannerDay', 'plannerSurviver'],
   pets: ['cat', 'fish', 'turtle', 'dog', 'parrot'],
   storages: {
-    places: ['fridge', 'freezer', 'pantry', 'kitchen0', 'kitchen1', 'cellar0', 'cellar1'],
+    places: ['fridge', 'freezer', 'pantry'],
+    newPlaces: ['fridge', 'freezer', 'pantry', 'kitchen0', 'cellar0', 'cellar1'],
     fridge: { tMax: 6, tMin: 1, capacity: 200 },
     freezer: { tMax: -5, tMin: -25, capacity: 160 },
     pantry: { tMax: 25, tMin: 18, capacity: 200 },
@@ -34,6 +35,8 @@ const defaultState = {
 };
 const initialState = !localProp ? defaultState : localProp;
 
+function saveState(state) { localStorage.setItem('hgp-properties', JSON.stringify(state)); }
+
 export const mainSlice = createSlice({
   name: 'main',
   initialState,
@@ -53,6 +56,7 @@ export const mainSlice = createSlice({
         default:
           break;
       }
+      saveState(state);
     },
     setMode: (state, action) => {
       switch (action.payload) {
@@ -78,14 +82,22 @@ export const mainSlice = createSlice({
         default:
           break;
       }
+      saveState(state);
     },
-    setLanguage: (state, action) => { state.language = action.payload; state.view.langs = false; },
-    setTheme: (state, action) => { state.theme = action.payload; state.view.themes = false; },
-    setState: (state, action) => { state = action.payload; },
-    setFamily: (state, action) => { state.family = action.payload; },
-    setStorages: (state, action) => { state.storages = action.payload; },
-    setPlanner: (state, action) => { state.planner = action.payload; },
-  },
+    setLanguage: (state, action) => {
+      state.language = action.payload;
+      state.view.langs = false;
+      saveState(state);
+    },
+    setTheme: (state, action) => {
+      state.theme = action.payload;
+      state.view.themes = false;
+      saveState(state);
+    },
+    setState: (state, action) => { state = action.payload; saveState(state); },
+    setFamily: (state, action) => { state.family = action.payload; saveState(state); },
+    setStorages: (state, action) => { state.storages = action.payload; saveState(state); },
+    setPlanner: (state, action) => { state.planner = action.payload; saveState(state); },
 });
 
 // Action creators are generated for each case reducer function
