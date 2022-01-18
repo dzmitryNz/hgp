@@ -98,7 +98,7 @@ export const mainSlice = createSlice({
     setFamily: (state, action) => { state.family = action.payload; saveState(state); },
     setStorages: (state, action) => { state.storages = action.payload; saveState(state); },
     setPlanner: (state, action) => { state.planner = action.payload; saveState(state); },
-  }
+  },
 });
 
 // Action creators are generated for each case reducer function
