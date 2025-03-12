@@ -5,9 +5,9 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.2",
     "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^11.2.3",
+    "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^12.6.0",
-    "axios": "^1.7.8",
+    "axios": "^1.8.2",
     "babel-polyfill": "^6.26.0",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^13.0.0",
